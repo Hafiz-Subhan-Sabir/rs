@@ -238,6 +238,7 @@ When you finalize this document, a maintainer can map:
 | Date       | Change |
 | ---------- | ------ |
 | 2026-05-11 | Expanded RS Dev scope: web apps, custom software, CRM, SEO, AI agents/workflows/bots, digital marketing, consultancy; updated pitch, hero, services, meta, contact hints, IA. |
+| 2026-05-11 | Synced into codebase: `config/`, `constants/`, hero, navbar, footer, layout JSON-LD, OG image, contact, chatbot, sections, `public/rs-dev-logo.png`, README; pushed to `github.com/Hafiz-Subhan-Sabir/rs`. |
 |            | *Add rows as you revise* |
 
 ---
