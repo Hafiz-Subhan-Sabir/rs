@@ -76,7 +76,7 @@ export const Projects = () => {
     >
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16">
         <div className="mb-6" data-reveal="fade-up">
-          <h2 className="text-3xl sm:text-4xl font-semibold brand-gradient-text">Featured Projects</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold brand-gradient-text">Selected work — featured</h2>
           <p className="mt-1 text-sm uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Good projects first</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5" data-project-group="featured">
@@ -118,7 +118,7 @@ export const Projects = () => {
       {otherProjects.length ? (
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 pb-16">
           <div className="mb-5" data-reveal="fade-up">
-            <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white">More Projects</h3>
+            <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white">More builds</h3>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">Additional builds with clean architecture and practical workflows.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5" data-project-group="other">

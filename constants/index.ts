@@ -28,7 +28,7 @@ export const SOCIALS = [
   {
     name: "GitHub",
     icon: RxGithubLogo,
-    link: "https://github.com/Hafiz-Subhan-Sabir",
+    link: "https://github.com/Hafiz-Subhan-Sabir/rs",
   },
 ] as const;
 
@@ -217,15 +217,15 @@ export const FOOTER_DATA = [
     title: "Profiles",
     data: [
       { name: "LinkedIn", icon: RxLinkedinLogo, link: "https://www.linkedin.com/in/hafiz-subhan-soft/" },
-      { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/Hafiz-Subhan-Sabir" },
+      { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/Hafiz-Subhan-Sabir/rs" },
     ],
   },
   {
     title: "Explore",
     data: [
-      { name: "About", icon: null, link: "/#about-me" },
-      { name: "Projects", icon: null, link: "/#projects" },
-      { name: "Resume", icon: null, link: "/#resume" },
+      { name: "Who we are", icon: null, link: "/#about-me" },
+      { name: "Selected work", icon: null, link: "/#projects" },
+      { name: "Snapshot", icon: null, link: "/#resume" },
     ],
   },
   {
@@ -238,77 +238,78 @@ export const FOOTER_DATA = [
 ] as const;
 
 export const NAV_LINKS = [
-  { title: "About me", link: "#about-me" },
-  { title: "Skills", link: "#skills" },
-  { title: "Timeline", link: "#timeline" },
-  { title: "Resume", link: "#resume" },
-  { title: "Testimonials", link: "#testimonials" },
-  { title: "Projects", link: "#projects" },
-  { title: "Contact", link: "/contact" },
+  { title: "Who we are", link: "#about-me" },
+  { title: "Capabilities", link: "#skills" },
+  { title: "Journey", link: "#timeline" },
+  { title: "Snapshot", link: "#resume" },
+  { title: "Proof", link: "#testimonials" },
+  { title: "Selected work", link: "#projects" },
+  { title: "Book a call", link: "/contact" },
 ] as const;
 
 export const LINKS = {
-  sourceCode: "https://github.com/Hafiz-Subhan-Sabir",
+  sourceCode: "https://github.com/Hafiz-Subhan-Sabir/rs",
 };
 
 export const TESTIMONIALS = [
   {
-    name: "Client Feedback",
-    role: "Startup Founder",
-    text: "Subhan delivered clean UI, fast performance, and clear communication from planning to deployment.",
+    name: "Founder (placeholder)",
+    role: "Product-led business",
+    text: "Clear updates, no black box. We shipped on the date we set.",
   },
   {
-    name: "Team Feedback",
-    role: "Project Teammate",
-    text: "Strong ownership and reliable delivery. He handled technical challenges quickly and kept the team aligned.",
+    name: "Teammate (placeholder)",
+    role: "Engineering partner",
+    text: "The UI system finally felt consistent; onboarding new devs got easier.",
   },
   {
-    name: "Product Feedback",
-    role: "Business Stakeholder",
-    text: "The final build looked premium, worked smoothly, and matched business needs without unnecessary complexity.",
+    name: "Stakeholder (placeholder)",
+    role: "Operations lead",
+    text: "They pushed back once — and saved us a month of wrong work.",
   },
 ] as const;
 
 export const EDUCATION_HIGHLIGHTS = {
-  education: "BS Information Engineering Technology",
+  education:
+    "RS Dev is led by Hafiz Subhan (BS Information Engineering Technology) with full-stack, CRM, SEO, and AI delivery experience.",
   technicalSummary:
-    "Technical skills applied across frontend, backend, AI workflows, and delivery-ready product builds.",
+    "Delivery spans web apps, custom software, integrations, SEO improvements, AI agents and automation, and marketing-aligned releases.",
   satisfiedClients: "Satisfied Clients: 35+",
   soloProjects: "Delivered 10+ solo projects end-to-end.",
   teamProjects: "Collaborated with teams on 20+ projects.",
 } as const;
 
 export const RESUME_DATA = {
-  title: "Professional Resume Snapshot",
+  title: "RS Dev — delivery snapshot",
   summary:
-    "Full-Stack Software Engineer building React/Next.js and Python/FastAPI products with AI integrations, secure auth, and performance-focused UI.",
+    "RS Dev ships websites and web apps, custom software, and CRM-aligned systems. We improve SEO, build practical AI agents and workflow automation, support digital marketing, and provide consultancy so product and growth stay aligned.",
   targetRoles: [
-    "Full-Stack Software Engineer",
-    "Frontend Engineer (React / Next.js)",
-    "Software Engineer (TypeScript / Python)",
+    "Web application & custom software delivery",
+    "CRM, SEO, and integration projects",
+    "AI automation & digital marketing support",
   ],
   coreSkills:
-    "React, Next.js, TypeScript, JavaScript, Tailwind CSS, Python, FastAPI, REST APIs, JWT, RBAC, Git, AI integrations, Prompt Engineering",
+    "React, Next.js, TypeScript, Tailwind CSS, Python, FastAPI, REST APIs, JWT, RBAC, Git, CRM integrations, technical SEO, AI agents & automation, campaign tracking",
   experience: [
     {
-      title: "Freelance Full-Stack Developer",
+      title: "RS Dev — client & product delivery",
       period: "2024 - Present",
       bullets: [
-        "Built and deployed portfolio, e-commerce, and dashboard products with clean architecture and responsive UI.",
-        "Implemented secure authentication flows (JWT + RBAC) and role-based access patterns across web applications.",
-        "Integrated third-party APIs and payment workflows while maintaining performance and accessibility standards.",
+        "Web apps, dashboards, and e-commerce flows with performance, accessibility, and maintainable architecture.",
+        "CRM-related integrations, auth (JWT + RBAC), payments, and third-party APIs with clear handoff docs.",
+        "SEO remediation, AI-assisted workflows, and marketing-aligned releases with realistic timelines.",
       ],
     },
     {
-      title: "Project-Based Software Engineering",
+      title: "Engineering & project delivery",
       period: "2022 - 2024",
       bullets: [
-        "Delivered multiple academic and personal projects across web apps, AI workflows, and data processing pipelines.",
-        "Focused on debugging, optimization, and reusable component systems for maintainable front-end development.",
+        "Full-stack and AI projects across academic, freelance, and team settings with strong debugging and optimization habits.",
+        "Reusable UI systems, documentation, and collaboration patterns for multi-developer delivery.",
       ],
     },
   ],
-  education: "BS Information Engineering Technology",
+  education: "BS Information Engineering Technology (lead: Hafiz Subhan)",
   resumeLink: "/resume/Hafiz_Subhan_Resume.pdf",
   resumeLinkLabel: "Download Resume PDF",
   downloadIcon: RxDownload,

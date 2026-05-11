@@ -72,22 +72,23 @@ export function ContactPage() {
 
   const messageTemplates = useMemo(
     () => [
-      'I want a portfolio website with premium UI and smooth interactions.',
-      'I need a landing page redesign with better performance and conversion.',
-      'I want full-stack development support for a startup MVP project.',
+      'We need a business website or web app with CRM hooks and room to grow SEO.',
+      'Looking for custom software or AI workflow automation tied to our existing tools.',
+      'Want consultancy on SEO, digital marketing, and what to build first in the next 90 days.',
     ],
     []
   );
 
   const mailto = useMemo(() => {
-    const subject = project && project !== 'General' ? `Project inquiry: ${project}` : 'Portfolio inquiry';
+    const subject =
+      project && project !== 'General' ? `RS Dev inquiry: ${project}` : 'RS Dev — scope call request';
     const body =
-      `Hi Subhan,\n\n` +
-      (project && project !== 'General' ? `I’m interested in: ${project}\n\n` : '') +
+      `Hi RS Dev,\n\n` +
+      (project && project !== 'General' ? `Context / reference project: ${project}\n\n` : '') +
       `Name: ${name || '(your name)'}\n` +
       `Email: ${fromEmail || '(your email)'}\n\n` +
       `Message:\n${message || '(write your message here)'}\n\n` +
-      `— Sent from your portfolio website`;
+      `— Sent from the RS Dev website`;
 
     return buildMailto({
       to: CONTACT_EMAIL,
@@ -236,10 +237,11 @@ export function ContactPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Let&apos;s work together.
+                Book a scope call.
               </h1>
               <p className="max-w-2xl text-base sm:text-lg text-gray-600 dark:text-gray-300">
-                Send your project details directly. I receive your message by email, and I usually respond within 24 hours.
+                Tell us what &quot;done&quot; looks like, your timeline, and whether you need build, consultancy, or both.
+                Mention your site or app, CRM (if any), SEO goals, and any AI or automation ideas. We usually reply within 24 hours.
               </p>
             </div>
           </MotionIn>
@@ -249,16 +251,16 @@ export function ContactPage() {
               <div className="rounded-3xl border border-gray-200 bg-white/80 backdrop-blur p-6 sm:p-8 shadow-xl dark:border-white/10 dark:bg-white/5 dark:shadow-[#1a0a2e]/50">
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Contact</h2>
+                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Start a thread</h2>
                     <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                      Choose a project (optional) and write a quick message.
+                      Optional: pick a reference from selected work, then share goals and constraints.
                     </p>
                   </div>
                   <Link
                     href="/#projects"
                     className="text-sm font-semibold text-emerald-600 hover:underline dark:text-cyan-300"
                   >
-                    Back to projects →
+                    Back to selected work →
                   </Link>
                 </div>
 
@@ -329,7 +331,7 @@ export function ContactPage() {
                     <textarea
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Tell me what you want to build, your timeline, expected budget, and any links."
+                      placeholder="Product or campaign outcome (30–90 days), budget band, site URL, CRM name, analytics/Search Console if relevant, links to Figma or staging."
                       rows={6}
                       className="resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none ring-0 focus:border-violet-400 dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-cyan-400"
                     />

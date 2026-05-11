@@ -43,6 +43,23 @@ export function SkillsPinned() {
   const groups = useMemo<SkillGroup[]>(
     () => [
       {
+        title: "What RS Dev builds",
+        subtitle: "Websites, software, CRM, SEO, AI, marketing",
+        visual: {
+          kind: "icon",
+          src: "/rs-dev-logo.png",
+          alt: "RS Dev logo",
+        },
+        items: [
+          { type: "text", label: "Websites & web applications" },
+          { type: "text", label: "Custom software" },
+          { type: "text", label: "CRM solutions & integrations" },
+          { type: "text", label: "SEO & ranking improvements" },
+          { type: "text", label: "AI agents, bots & workflow automation" },
+          { type: "text", label: "Digital marketing & consultancy" },
+        ],
+      },
+      {
         title: "Frontend & Motion",
         subtitle: "UI foundations + advanced animations",
         visual: { kind: "icon", src: "/skills/framer.png", alt: "Frontend & Motion" },
@@ -76,7 +93,7 @@ export function SkillsPinned() {
       {
         title: "AI & Data Systems",
         subtitle: "AI product engineering and model workflows",
-        visual: { kind: "icon", src: "/vector.png", alt: "AI System" },
+        visual: { kind: "icon", src: "/rs-dev-logo.png", alt: "RS Dev — AI & data" },
         items: [
           { type: "text", label: "AI Integrations (API keys, custom chatbots, SaaS AI systems)" },
           { type: "text", label: "Data Collection & AI Model Training" },
@@ -252,7 +269,7 @@ export function SkillsPinned() {
         {/* Mobile title */}
         <div className="mb-8 lg:hidden" data-reveal="fade-up">
           <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white">
-            Skills
+            Capabilities
           </h2>
         </div>
 
@@ -283,7 +300,7 @@ export function SkillsPinned() {
                 }}
               />
               <div className="mb-4">
-                <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">Skills</h2>
+                <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">Capabilities</h2>
                 <div className="mt-2 h-px w-full bg-gradient-to-r from-emerald-500/40 via-cyan-400/30 to-transparent" />
               </div>
               <div className="text-xs tracking-[0.22em] uppercase text-gray-500 dark:text-gray-400">

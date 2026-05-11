@@ -102,9 +102,9 @@ export function TestimonialsEducation() {
             }}
           >
             <div className="mb-6" data-reveal="fade-up">
-              <p className="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-cyan-200/80">Client Satisfaction</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-cyan-200/80">Proof & background</p>
               <h2 className="mt-2 text-3xl sm:text-4xl font-semibold brand-gradient-text">
-                Testimonials & Education
+                Testimonials & delivery story
               </h2>
             </div>
 

@@ -122,15 +122,15 @@ export const HeroContent = () => {
               className="z-20 text-center lg:text-left will-change-transform min-w-0"
             >
               <h1 className="text-[2.35rem] max-[430px]:text-[2.2rem] sm:text-5xl lg:text-[4.4rem] xl:text-[5.15rem] font-semibold tracking-tight text-gray-900 dark:text-white leading-[1.02] lg:leading-[0.95]">
-                <span className={isMobile ? "block text-gray-900 dark:text-white" : "brand-gradient-text block"}>AI‑Powered</span>
-                <span className={isMobile ? "block text-gray-900 dark:text-white" : "brand-gradient-text block"}>Full-Stack</span>
-                <span className={isMobile ? "block text-gray-900 dark:text-white" : "brand-gradient-text block"}>Engineer</span>
+                <span className={isMobile ? "block text-gray-900 dark:text-white" : "brand-gradient-text block"}>Web apps</span>
+                <span className={isMobile ? "block text-gray-900 dark:text-white" : "brand-gradient-text block"}>Custom software</span>
+                <span className={isMobile ? "block text-gray-900 dark:text-white" : "brand-gradient-text block"}>CRM · SEO · AI</span>
               </h1>
               <p
                 ref={paragraphRef}
                 className="mt-4 max-[430px]:mt-3 text-base max-[430px]:text-[1.05rem] sm:text-lg text-gray-600 dark:text-gray-300 max-w-[620px] lg:max-w-[560px] mx-auto lg:mx-0"
               >
-                Full-Stack Software Engineer building AI-integrated web products with React, Next.js, TypeScript, and Python for smooth UX and high performance.
+                RS Dev delivers websites and web applications, custom software, and CRM implementations — plus SEO, AI agents and bots, workflow automation, digital marketing, and consultancy — with clear scope and outcomes you can measure.
               </p>
             </div>
 
@@ -143,22 +143,24 @@ export const HeroContent = () => {
                   className="about-photo group relative overflow-visible rounded-3xl outline-none"
                   tabIndex={0}
                   role="img"
-                  aria-label="Portrait of Hafiz Subhan"
+                  aria-label="RS Dev monogram logo"
                 >
-                  <div className="about-float about-vintage will-change-transform">
+                  <div className="about-float about-vintage will-change-transform flex items-center justify-center rounded-3xl border border-gray-200/80 dark:border-white/10 bg-white p-8 dark:bg-white">
                     <Image
-                      src="/port.png"
-                      alt="Hafiz Subhan portrait"
-                      width={720}
-                      height={960}
+                      src="/rs-dev-logo.png"
+                      alt="RS Dev — modern black and white monogram logo with RS above DEV"
+                      width={480}
+                      height={600}
                       priority
-                      className="h-[420px] xl:h-[500px] w-full object-cover object-[center_6%] rounded-3xl border border-gray-200/80 dark:border-white/10"
+                      className="h-[320px] xl:h-[380px] w-full max-w-[280px] xl:max-w-[320px] object-contain"
                     />
                   </div>
                 </div>
                 <div className="mt-4 text-center lg:text-left">
-                  <div className="text-xs uppercase tracking-[0.28em] text-gray-500 dark:text-gray-400">Engineer</div>
-                  <div className="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">Hafiz Subhan</div>
+                  <div className="text-xs uppercase tracking-[0.28em] text-gray-500 dark:text-gray-400">RS Dev</div>
+                  <div className="mt-1 text-sm font-medium text-gray-600 dark:text-gray-300 max-w-[360px]">
+                    Web apps · custom software · CRM · SEO · AI automation · marketing consultancy
+                  </div>
                 </div>
               </div>
             </div>
@@ -171,16 +173,16 @@ export const HeroContent = () => {
               <div className="about-photo group relative overflow-visible rounded-3xl outline-none" tabIndex={0}>
                 <div className="about-float about-vintage will-change-transform">
                   <Image
-                    src="/port.png"
-                    alt="Hafiz Subhan portrait"
-                    width={520}
-                    height={700}
-                    className="h-[230px] w-full object-cover object-[center_6%] rounded-3xl border border-gray-200/80 dark:border-white/10"
+                    src="/rs-dev-logo.png"
+                    alt="RS Dev — monogram logo"
+                    width={400}
+                    height={500}
+                    className="h-[200px] w-full max-w-[220px] mx-auto object-contain rounded-3xl border border-gray-200/80 dark:border-white/10 bg-white p-6 dark:bg-white"
                   />
                 </div>
               </div>
               <div className="mt-2 text-center">
-                <div className="text-xs uppercase tracking-[0.24em] text-gray-500 dark:text-gray-400">Hafiz Subhan</div>
+                <div className="text-xs uppercase tracking-[0.24em] text-gray-500 dark:text-gray-400">RS Dev</div>
               </div>
             </div>
           </div>

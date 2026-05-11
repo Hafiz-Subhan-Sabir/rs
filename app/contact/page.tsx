@@ -4,9 +4,9 @@ import { ContactPage } from "@/components/main/contact-page";
 
 export const dynamic = "force-static";
 export const metadata: Metadata = {
-  title: "Contact Hafiz Subhan | Full-Stack Software Engineer",
+  title: "RS Dev | Book a scope call — Web apps, CRM, SEO & AI",
   description:
-    "Contact Hafiz Subhan for full-stack web development, React/Next.js projects, AI integrations, and portfolio/resume inquiries.",
+    "Contact RS Dev for websites and web apps, custom software, CRM, SEO, AI agents and automation, digital marketing, and consultancy.",
   alternates: {
     canonical: "/contact",
   },

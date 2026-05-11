@@ -35,19 +35,19 @@ export const Navbar = () => {
         <div className="relative flex items-center min-w-0 flex-1 pr-2">
           <Link href="#about-me" className="flex items-center min-w-0">
             <Image
-              src="/vector.png"
-              alt="Hafiz Subhan"
-              width={38}
-              height={38}
+              src="/rs-dev-logo.png"
+              alt="RS Dev — modern black and white monogram logo with RS above DEV"
+              width={42}
+              height={42}
               draggable={false}
-              className="cursor-pointer object-contain h-8 w-auto sm:h-9 dark:invert-0"
+              className="cursor-pointer object-contain h-8 w-auto sm:h-9 rounded-md bg-white p-0.5 dark:bg-white"
               style={{ width: "auto" }}
             />
             <span className="md:hidden ml-2 max-w-[150px] text-sm max-[430px]:text-[13px] font-semibold text-gray-900 dark:text-white truncate">
-              Hafiz Subhan
+              RS Dev
             </span>
             <div className="hidden md:flex font-semibold ml-[10px] text-gray-800 dark:text-gray-300">
-              Hafiz Subhan
+              RS Dev
             </div>
           </Link>
         </div>

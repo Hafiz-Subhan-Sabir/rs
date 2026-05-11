@@ -9,10 +9,10 @@ const milestones = [
     year: "2026",
     items: [
       {
-        title: "AI-powered Full Stack Delivery",
-        subtitle: "Systems, security, and premium UI",
+        title: "RS Dev — product, CRM & growth lanes",
+        subtitle: "Web apps, SEO, AI automation, consultancy",
         description:
-          "Shipping full-stack systems with AI integrations, secure auth flows, and polished motion — from requirements to deployment.",
+          "Positioning RS Dev for end-to-end delivery: websites and apps, custom software, CRM and integrations, SEO improvements, AI agents and workflow automation, digital marketing, and scoped consultancy.",
       },
     ],
   },

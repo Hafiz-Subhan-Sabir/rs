@@ -21,32 +21,32 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = siteConfig;
-const personSchema = {
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Hafiz Subhan",
-  jobTitle: "Full-Stack Software Engineer",
+  "@type": "ProfessionalService",
+  name: "RS Dev",
+  description:
+    "Websites and web apps, custom software, CRM, SEO, AI agents and workflow automation, AI bots, digital marketing, and consultancy.",
   url: "https://hafiz-subhan-portfolio.vercel.app",
-  image: "https://hafiz-subhan-portfolio.vercel.app/port.png",
+  image: "https://hafiz-subhan-portfolio.vercel.app/rs-dev-logo.png",
   sameAs: [
-    "https://github.com/Hafiz-Subhan-Sabir",
+    "https://github.com/Hafiz-Subhan-Sabir/rs",
     "https://www.linkedin.com/in/hafiz-subhan-soft/",
   ],
   knowsAbout: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Python",
-    "FastAPI",
-    "AI integrations",
-    "JWT authentication",
-    "RBAC",
+    "Web application development",
+    "Custom software",
+    "CRM",
+    "Search engine optimization",
+    "AI agents",
+    "Business process automation",
+    "Digital marketing",
   ],
 };
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Hafiz Subhan Portfolio",
+  name: "RS Dev",
   url: "https://hafiz-subhan-portfolio.vercel.app",
 };
 
@@ -66,7 +66,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <script
           type="application/ld+json"

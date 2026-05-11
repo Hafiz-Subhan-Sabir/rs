@@ -30,7 +30,7 @@ export const Footer = () => {
         </div>
 
         <div className="mb-[20px] text-[15px] text-center text-gray-600 dark:text-gray-400">
-          &copy; 2026 Hafiz Subhan | All Rights Reserved.
+          &copy; 2026 RS Dev. All rights reserved.
         </div>
       </div>
     </div>

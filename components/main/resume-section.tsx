@@ -19,7 +19,7 @@ export function ResumeSection() {
             data-reveal="fade-up"
           >
             <p className="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-cyan-300/80" data-reveal="fade">
-              Resume
+              Snapshot
             </p>
             <h2 className="mt-2 text-3xl sm:text-4xl font-semibold text-gray-900 dark:text-white">
               {RESUME_DATA.title}

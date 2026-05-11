@@ -16,11 +16,9 @@ export default function OpenGraphImage() {
           height: "100%",
           display: "flex",
           position: "relative",
-          backgroundColor: "#07001f",
-          backgroundImage:
-            "radial-gradient(circle at 25% 20%, rgba(34,197,94,0.35), transparent 45%), radial-gradient(circle at 80% 20%, rgba(34,211,238,0.28), transparent 48%)",
-          color: "white",
-          fontFamily: "Arial, sans-serif",
+          backgroundColor: "#ffffff",
+          color: "#0a0a0a",
+          fontFamily: "Georgia, 'Times New Roman', serif",
         }}
       >
         <div
@@ -28,60 +26,49 @@ export default function OpenGraphImage() {
             position: "absolute",
             inset: 0,
             display: "flex",
-            padding: "64px 72px",
+            padding: "56px 64px",
             flexDirection: "column",
-            justifyContent: "space-between",
+            justifyContent: "center",
+            gap: 28,
           }}
         >
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              gap: 18,
+              flexDirection: "column",
+              gap: 0,
+              letterSpacing: "-0.03em",
             }}
           >
+            <div style={{ fontSize: 112, fontWeight: 700, lineHeight: 0.9 }}>RS</div>
             <div
               style={{
-                width: 56,
-                height: 56,
-                borderRadius: 16,
-                background:
-                  "linear-gradient(135deg, rgba(16,185,129,1), rgba(34,211,238,1))",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#041018",
-                fontWeight: 700,
-                fontSize: 32,
+                marginTop: 8,
+                fontSize: 36,
+                fontWeight: 600,
+                letterSpacing: "0.35em",
+                textTransform: "uppercase",
               }}
             >
-              H
-            </div>
-            <div style={{ fontSize: 34, fontWeight: 700 }}>Hafiz Subhan</div>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            <div
-              style={{
-                fontSize: 86,
-                lineHeight: 1,
-                fontWeight: 800,
-                letterSpacing: "-0.02em",
-                background:
-                  "linear-gradient(90deg, rgba(16,185,129,1), rgba(56,189,248,1))",
-                color: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Full-Stack Engineer
-            </div>
-            <div style={{ fontSize: 34, color: "rgba(235,245,255,0.92)" }}>
-              React • Next.js • TypeScript • Python • FastAPI
+              DEV
             </div>
           </div>
 
-          <div style={{ fontSize: 26, color: "rgba(220,240,255,0.86)" }}>
-            Hire-ready portfolio and production-grade projects
+          <div
+            style={{
+              fontSize: 28,
+              fontWeight: 500,
+              maxWidth: 920,
+              lineHeight: 1.35,
+              color: "#333333",
+              fontFamily: "Arial, sans-serif",
+            }}
+          >
+            Web apps, custom software, CRM, SEO, AI automation & marketing consultancy
+          </div>
+
+          <div style={{ fontSize: 22, color: "#555555", fontFamily: "Arial, sans-serif" }}>
+            Scoped delivery · direct communication · outcomes you can measure
           </div>
         </div>
       </div>

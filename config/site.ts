@@ -1,65 +1,73 @@
 export const siteConfig = {
   url: 'https://hafiz-subhan-portfolio.vercel.app',
-  name: 'Hafiz Subhan',
-  role: 'BS Information Engineering Technology (2026)',
-  title: 'Hafiz Subhan | AI Portfolio',
-  description: 'AI-powered full stack portfolio for Hafiz Subhan.',
+  name: 'RS Dev',
+  role:
+    'Web apps · custom software · CRM · SEO · AI automation · marketing consultancy',
+  title: 'RS Dev | Web apps, software, CRM, SEO & AI',
+  description:
+    'RS Dev: websites and web apps, custom software, CRM, SEO, AI agents and workflow automation, AI bots, digital marketing, and consultancy — scoped delivery and honest guidance.',
   hero:
-    'I’m an Information Engineering Technology graduate (2026) focused on building clean, modern web experiences with strong UI/UX, performance, and maintainable code.',
+    'RS Dev helps teams ship reliable web products, wire CRM and growth channels, and adopt practical AI automation — with clear scope and direct communication.',
   about:
-    'I enjoy turning complex problems into simple, intuitive experiences. I focus on front-end engineering with React/TypeScript and modern UI systems, and I care about motion, accessibility, and performance.',
-  linkedin: 'https://www.linkedin.com/in/hafiz-subhan-20669829a',
-  github: 'https://github.com/Hafiz-Subhan-Sabir',
+    'We deliver websites and web applications, custom software, and CRM implementations aligned with how you sell and support customers. SEO, digital marketing, and consultancy keep product and demand moving together.',
+  linkedin: 'https://www.linkedin.com/in/hafiz-subhan-soft/',
+  github: 'https://github.com/Hafiz-Subhan-Sabir/rs',
   highlights: [
-    { label: 'Graduation', value: '2026' },
-    { label: 'Focus', value: 'Frontend + UI/UX' },
-    { label: 'Stack', value: 'React / TS / Tailwind' },
-    { label: 'Availability', value: 'Open to work' },
+    { label: 'Scope', value: 'Web apps · software · CRM · SEO · AI · marketing' },
+    { label: 'Delivery', value: 'Milestones you can plan around' },
+    { label: 'Stack', value: 'Modern web, APIs, integrations' },
+    { label: 'Engagement', value: 'Phases, retainers, or advisory' },
+    { label: 'Availability', value: 'Open to selective new work' },
   ],
   services: [
     {
-      title: 'Frontend Engineering',
+      title: 'Websites & web applications',
       description:
-        'Modern React, TypeScript, and UI systems with strong component quality and accessibility.',
+        'Marketing sites, portals, and internal web apps — fast, responsive, and structured for SEO and analytics.',
     },
     {
-      title: 'UI / UX + Motion',
+      title: 'Custom software & CRM',
       description:
-        'Smooth animations and interactions that feel professional, fast, and intentional.',
+        'Bespoke tools and CRM setup: pipelines, reporting, and integrations so sales and ops stay in sync.',
     },
     {
-      title: 'Performance & Clean Code',
+      title: 'SEO, AI & growth',
       description:
-        'Optimized experiences with maintainable architecture and consistent styling patterns.',
+        'Technical SEO, AI agents and bots, workflow automation, and digital marketing — scoped and maintainable.',
+    },
+    {
+      title: 'Consultancy',
+      description:
+        'Roadmaps, tool choices, and “what to build first” — standalone or bundled with delivery.',
     },
   ],
   education: {
-    degree: 'BS Information Engineering Technology',
-    period: '2022 — 2026',
+    degree: 'Engineering-led digital delivery',
+    period: 'Ongoing',
     description:
-      'Focused on software development, information systems, and engineering practices.',
+      'Led by Hafiz Subhan (BS Information Engineering Technology) with full-stack, AI, and product delivery experience.',
   },
   skills: [
-    { name: 'React / TypeScript', percent: 85, level: 'Advanced' },
-    { name: 'HTML / CSS / Tailwind', percent: 90, level: 'Advanced' },
-    { name: 'JavaScript', percent: 88, level: 'Advanced' },
-    { name: 'UI / UX + Motion', percent: 80, level: 'Strong' },
+    { name: 'Web & product engineering', percent: 90, level: 'Advanced' },
+    { name: 'CRM, SEO & integrations', percent: 82, level: 'Strong' },
+    { name: 'AI workflows & automation', percent: 80, level: 'Strong' },
+    { name: 'Digital marketing & consultancy', percent: 78, level: 'Strong' },
   ],
   techStack: [
     'React',
     'Next.js',
     'TypeScript',
     'Tailwind CSS',
-    'Three.js',
-    'Framer Motion',
+    'Python',
+    'FastAPI',
+    'AI integrations',
   ],
   experience: [
     {
-      title: 'Projects & Learning',
+      title: 'RS Dev — client delivery',
       period: '2024 — Present',
       description:
-        'Building modern interfaces, experimenting with animations, and improving code quality through real projects and continuous learning.',
+        'End-to-end web products, CRM and integration work, SEO improvements, AI-assisted workflows, and marketing-aligned releases.',
     },
   ],
 } as const
-
