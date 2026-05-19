@@ -3,6 +3,7 @@ import { BusinessPaths } from "@/components/pages/business-paths";
 import { DeliveryCycle } from "@/components/pages/delivery-cycle";
 import { FeaturedWork } from "@/components/pages/featured-work";
 import { GrowthWorkflow } from "@/components/pages/growth-workflow";
+import { BrandMarquee } from "@/components/pages/brand-marquee";
 import { HomeHero } from "@/components/pages/home-hero";
 import { MaintenanceCycle } from "@/components/pages/maintenance-cycle";
 import { ProblemSolution } from "@/components/pages/problem-solution";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main className="h-full w-full">
       <HomeHero />
+      <BrandMarquee />
       <ProblemSolution />
       <BusinessPaths />
       <GrowthWorkflow />

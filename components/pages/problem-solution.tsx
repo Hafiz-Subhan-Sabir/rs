@@ -6,7 +6,7 @@ import { PROBLEM_SOLUTION_BLOCKS, PROBLEM_SOLUTION_INTRO } from "@/constants/con
 
 export function ProblemSolution() {
   return (
-    <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
+    <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 pt-8 pb-20 md:pt-12 md:pb-28">
       <SectionHeader
         eyebrow={PROBLEM_SOLUTION_INTRO.eyebrow}
         title={PROBLEM_SOLUTION_INTRO.headline}

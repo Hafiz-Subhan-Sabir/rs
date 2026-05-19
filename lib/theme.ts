@@ -17,6 +17,12 @@ export function resolveTheme(): Theme {
   return getStoredTheme() ?? getSystemTheme();
 }
 
+/** Remove saved preference so the site follows system theme again */
+export function clearStoredTheme() {
+  if (typeof window === "undefined") return;
+  localStorage.removeItem(THEME_STORAGE_KEY);
+}
+
 export function applyTheme(theme: Theme) {
   document.documentElement.classList.remove("light", "dark");
   document.documentElement.classList.add(theme);
