@@ -223,9 +223,10 @@ export const FOOTER_DATA = [
   {
     title: "Explore",
     data: [
-      { name: "Who we are", icon: null, link: "/#about-me" },
-      { name: "Selected work", icon: null, link: "/#projects" },
-      { name: "Snapshot", icon: null, link: "/#resume" },
+      { name: "About", icon: null, link: "/about" },
+      { name: "Services", icon: null, link: "/services" },
+      { name: "Work", icon: null, link: "/work" },
+      { name: "Journey", icon: null, link: "/journey" },
     ],
   },
   {
@@ -237,14 +238,74 @@ export const FOOTER_DATA = [
   },
 ] as const;
 
+export const HERO_SOLUTIONS = [
+  {
+    id: "build",
+    title: "Build & launch",
+    description: "Production-grade websites, web apps, and CRM systems — engineered for performance and scale.",
+  },
+  {
+    id: "rank",
+    title: "Rank & grow",
+    description: "Technical SEO and visibility work so your brand is found by the right audience, consistently.",
+  },
+  {
+    id: "maintain",
+    title: "Maintain & evolve",
+    description: "Ongoing care — updates, hosting, security, and improvements so nothing drifts after go-live.",
+  },
+  {
+    id: "leads",
+    title: "Qualified leads",
+    description: "Conversion-focused funnels, tracking, and campaigns aligned to pipeline — not vanity traffic.",
+  },
+  {
+    id: "automate",
+    title: "Workflow automation",
+    description: "Replace repetitive daily tasks with reliable automations — so your team focuses on high-value work.",
+  },
+] as const;
+
+export const BUSINESS_SERVICES = [
+  {
+    icon: "🌐",
+    title: "Websites & web apps",
+    description: "Conversion-focused sites, dashboards, and product UIs with performance and maintainable architecture.",
+  },
+  {
+    icon: "⚙️",
+    title: "Custom software",
+    description: "Tailored tools, portals, and integrations built around how your team actually works.",
+  },
+  {
+    icon: "📊",
+    title: "CRM & integrations",
+    description: "CRM setup, data flows, auth, payments, and third-party APIs with clear handoff documentation.",
+  },
+  {
+    icon: "📈",
+    title: "SEO & visibility",
+    description: "Technical SEO, structure fixes, and ranking improvements aligned with your product goals.",
+  },
+  {
+    icon: "🤖",
+    title: "AI agents & automation",
+    description: "Practical AI bots, workflow automation, and SaaS-style AI features — scoped and shippable.",
+  },
+  {
+    icon: "📣",
+    title: "Marketing & consultancy",
+    description: "Digital marketing support and honest guidance on what to build first in the next 90 days.",
+  },
+] as const;
+
 export const NAV_LINKS = [
-  { title: "Who we are", link: "#about-me" },
-  { title: "Capabilities", link: "#skills" },
-  { title: "Journey", link: "#timeline" },
-  { title: "Snapshot", link: "#resume" },
-  { title: "Proof", link: "#testimonials" },
-  { title: "Selected work", link: "#projects" },
-  { title: "Book a call", link: "/contact" },
+  { title: "Home", link: "/" },
+  { title: "About", link: "/about" },
+  { title: "Services", link: "/services" },
+  { title: "Work", link: "/work" },
+  { title: "Journey", link: "/journey" },
+  { title: "Contact", link: "/contact" },
 ] as const;
 
 export const LINKS = {

@@ -1,39 +1,59 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { FOOTER_DATA } from "@/constants";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-700 dark:text-gray-200 shadow-lg px-4 py-4 sm:px-6">
-      <div className="w-full flex flex-col items-center justify-center m-auto">
-        <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {FOOTER_DATA.map((column) => (
-            <div
-              key={column.title}
-              className="h-auto flex flex-col items-center sm:items-start justify-start"
-            >
-              <h3 className="font-bold text-[16px] text-gray-900 dark:text-white">{column.title}</h3>
-              {column.data.map(({ icon: Icon, name, link }) => (
-                <Link
-                  key={`${column.title}-${name}`}
-                  href={link}
-                  target={link.startsWith("/") || link.startsWith("#") ? undefined : "_blank"}
-                  rel={link.startsWith("/") || link.startsWith("#") ? undefined : "noreferrer noopener"}
-                  className="flex flex-row items-center my-[15px] text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition"
-                >
-                  {Icon && <Icon className="w-5 h-5" />}
-                  <span className="text-[15px] ml-[6px]">{name}</span>
-                </Link>
-              ))}
-            </div>
-          ))}
+    <footer className="mt-auto border-t border-gray-200/80 bg-white/40 dark:border-white/[0.08] dark:bg-black/20">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-10">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-col items-center lg:items-start gap-4">
+            <Link href="/" className="inline-block">
+              <Image
+                src="/rs-dev-logo.png"
+                alt="RS Dev"
+                width={52}
+                height={52}
+                className="h-12 w-12 rounded-xl bg-white p-1 ring-1 ring-gray-200/80 dark:ring-white/15"
+              />
+            </Link>
+            <p className="max-w-xs text-center text-sm text-gray-600 dark:text-gray-400 lg:text-left">
+              Web apps, custom software, CRM, SEO, and AI automation — delivered with clear scope.
+            </p>
+          </div>
+
+          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-3 lg:max-w-2xl">
+            {FOOTER_DATA.map((column) => (
+              <div key={column.title} className="text-center sm:text-left">
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+                  {column.title}
+                </h3>
+                <ul className="mt-4 space-y-3">
+                  {column.data.map(({ icon: Icon, name, link }) => (
+                    <li key={`${column.title}-${name}`}>
+                      <Link
+                        href={link}
+                        target={link.startsWith("/") || link.startsWith("#") ? undefined : "_blank"}
+                        rel={link.startsWith("/") || link.startsWith("#") ? undefined : "noreferrer noopener"}
+                        className="inline-flex items-center gap-2 text-sm text-gray-600 transition hover:text-emerald-600 dark:text-gray-300 dark:hover:text-cyan-300"
+                      >
+                        {Icon ? <Icon className="h-4 w-4" /> : null}
+                        {name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="mb-[20px] text-[15px] text-center text-gray-600 dark:text-gray-400">
-          &copy; 2026 RS Dev. All rights reserved.
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-gray-200/80 pt-8 text-sm text-gray-500 dark:border-white/10 dark:text-gray-400 sm:flex-row">
+          <span>&copy; {new Date().getFullYear()} RS Dev. All rights reserved.</span>
+          <span className="text-xs uppercase tracking-[0.18em]">Built for measurable outcomes</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
-

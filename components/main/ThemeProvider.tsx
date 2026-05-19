@@ -1,26 +1,23 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-const STORAGE_KEY = 'portfolio_theme';
-type Theme = 'light' | 'dark';
-
-function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') return 'dark';
-  const t = localStorage.getItem(STORAGE_KEY);
-  return t === 'light' || t === 'dark' ? t : 'dark';
-}
+import { applyTheme, getStoredTheme, getSystemTheme, resolveTheme } from '@/lib/theme';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    const theme = getInitialTheme();
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
-    setMounted(true);
+    applyTheme(resolveTheme());
+
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const onSystemChange = () => {
+      if (!getStoredTheme()) {
+        applyTheme(getSystemTheme());
+      }
+    };
+
+    media.addEventListener('change', onSystemChange);
+    return () => media.removeEventListener('change', onSystemChange);
   }, []);
 
-  if (!mounted) return <>{children}</>;
   return <>{children}</>;
 }

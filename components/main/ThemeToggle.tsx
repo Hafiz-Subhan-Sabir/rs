@@ -2,48 +2,52 @@
 
 import { useEffect, useState } from 'react';
 
-const STORAGE_KEY = 'portfolio_theme';
-type Theme = 'light' | 'dark';
-
-function getStoredTheme(): Theme {
-  if (typeof window === 'undefined') return 'dark';
-  const t = localStorage.getItem(STORAGE_KEY);
-  return t === 'light' || t === 'dark' ? t : 'dark';
-}
+import { applyTheme, resolveTheme, THEME_STORAGE_KEY, type Theme } from '@/lib/theme';
 
 export function ThemeToggle({ compact = false }: { compact?: boolean }) {
-  const [theme, setTheme] = useState<Theme>(getStoredTheme);
+  const [theme, setTheme] = useState<Theme>('light');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.classList.remove('light', 'dark');
-    root.classList.add(theme);
-    localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
+    setTheme(resolveTheme());
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    applyTheme(theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [theme, mounted]);
+
+  const btnBase = compact ? 'px-2.5 py-1 text-[11px]' : 'px-3 py-1.5 text-sm';
 
   return (
-    <div className="flex rounded-full border border-gray-300 dark:border-white/10 bg-white/60 dark:bg-white/5 p-0.5 backdrop-blur">
+    <div
+      className="flex rounded-full border border-gray-300/80 dark:border-white/10 bg-white/70 dark:bg-white/5 p-0.5 backdrop-blur"
+      role="group"
+      aria-label="Theme"
+    >
       <button
         type="button"
         onClick={() => setTheme('light')}
-        className={`rounded-full ${compact ? 'px-2.5 py-1 text-[11px]' : 'px-3 py-1.5 text-sm'} font-medium transition ${
-          theme === 'light'
-            ? 'bg-white text-gray-900 shadow'
+        className={`rounded-full ${btnBase} font-medium transition ${
+          mounted && theme === 'light'
+            ? 'bg-white text-gray-900 shadow dark:bg-white/90'
             : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
         }`}
-        aria-pressed={theme === 'light'}
+        aria-pressed={mounted ? theme === 'light' : undefined}
       >
         Light
       </button>
       <button
         type="button"
         onClick={() => setTheme('dark')}
-        className={`rounded-full ${compact ? 'px-2.5 py-1 text-[11px]' : 'px-3 py-1.5 text-sm'} font-medium transition ${
-          theme === 'dark'
+        className={`rounded-full ${btnBase} font-medium transition ${
+          mounted && theme === 'dark'
             ? 'brand-button shadow'
             : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
         }`}
-        aria-pressed={theme === 'dark'}
+        aria-pressed={mounted ? theme === 'dark' : undefined}
       >
         Dark
       </button>

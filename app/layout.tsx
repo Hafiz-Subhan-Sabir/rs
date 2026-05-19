@@ -11,6 +11,7 @@ import { ThemeProvider } from "@/components/main/ThemeProvider";
 import { RevealEngine } from "@/components/motion/RevealEngine";
 import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
+import { themeInitScript } from "@/lib/theme";
 
 import "./globals.css";
 
@@ -50,20 +51,11 @@ const websiteSchema = {
   url: "https://hafiz-subhan-portfolio.vercel.app",
 };
 
-const themeScript = `
-(function(){
-  var t = localStorage.getItem('portfolio_theme');
-  var theme = (t === 'light' || t === 'dark') ? t : 'dark';
-  document.documentElement.classList.remove('light','dark');
-  document.documentElement.classList.add(theme);
-})();
-`;
-
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" style={{ colorScheme: "light dark" }}>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

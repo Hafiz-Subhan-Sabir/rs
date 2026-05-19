@@ -221,7 +221,7 @@ export function ContactPage() {
 
   return (
     <main className="w-full">
-      <section className="relative overflow-hidden pt-[110px] pb-16 min-h-[calc(100vh-72px)]">
+      <section className="relative overflow-hidden pt-[96px] pb-16 min-h-[calc(100vh-80px)]">
         {/* background glow */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl dark:bg-emerald-400/10" />
@@ -257,10 +257,10 @@ export function ContactPage() {
                     </p>
                   </div>
                   <Link
-                    href="/#projects"
+                    href="/work"
                     className="text-sm font-semibold text-emerald-600 hover:underline dark:text-cyan-300"
                   >
-                    Back to selected work →
+                    View selected work →
                   </Link>
                 </div>
 

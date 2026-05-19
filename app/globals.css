@@ -276,11 +276,43 @@ html.light body::before {
   }
 }
 
+/* Page section stagger — used with framer-motion on multi-page layout */
+.page-section {
+  position: relative;
+}
+
+@keyframes page-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Smooth accordion / workflow panels */
+.workflow-panel {
+  transform-origin: top center;
+}
+
+html {
+  color-scheme: light dark;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .about-float {
     animation: none;
   }
   .ai-scanline {
+    animation: none;
+  }
+  .page-enter {
     animation: none;
   }
 }
