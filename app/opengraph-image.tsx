@@ -64,11 +64,11 @@ export default function OpenGraphImage() {
               fontFamily: "Arial, sans-serif",
             }}
           >
-            Web apps, custom software, CRM, SEO, AI automation & marketing consultancy
+            Sites, bespoke tools, search, assistants, and campaign advice
           </div>
 
           <div style={{ fontSize: 22, color: "#555555", fontFamily: "Arial, sans-serif" }}>
-            Scoped delivery · direct communication · outcomes you can measure
+            Written plans · plain updates · results you can count
           </div>
         </div>
       </div>

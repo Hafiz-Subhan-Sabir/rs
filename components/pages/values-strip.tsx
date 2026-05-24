@@ -9,8 +9,8 @@ export function ValuesStrip() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28 border-y border-gray-200/80 dark:border-white/[0.06]">
       <SectionHeader
-        eyebrow="What we stand for"
-        title="Principles that shape every engagement."
+        eyebrow="How we work"
+        title="Four rules that show up in every contract."
         align="center"
       />
 

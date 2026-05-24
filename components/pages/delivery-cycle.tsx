@@ -11,9 +11,9 @@ export function DeliveryCycle() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28 bg-gray-50/90 dark:bg-white/[0.02]">
       <SectionHeader
-        eyebrow="How projects run"
-        title="A delivery cycle built for visibility — not surprises."
-        description="From first conversation to post-launch growth, every phase has a defined output. You always know what stage the work is in and what comes next."
+        eyebrow="How work runs"
+        title="Every phase has a name, an owner, and something you can see."
+        description="From first call through post launch care, you always know where time is going and what ships next."
         align="center"
       />
 
@@ -21,7 +21,6 @@ export function DeliveryCycle() {
         className="mb-14 max-w-4xl mx-auto"
         imagePath={DIAGRAM_SLOTS.deliveryCycle.file}
         title={DIAGRAM_SLOTS.deliveryCycle.title}
-        hint={DIAGRAM_SLOTS.deliveryCycle.hint}
       />
 
       <div className="relative">
@@ -47,7 +46,7 @@ export function DeliveryCycle() {
         viewport={{ once: true }}
         className="mt-12 text-center text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto"
       >
-        After launch, the same team continues into SEO, campaigns, automation, and maintenance — so momentum does not reset at go-live.
+        After go live the same people keep search, ads, routines, and care moving so momentum does not reset at launch.
       </motion.p>
     </section>
   );

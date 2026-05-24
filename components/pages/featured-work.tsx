@@ -16,10 +16,10 @@ export function FeaturedWork() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-600 dark:text-cyan-400/90">
-              Selected work
+              Built and live
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              Projects that <span className="brand-gradient-text">ship</span>
+              Work that <span className="brand-gradient-text">left the repo</span>
             </h2>
           </div>
           <Link

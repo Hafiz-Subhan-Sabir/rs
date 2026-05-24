@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 
-import { CONTACT_EMAIL, PROJECTS, SOCIALS } from '@/constants';
+import { CONTACT_EMAIL, PROJECTS } from '@/constants';
 import { MotionIn } from '@/components/motion/MotionIn';
 import { API_BASE_URL, apiUrl } from '@/lib/api';
 
@@ -72,23 +72,23 @@ export function ContactPage() {
 
   const messageTemplates = useMemo(
     () => [
-      'We need a business website or web app with CRM hooks and room to grow SEO.',
-      'Looking for custom software or AI workflow automation tied to our existing tools.',
-      'Want consultancy on SEO, digital marketing, and what to build first in the next 90 days.',
+      'We need a business site with sales hooks and room to grow in search.',
+      'Looking for bespoke software or background routines tied to tools we already use.',
+      'Want advice on search, campaigns, and what to tackle first in the next ninety days.',
     ],
     []
   );
 
   const mailto = useMemo(() => {
     const subject =
-      project && project !== 'General' ? `RS Dev inquiry: ${project}` : 'RS Dev — scope call request';
+      project && project !== 'General' ? `RS Dev inquiry: ${project}` : 'RS Dev call request';
     const body =
       `Hi RS Dev,\n\n` +
       (project && project !== 'General' ? `Context / reference project: ${project}\n\n` : '') +
       `Name: ${name || '(your name)'}\n` +
       `Email: ${fromEmail || '(your email)'}\n\n` +
       `Message:\n${message || '(write your message here)'}\n\n` +
-      `— Sent from the RS Dev website`;
+      `Sent from the RS Dev website`;
 
     return buildMailto({
       to: CONTACT_EMAIL,
@@ -233,15 +233,15 @@ export function ContactPage() {
             <div className="flex flex-col gap-4">
               <div className="inline-flex items-center gap-2 self-start rounded-full border border-gray-200 bg-white/70 px-4 py-2 text-sm font-semibold text-gray-700 backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-gray-200">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                Available for work
+                Available for new work
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Book a scope call.
+                Name what done looks like.
               </h1>
               <p className="max-w-2xl text-base sm:text-lg text-gray-600 dark:text-gray-300">
-                Tell us what &quot;done&quot; looks like, your timeline, and whether you need build, consultancy, or both.
-                Mention your site or app, CRM (if any), SEO goals, and any AI or automation ideas. We usually reply within 24 hours.
+                Share the outcome you want in thirty to ninety days, your deadline, and whether you need build, advice, or both.
+                Mention your site, sales tool, search goal, or routine you want gone. We usually reply within a day.
               </p>
             </div>
           </MotionIn>
@@ -251,9 +251,9 @@ export function ContactPage() {
               <div className="rounded-3xl border border-gray-200 bg-white/80 backdrop-blur p-6 sm:p-8 shadow-xl dark:border-white/10 dark:bg-white/5 dark:shadow-[#1a0a2e]/50">
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Start a thread</h2>
+                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Send the brief</h2>
                     <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                      Optional: pick a reference from selected work, then share goals and constraints.
+                      Optional: tag a reference project, then spell out goals and limits.
                     </p>
                   </div>
                   <Link
@@ -331,7 +331,7 @@ export function ContactPage() {
                     <textarea
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Product or campaign outcome (30–90 days), budget band, site URL, CRM name, analytics/Search Console if relevant, links to Figma or staging."
+                      placeholder="Outcome for the next thirty to ninety days, budget band, site URL, sales tool name, search goal, links to designs or staging."
                       rows={6}
                       className="resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none ring-0 focus:border-violet-400 dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-cyan-400"
                     />
@@ -401,32 +401,18 @@ export function ContactPage() {
 
             <MotionIn delay={0.1}>
               <div className="rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 shadow-xl dark:border-white/10 dark:bg-white/5 dark:shadow-[#1a0a2e]/50">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Elsewhere</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Direct email</h3>
                 <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                  Prefer socials? I’m active here.
+                  Prefer email over the form? Write anytime.
                 </p>
 
-                <div className="mt-5 flex flex-col gap-3">
-                  {SOCIALS.map(({ link, name, icon: Icon }) => (
-                    <Link
-                      key={name}
-                      href={link}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="group flex items-center justify-between rounded-2xl border border-gray-200 bg-white/70 px-4 py-3 hover:bg-white transition dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="grid place-items-center h-10 w-10 rounded-xl bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white">
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <div className="text-sm font-semibold text-gray-900 dark:text-white">{name}</div>
-                      </div>
-                      <span className="text-sm text-gray-500 group-hover:text-emerald-600 dark:text-gray-400 dark:group-hover:text-cyan-300">
-                        Open →
-                      </span>
-                    </Link>
-                  ))}
-                </div>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="mt-5 flex items-center justify-between rounded-2xl border border-gray-200 bg-white/70 px-4 py-3 hover:bg-white transition dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+                >
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white break-all">{CONTACT_EMAIL}</span>
+                  <span className="text-sm text-gray-500 shrink-0 ml-2 dark:text-gray-400">Open →</span>
+                </a>
 
                 <motion.div
                   className="mt-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 p-4 dark:border-white/10"
@@ -447,16 +433,16 @@ export function ContactPage() {
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-4">
             {[
               {
-                title: '1) Tell me your goal',
-                text: 'A short message is enough: what you want, deadline, and any reference links.',
+                title: '1) Say the goal',
+                text: 'A short note works: what you want, when you need it, and any links worth seeing.',
               },
               {
-                title: '2) I reply with a plan',
-                text: 'You’ll get a clear scope, timeline, and next steps (fast + honest).',
+                title: '2) Get a plain plan',
+                text: 'You receive written next steps, timing, and an honest fit call.',
               },
               {
-                title: '3) Build + polish',
-                text: 'I focus on clean UI, smooth motion, and performance that feels premium.',
+                title: '3) Build and tune',
+                text: 'We focus on clean screens, scroll motion, and speed that feels premium.',
               },
             ].map((item) => (
               <div
@@ -475,20 +461,20 @@ export function ContactPage() {
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   {
-                    q: 'Do you work with small budgets?',
-                    a: 'Yes. If scope is clear, we can ship a strong version fast and iterate.',
+                    q: 'Do you take smaller budgets?',
+                    a: 'Yes. With a tight brief we ship a strong first version and improve in passes.',
                   },
                   {
-                    q: 'Can you redesign my existing site?',
-                    a: 'Yes. I can keep your content and upgrade the UI, motion, and performance.',
+                    q: 'Can you refresh an existing site?',
+                    a: 'Yes. Keep your content, upgrade screens, motion, and load time.',
                   },
                   {
-                    q: 'Do you provide hosting?',
-                    a: 'I can set up deployment and provide hosting + maintenance support.',
+                    q: 'Do you handle hosting?',
+                    a: 'We can deploy, host, and stay on for tune ups after launch.',
                   },
                   {
-                    q: 'How fast can you start?',
-                    a: 'Usually immediately. Send your requirements and I’ll confirm availability.',
+                    q: 'How soon can you start?',
+                    a: 'Often immediately. Send requirements and we confirm the calendar.',
                   },
                 ].map((f) => (
                   <div

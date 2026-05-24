@@ -21,7 +21,7 @@ const QUICK_TOPICS = [
 ] as const;
 
 const FALLBACK_TEXT =
-  "Thanks for your question. Share details on the contact page so we can respond with fit, approach, and next steps for your exact goals.";
+  "Good question. Drop details on the contact page and we will answer with fit, approach, and next steps for your exact goal.";
 
 const containsAny = (q: string, terms: string[]): boolean => terms.some((t) => q.includes(t));
 
@@ -29,7 +29,7 @@ function getCustomReply(question: string): string {
   const q = question.toLowerCase().replace(/[^\w\s]/g, " ").replace(/\s+/g, " ").trim();
 
   if (containsAny(q, ["what is rs dev", "rs dev", "who are you", "about you", "introduce", "briefly introduce", "intro"])) {
-    return "RS Dev provides websites and web apps, custom software, CRM solutions, SEO and ranking work, AI agents and bots, AI workflow automation, digital marketing, and consultancy — scoped delivery with direct communication.";
+    return "RS Dev builds sites and apps, bespoke tools, sales boards, search placement, assistant bots, and campaigns with written plans and direct replies.";
   }
   if (containsAny(q, ["your name", "what is your name", "hafiz", "subhan", "founder"])) {
     return "You are speaking with the RS Dev site assistant. RS Dev is led by Hafiz Subhan; use the contact page for a direct conversation.";
@@ -38,22 +38,22 @@ function getCustomReply(question: string): string {
     return "The team behind RS Dev has multi-year experience across web products, integrations, AI workflows, and delivery with startups and project teams.";
   }
   if (containsAny(q, ["service", "offer", "what do you do", "what can you do"])) {
-    return "RS Dev offers web application development, custom software, CRM setup and integrations, SEO improvements, AI agents and bots, workflow automation, digital marketing support, and consultancy — end-to-end or à la carte.";
+    return "RS Dev offers sites and apps, bespoke software, sales record setups, search work, assistant bots, background routines, campaign help, and advice. End to end or one slice at a time.";
   }
   if (containsAny(q, ["crm", "salesforce", "hubspot", "pipeline"])) {
-    return "Yes. RS Dev helps with CRM selection guidance, implementation, customization, pipelines, reporting, and integrations so sales and marketing stay aligned with your product.";
+    return "Yes. We help pick, set up, and tune sales boards with pipelines, reports, and live links so marketing and sales see the same numbers.";
   }
   if (containsAny(q, ["seo", "ranking", "google", "search console", "organic"])) {
-    return "Yes. RS Dev handles technical SEO, structure and performance fixes, and practical content guidance — without unrealistic ranking guarantees.";
+    return "Yes. We fix structure, speed, and page intent with practical content guidance. No fake promises about page one overnight.";
   }
   if (containsAny(q, ["marketing", "ads", "campaign", "social media"])) {
-    return "RS Dev supports digital marketing with channel strategy, campaign structure, tracking setup, and messaging that matches your product story — as execution help or consultancy.";
+    return "We help with channel picks, ad structure, tracking, and messages that match what you sell. Execution or advice only.";
   }
   if (containsAny(q, ["ai agent", "ai bot", "automation", "workflow", "llm", "chatbot"])) {
-    return "RS Dev designs AI agents and bots plus workflow automation connected to your real tools — with guardrails, logging, and maintainability in mind.";
+    return "We wire assistant bots and background routines to your real tools with guardrails, logs, and human handoff when judgment matters.";
   }
   if (containsAny(q, ["skill", "tech stack", "technology", "stack", "react", "next", "python", "fastapi", "typescript"])) {
-    return "Typical delivery stacks include React, Next.js, TypeScript, Tailwind CSS, Python, and FastAPI, plus integrations, auth patterns, and AI APIs — chosen to match your project.";
+    return "Typical stacks include React, Next.js, TypeScript, Tailwind CSS, Python, and FastAPI, plus live links, sign in patterns, and assistant APIs matched to the job.";
   }
   if (containsAny(q, ["budget", "cost", "price", "charges", "pricing", "rate"])) {
     return "Investment depends on scope, channels (product vs SEO vs CRM), and timeline. After a short brief, RS Dev replies with fit, a practical plan, and a clear estimate band.";
@@ -62,13 +62,13 @@ function getCustomReply(question: string): string {
     return "Timelines vary: landing refreshes differ from CRM rollouts or automation lanes. You get a realistic schedule after we understand constraints and success signals.";
   }
   if (containsAny(q, ["solo", "team", "collaborat", "independent"])) {
-    return "RS Dev works with founders and internal teams — embedded for sprints or fixed-phase delivery — and can align with your existing vendors.";
+    return "We work with founders and internal teams, embedded for sprints or fixed phases, and can align with vendors you already use.";
   }
   if (containsAny(q, ["redesign", "existing website", "improve my website", "revamp", "ui ux"])) {
     return "Yes. RS Dev can redesign or rebuild your site for performance, conversion, SEO foundations, and a UI system your team can extend.";
   }
   if (containsAny(q, ["consultancy", "advisory", "roadmap", "strategy only"])) {
-    return "Yes. RS Dev offers advisory slices: architecture, SEO, CRM, AI feasibility, or marketing roadmaps — written recommendations you can execute internally or hand back for build.";
+    return "Yes. Advisory slices cover architecture, search, sales tools, assistant feasibility, or campaign roadmaps you can run internally or hand back for build.";
   }
   if (containsAny(q, ["full stack", "fullstack", "backend", "api", "database", "authentication"])) {
     return "Yes. RS Dev builds full-stack applications: frontends, APIs, authentication, data workflows, and production-minded deployment patterns.";
@@ -89,7 +89,7 @@ function getCustomReply(question: string): string {
     return "Use the Book a call page: share outcomes, timeline, CRM and stack context, and budget band. RS Dev replies with fit and next steps.";
   }
   if (containsAny(q, ["project", "portfolio", "case study", "selected work"])) {
-    return "Selected work on this site highlights web apps, full-stack builds, and AI-integrated products — each with stack notes and links where available.";
+    return "Selected work here shows web apps, full stack builds, and assistant products with stack notes and links where available.";
   }
   return FALLBACK_TEXT;
 }
@@ -100,7 +100,7 @@ export function ChatBot() {
     {
       role: "bot",
       text:
-        "Welcome to RS Dev. Ask about web apps, custom software, CRM, SEO, AI automation, digital marketing, or how to start a scope call.",
+        "Welcome. Ask about sites, bespoke tools, search, assistant bots, campaigns, or how to book a call.",
     },
   ]);
   const [input, setInput] = useState("");

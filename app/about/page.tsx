@@ -9,9 +9,9 @@ import { ValuesStrip } from "@/components/pages/values-strip";
 import { TestimonialsEducation } from "@/components/main/testimonials-education";
 
 export const metadata: Metadata = {
-  title: "RS Dev | About — Delivery team for web, SEO & automation",
+  title: "RS Dev | About the crew behind the work",
   description:
-    "RS Dev is a delivery team focused on measurable outcomes: build, rank, maintain, convert, and automate — with clear scope and accountable execution.",
+    "RS Dev combines product build, search placement, enquiry systems, and back office wiring under one crew with written plans and plain updates.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,10 +20,10 @@ export default function AboutPage() {
     <PageShell>
       <PageHero
         badge="Who we are"
-        title="Built for operators who need results — not another vendor handoff."
-        description="RS Dev combines product engineering, search visibility, lead systems, and workflow automation under one team. That means fewer gaps between launch, growth, and day-to-day operations."
-        primaryCta={{ label: "Discuss your situation", href: "/contact" }}
-        secondaryCta={{ label: "See capabilities", href: "/services" }}
+        title="For operators who need results, not another handoff email."
+        description="One crew owns the site, the search rank, the enquiry path, and the routines behind daily ops. Fewer gaps between launch, revenue, and Monday morning."
+        primaryCta={{ label: "Describe your situation", href: "/contact" }}
+        secondaryCta={{ label: "See what we ship", href: "/services" }}
       />
       <ProblemSolution />
       <ValuesStrip />
@@ -32,8 +32,8 @@ export default function AboutPage() {
         <TestimonialsEducation />
       </div>
       <CtaBand
-        title="Clarity first. Execution second."
-        description="Whether the priority is a new product surface, ranking pressure, or operational drag — we align on outcomes before build begins."
+        title="Clarity on paper first. Build second."
+        description="Whether the pressure is a new product surface, a rank slide, or office drag, we agree outcomes before code starts."
       />
     </PageShell>
   );

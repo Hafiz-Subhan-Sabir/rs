@@ -4,9 +4,9 @@ const siteUrl = "https://hafiz-subhan-portfolio.vercel.app";
 
 export const siteConfig: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "RS Dev | Web apps, software, CRM, SEO & AI",
+  title: "RS Dev | Sites, software, search and smart ops",
   description:
-    "RS Dev: websites and web apps, custom software, CRM, SEO, AI agents and workflow automation, AI bots, digital marketing, and consultancy — scoped delivery and honest guidance.",
+    "RS Dev builds sites and apps, bespoke tools, sales boards, search placement, assistant bots, and campaigns with plain updates and written plans.",
   icons: {
     icon: "/rs-dev-logo.png",
     shortcut: "/rs-dev-logo.png",
@@ -19,15 +19,10 @@ export const siteConfig: Metadata = {
     "CRM implementation",
     "SEO services",
     "AI agents",
-    "AI workflow automation",
-    "AI bots",
-    "digital marketing consultancy",
-    "full stack developer",
+    "workflow automation",
+    "digital marketing",
     "React developer",
     "Next.js developer",
-    "TypeScript",
-    "Python",
-    "FastAPI",
     "business website",
     "software consultancy",
   ] as string[],
@@ -39,9 +34,9 @@ export const siteConfig: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "RS Dev | Web apps, software, CRM, SEO & AI",
+    title: "RS Dev | Sites, software, search and smart ops",
     description:
-      "Websites and apps, custom software, CRM, SEO, AI automation, bots, digital marketing, and consultancy — delivery you can plan around.",
+      "One crew for product build, search placement, enquiries, and back office wiring. Plans you can read before you commit.",
     url: siteUrl,
     siteName: "RS Dev",
     type: "website",
@@ -50,15 +45,15 @@ export const siteConfig: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "RS Dev — modern monogram logo and positioning",
+        alt: "RS Dev monogram and positioning",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RS Dev | Web apps, software, CRM, SEO & AI",
+    title: "RS Dev | Sites, software, search and smart ops",
     description:
-      "Web apps, custom software, CRM, SEO, AI agents and automation, digital marketing, and consultancy.",
+      "Sites, bespoke tools, search, assistant bots, and campaigns from one crew with written plans.",
     images: ["/twitter-image"],
   },
 } as const;

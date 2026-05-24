@@ -22,11 +22,11 @@ export function ProofStrip() {
           <div className="relative grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-600 dark:text-cyan-400/90">
-                Why work with us
+                Track record
               </p>
               <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
-                Teams choose RS Dev when execution must keep pace with{" "}
-                <span className="brand-gradient-text">the plan.</span>
+                People hire RS Dev when the plan has to{" "}
+                <span className="brand-gradient-text">match reality.</span>
               </h2>
               <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 {EDUCATION_HIGHLIGHTS.technicalSummary}
@@ -35,7 +35,7 @@ export function ProofStrip() {
                 href="/about"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:underline dark:text-cyan-300"
               >
-                About our team
+                Meet the crew
                 <span aria-hidden>→</span>
               </Link>
             </div>

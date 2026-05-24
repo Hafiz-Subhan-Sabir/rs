@@ -19,7 +19,7 @@ function BrandItem({ brand }: { brand: BrandPartner }) {
     <div
       className="brand-marquee-item group relative flex shrink-0 items-center gap-4 overflow-hidden rounded-2xl border border-gray-200/70 bg-white/80 px-6 py-4 dark:border-white/10 dark:bg-white/[0.04]"
       style={style}
-      title={`${name} — ${sector}`}
+      title={`${name}: ${sector}`}
     >
       <div className="relative flex h-10 w-[120px] items-center justify-center sm:h-11 sm:w-[140px]">
         {imgOk ? (
@@ -52,14 +52,14 @@ export function BrandMarquee() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 text-center sm:text-left">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-600 dark:text-cyan-400/90">
-                Proven delivery
+                Ships in the wild
               </p>
               <h2 className="mt-2 text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
-                Teams that trusted us with production work
+                Names that trusted us with live work
               </h2>
             </div>
             <p className="max-w-md text-sm text-gray-600 dark:text-gray-400 sm:text-right">
-              Across e-commerce, healthcare, hospitality, enterprise systems, and AI — shipped end-to-end.
+              Retail, health, hospitality, enterprise tools, and vision products. Built, launched, and kept running.
             </p>
           </div>
         </MotionIn>

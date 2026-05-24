@@ -15,18 +15,18 @@ export function ServicesPreview() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-600 dark:text-cyan-400/90">
-              What we deliver
+              What we ship
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-tight text-gray-900 dark:text-white">
-              Capabilities mapped to{" "}
-              <span className="brand-gradient-text">real constraints</span>
+              Skills tied to{" "}
+              <span className="brand-gradient-text">real blockers</span>
             </h2>
           </div>
           <Link
             href="/services"
             className="inline-flex items-center gap-2 self-start rounded-full border border-gray-200 bg-white/80 px-5 py-2.5 text-sm font-semibold text-gray-800 transition hover:border-emerald-400/50 hover:text-emerald-700 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:hover:text-cyan-300"
           >
-            All capabilities
+            All services
             <span aria-hidden>→</span>
           </Link>
         </div>

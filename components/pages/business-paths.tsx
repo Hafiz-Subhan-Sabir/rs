@@ -11,13 +11,15 @@ import { BUSINESS_PATHS, DIAGRAM_SLOTS } from "@/constants/content";
 
 export function BusinessPaths() {
   const [openId, setOpenId] = useState<string>(BUSINESS_PATHS[0].id);
+  const activePath = BUSINESS_PATHS.find((p) => p.id === openId);
+  const diagram = activePath ? DIAGRAM_SLOTS[activePath.diagramKey] : DIAGRAM_SLOTS.growthFunnel;
 
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28 bg-gray-50/90 dark:bg-white/[0.02]">
       <SectionHeader
-        eyebrow="Where are you today?"
-        title="Every growth stage has a different bottleneck. We match the solution to yours."
-        description="Select the situation that sounds closest to your business — expand to see how RS Dev structures the response."
+        eyebrow="Pick your pressure point"
+        title="Same market, different choke points. We match the fix to yours."
+        description="Open the line that sounds like Tuesday morning. Each path shows the friction, the response, and what you walk away with."
         align="center"
       />
 
@@ -25,7 +27,6 @@ export function BusinessPaths() {
         <ul className="space-y-3">
           {BUSINESS_PATHS.map((path) => {
             const isOpen = openId === path.id;
-            const diagram = DIAGRAM_SLOTS[path.diagramKey];
             return (
               <li key={path.id}>
                 <button
@@ -58,11 +59,11 @@ export function BusinessPaths() {
                     >
                       <div className="mt-3 rounded-2xl border border-gray-200/80 bg-white p-5 dark:border-white/10 dark:bg-[#0a0814]/80">
                         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-rose-600/90 dark:text-rose-400/80">
-                          What holds teams back
+                          The friction
                         </p>
                         <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{path.problem}</p>
                         <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-600 dark:text-cyan-400">
-                          How we respond
+                          The response
                         </p>
                         <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{path.solution}</p>
                         <ul className="mt-4 flex flex-wrap gap-2">
@@ -91,19 +92,7 @@ export function BusinessPaths() {
         </ul>
 
         <div className="lg:sticky lg:top-28">
-          {openId ? (
-            <DiagramSlot
-              imagePath={DIAGRAM_SLOTS[BUSINESS_PATHS.find((p) => p.id === openId)!.diagramKey].file}
-              title={DIAGRAM_SLOTS[BUSINESS_PATHS.find((p) => p.id === openId)!.diagramKey].title}
-              hint={DIAGRAM_SLOTS[BUSINESS_PATHS.find((p) => p.id === openId)!.diagramKey].hint}
-            />
-          ) : (
-            <DiagramSlot
-              imagePath={DIAGRAM_SLOTS.growthFunnel.file}
-              title={DIAGRAM_SLOTS.growthFunnel.title}
-              hint={DIAGRAM_SLOTS.growthFunnel.hint}
-            />
-          )}
+          <DiagramSlot imagePath={diagram.file} title={diagram.title} />
         </div>
       </div>
     </section>

@@ -14,9 +14,9 @@ export function GrowthWorkflow() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
       <SectionHeader
-        eyebrow="Growth workflow"
-        title="From launch to qualified leads — one connected program."
-        description="This is how we compound results: each phase solves a specific gap. Expand any stage to see the challenge, our response, and what gets delivered."
+        eyebrow="Revenue program"
+        title="Six beats from live site to sales calls worth taking."
+        description="Each beat targets one leak. Open a step to see the block, the fix, and the proof we hand over."
         align="center"
       />
 
@@ -24,7 +24,6 @@ export function GrowthWorkflow() {
         className="mb-12 max-w-4xl mx-auto"
         imagePath={DIAGRAM_SLOTS.growthFunnel.file}
         title={DIAGRAM_SLOTS.growthFunnel.title}
-        hint={DIAGRAM_SLOTS.growthFunnel.hint}
       />
 
       <div className="max-w-3xl mx-auto space-y-2">
@@ -71,18 +70,18 @@ export function GrowthWorkflow() {
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
                           <p className="text-[10px] font-bold uppercase tracking-wider text-rose-600/90 dark:text-rose-400/80">
-                            Challenge
+                            The block
                           </p>
                           <p className="mt-1.5 text-sm text-gray-700 dark:text-gray-300">{item.problem}</p>
                         </div>
                         <div>
                           <p className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-cyan-400">
-                            Solution
+                            The fix
                           </p>
                           <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">{item.solution}</p>
                         </div>
                       </div>
-                      <p className="mt-4 text-[10px] font-bold uppercase tracking-wider text-gray-500">Deliverables</p>
+                      <p className="mt-4 text-[10px] font-bold uppercase tracking-wider text-gray-500">You get</p>
                       <ul className="mt-2 flex flex-wrap gap-2">
                         {item.deliverables.map((d) => (
                           <li

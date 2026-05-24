@@ -10,8 +10,6 @@ export const siteConfig = {
     'RS Dev helps teams ship reliable web products, wire CRM and growth channels, and adopt practical AI automation — with clear scope and direct communication.',
   about:
     'We deliver websites and web applications, custom software, and CRM implementations aligned with how you sell and support customers. SEO, digital marketing, and consultancy keep product and demand moving together.',
-  linkedin: 'https://www.linkedin.com/in/hafiz-subhan-soft/',
-  github: 'https://github.com/Hafiz-Subhan-Sabir/rs',
   highlights: [
     { label: 'Scope', value: 'Web apps · software · CRM · SEO · AI · marketing' },
     { label: 'Delivery', value: 'Milestones you can plan around' },

@@ -33,10 +33,7 @@ const organizationSchema = {
     "Websites and web apps, custom software, CRM, SEO, AI agents and workflow automation, AI bots, digital marketing, and consultancy.",
   url: "https://hafiz-subhan-portfolio.vercel.app",
   image: "https://hafiz-subhan-portfolio.vercel.app/rs-dev-logo.png",
-  sameAs: [
-    "https://github.com/Hafiz-Subhan-Sabir/rs",
-    "https://www.linkedin.com/in/hafiz-subhan-soft/",
-  ],
+  sameAs: [] as string[],
   knowsAbout: [
     "Web application development",
     "Custom software",

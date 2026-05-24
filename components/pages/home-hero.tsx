@@ -25,8 +25,8 @@ const solutionIcons = {
 
 const trustMetrics = [
   { value: "35+", label: "Clients served" },
-  { value: "End-to-end", label: "Delivery model" },
-  { value: "24h", label: "Response window" },
+  { value: "One plan", label: "Written before build" },
+  { value: "24h", label: "Typical reply time" },
 ];
 
 export function HomeHero() {
@@ -58,24 +58,24 @@ export function HomeHero() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
-                Full-cycle digital partner
+                Full cycle digital partner
               </div>
 
               <h1 className="text-[2.1rem] sm:text-[2.65rem] lg:text-[3.1rem] xl:text-[3.5rem] font-semibold tracking-tight leading-[1.1] text-gray-900 dark:text-white">
-                When growth stalls, the issue is rarely the ambition —{" "}
+                Ambition is rarely the blocker.{" "}
                 <span className="brand-gradient-text block sm:inline mt-2 sm:mt-0">
-                  it is the system behind it.
+                  The wiring behind it is.
                 </span>
               </h1>
 
               <p className="mt-7 text-base sm:text-lg text-gray-600 dark:text-gray-300/90 max-w-[560px] mx-auto lg:mx-0 leading-relaxed">
-                RS Dev is a delivery team that closes the full loop: digital products built to perform, visibility
-                earned in search, campaigns that bring qualified conversations, and automations that free your team
-                from the repetitive work blocking momentum.
+                RS Dev is the crew that ships your product, earns the search click, fills the calendar with
+                serious enquiries, and moves repeat office work into the background so your people sell and
+                decide instead of retype.
               </p>
 
               <div className="mt-9 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0">
-                {["Build", "Rank", "Maintain", "Leads", "Automate"].map((label, i) => (
+                {["Ship", "Found", "Guard", "Capture", "Streamline"].map((label, i) => (
                   <motion.div
                     key={label}
                     initial={{ opacity: 0, y: 12 }}
@@ -94,7 +94,7 @@ export function HomeHero() {
                   className="col-span-2 sm:col-span-1 flex items-center justify-center rounded-xl border border-dashed border-emerald-400/40 bg-emerald-500/5 px-3 py-2.5 dark:border-cyan-400/30 dark:bg-cyan-400/5"
                 >
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-700 dark:text-cyan-300">
-                    One accountable team
+                    One crew end to end
                   </span>
                 </motion.div>
               </div>
@@ -104,13 +104,13 @@ export function HomeHero() {
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold brand-button shadow-lg shadow-emerald-500/20 transition hover:scale-[1.02]"
                 >
-                  Start a conversation
+                  Tell us what is stuck
                 </Link>
                 <Link
                   href="/services"
                   className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold border border-gray-200/90 bg-white/80 text-gray-800 hover:bg-white dark:border-white/10 dark:bg-white/[0.06] dark:text-gray-100 dark:hover:bg-white/10 transition"
                 >
-                  View full capabilities
+                  See what we ship
                 </Link>
               </div>
 
@@ -154,7 +154,7 @@ export function HomeHero() {
 
                 <div className="flex flex-col flex-1 min-h-0 px-5 sm:px-6 pb-6 sm:pb-7 pt-5">
                   <p className="mb-4 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400">
-                    What we deliver for you
+                    What lands on your desk
                   </p>
 
                   <ul className="space-y-2.5 max-h-[min(420px,50vh)] overflow-y-auto pr-1 scrollbar-thin">

@@ -11,9 +11,9 @@ export function MaintenanceCycle() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
       <SectionHeader
-        eyebrow="After launch"
-        title="Maintenance is not a ticket queue — it is a growth loop."
-        description="Sites and systems drift without care. We run a continuous loop so performance, security, and results keep compounding."
+        eyebrow="Once you are live"
+        title="Care is a rhythm, not a ticket inbox."
+        description="Properties drift without attention. We run a repeating loop so speed, safety, and results keep stacking."
         align="center"
       />
 
@@ -21,7 +21,6 @@ export function MaintenanceCycle() {
         <DiagramSlot
           imagePath={DIAGRAM_SLOTS.maintenanceLoop.file}
           title={DIAGRAM_SLOTS.maintenanceLoop.title}
-          hint={DIAGRAM_SLOTS.maintenanceLoop.hint}
         />
 
         <ol className="space-y-4">

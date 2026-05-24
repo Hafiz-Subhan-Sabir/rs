@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { NAV_LINKS, SOCIALS } from "@/constants";
+import { NAV_LINKS } from "@/constants";
 import { ThemeToggle } from "@/components/main/ThemeToggle";
 import { cn } from "@/lib/utils";
 
@@ -74,19 +74,6 @@ export const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <ThemeToggle compact />
-          <div className="h-6 w-px bg-gray-200 dark:bg-white/10" />
-          {SOCIALS.map(({ link, name, icon: Icon }) => (
-            <Link
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              key={name}
-              aria-label={name}
-              className="grid h-9 w-9 place-items-center rounded-full border border-gray-200/80 bg-white/50 text-gray-700 transition hover:border-emerald-400/40 hover:text-emerald-600 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:hover:text-cyan-300"
-            >
-              <Icon className="h-[18px] w-[18px]" />
-            </Link>
-          ))}
         </div>
 
         <div className="flex md:hidden items-center gap-2 shrink-0">
@@ -129,13 +116,6 @@ export const Navbar = () => {
               </Link>
             );
           })}
-          <div className="mt-3 flex justify-center gap-4 border-t border-gray-200 pt-4 dark:border-white/10">
-            {SOCIALS.map(({ link, name, icon: Icon }) => (
-              <Link href={link} target="_blank" rel="noreferrer noopener" key={name} aria-label={name}>
-                <Icon className="h-7 w-7 text-gray-700 dark:text-white" />
-              </Link>
-            ))}
-          </div>
         </nav>
       ) : null}
     </header>

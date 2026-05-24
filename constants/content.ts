@@ -1,102 +1,130 @@
-/** Site copy — problem → solution framing, workflows, diagram slots */
+/** Site copy — problem → solution framing, workflows, diagram assets */
 
 export const DIAGRAM_SLOTS = {
   growthFunnel: {
     file: "/diagrams/growth-funnel.png",
-    title: "Growth funnel",
-    hint: "Visual: Website → SEO → Google visibility → Ads → Qualified leads. Export as wide PNG or SVG (~1200×600).",
+    title: "Site to signed deal",
   },
   deliveryCycle: {
     file: "/diagrams/delivery-cycle.png",
-    title: "Project delivery cycle",
-    hint: "Circular or linear flow: Discover → Scope → Build → Launch → Measure → Iterate.",
+    title: "Six beats from brief to live",
   },
   maintenanceLoop: {
     file: "/diagrams/maintenance-loop.png",
-    title: "Maintenance loop",
-    hint: "Ongoing loop: Monitor → Update → Secure → Optimize → Report.",
+    title: "Quarterly momentum ring",
   },
   automationFlow: {
     file: "/diagrams/automation-flow.png",
-    title: "Automation workflow",
-    hint: "Before/after: manual repetitive tasks → automated pipelines + integrations.",
+    title: "Manual chaos to wired ops",
   },
   brandExperience: {
     file: "/diagrams/brand-experience.png",
-    title: "Brand experience layer",
-    hint: "Motion, visuals, and UI system for premium brand presence.",
+    title: "Stacked presence layers",
   },
 } as const;
 
+export const DIAGRAM_GALLERY_ITEMS = [
+  {
+    id: "growthFunnel",
+    file: DIAGRAM_SLOTS.growthFunnel.file,
+    title: DIAGRAM_SLOTS.growthFunnel.title,
+    caption: "How a live product, search, ads, and care connect into revenue.",
+  },
+  {
+    id: "deliveryCycle",
+    file: DIAGRAM_SLOTS.deliveryCycle.file,
+    title: DIAGRAM_SLOTS.deliveryCycle.title,
+    caption: "Listen, define, sketch, ship slices, go live, then extend.",
+  },
+  {
+    id: "maintenanceLoop",
+    file: DIAGRAM_SLOTS.maintenanceLoop.file,
+    title: DIAGRAM_SLOTS.maintenanceLoop.title,
+    caption: "Watch, guard, refine, wire, and report on a repeating rhythm.",
+  },
+  {
+    id: "automationFlow",
+    file: DIAGRAM_SLOTS.automationFlow.file,
+    title: DIAGRAM_SLOTS.automationFlow.title,
+    caption: "From manual chaos to wired operations your team can trust.",
+  },
+  {
+    id: "brandExperience",
+    file: DIAGRAM_SLOTS.brandExperience.file,
+    title: DIAGRAM_SLOTS.brandExperience.title,
+    caption: "Layers that make your presence online match your offline quality.",
+  },
+] as const;
+
 export const PROBLEM_SOLUTION_INTRO = {
-  eyebrow: "The gap we close",
-  headline: "Most businesses don't fail on ideas — they stall on execution.",
+  eyebrow: "Where plans get stuck",
+  headline: "Strong ideas fade when nothing behind them moves at the same speed.",
   subhead:
-    "Traffic without conversion. A site that launched but never ranks. Tools that don't talk to each other. Teams buried in the same tasks every morning. RS Dev exists to remove those bottlenecks with one accountable delivery team.",
+    "Visitors arrive but never enquire. Pages go live yet stay invisible in search. Spreadsheets multiply while nobody sees the full picture. Mornings disappear into copy paste work. RS Dev closes those gaps with one crew that builds, ranks, sells, and wires the back office.",
 } as const;
 
 export const PROBLEM_SOLUTION_BLOCKS = [
   {
-    problem: "Visibility stays flat after launch",
+    problem: "Launch day passes and nothing changes in the market",
     solution:
-      "We engineer for search from day one, then run structured SEO so your brand earns placement — not just a live URL.",
+      "We structure every page for search intent from the first wireframe, then keep tuning titles, speed, and links until your name shows up where buyers actually look.",
   },
   {
-    problem: "Leads are inconsistent or low quality",
+    problem: "Enquiries trickle in or miss the mark",
     solution:
-      "Conversion paths, tracking, and paid campaigns are aligned to your offer so pipeline fills with prospects that match your criteria.",
+      "Forms, landing paths, ad spend, and sales records get aligned to one offer so your calendar fills with people who already fit what you sell.",
   },
   {
-    problem: "Operations eat the week",
+    problem: "The week vanishes into admin instead of selling",
     solution:
-      "Custom software, CRM, and workflow automation connect your stack and remove repetitive work — so capacity goes back to growth.",
+      "Tailored apps, customer record setups, and background routines connect your tools and strip out repeat tasks so hours return to revenue work.",
   },
 ] as const;
 
 export const BUSINESS_PATHS = [
   {
     id: "grow",
-    label: "Want to grow your business",
+    label: "Revenue has flatlined online",
     problem:
-      "You're ready to scale, but your digital presence doesn't reflect your ambition — or it isn't bringing in the right conversations.",
+      "You are ready to expand, yet the site feels small, slow to find, or silent when prospects compare you to rivals.",
     solution:
-      "A growth-ready website and funnel: built for performance, ranked in search, maintained over time, and supported with campaigns that deliver qualified leads.",
-    outcomes: ["Premium web experience", "SEO & visibility", "Lead generation", "Ongoing optimization"],
+      "A fast storefront plus search placement, paid reach where it pays back, and steady tune ups so traffic turns into conversations worth your sales time.",
+    outcomes: ["Sharp web presence", "Search placement", "Pipeline fill", "Monthly tune ups"],
     diagramKey: "growthFunnel" as const,
-    cta: { label: "Explore growth path", href: "/contact?intent=growth" },
+    cta: { label: "Map the revenue path", href: "/contact?intent=growth" },
   },
   {
     id: "operations",
-    label: "Need a system for daily operations",
+    label: "Daily work runs on duct tape",
     problem:
-      "Spreadsheets, disconnected tools, and manual handoffs create errors, delays, and no single view of the business.",
+      "Tabs, sheets, and inbox threads hold the business together. Mistakes slip through and nobody trusts a single number.",
     solution:
-      "Custom software and CRM implementations designed around how your team actually works — with integrations, roles, and reporting built in.",
-    outcomes: ["CRM & dashboards", "Custom portals", "API integrations", "Secure access & data"],
+      "Software shaped around how your people actually sell and support, with roles, reports, and live links between the tools you already pay for.",
+    outcomes: ["Sales boards", "Custom portals", "Live data links", "Safe sign in"],
     diagramKey: "automationFlow" as const,
-    cta: { label: "Discuss operations", href: "/contact?intent=operations" },
+    cta: { label: "Fix the back office", href: "/contact?intent=operations" },
   },
   {
     id: "brand",
-    label: "Want a modern, premium brand presence",
+    label: "You look better in person than on screen",
     problem:
-      "Your brand feels dated online. Competitors look sharper, motion feels flat, and the experience doesn't match the quality you deliver offline.",
+      "Offline you win trust fast. Online the story feels generic, stiff, or years behind the quality you deliver face to face.",
     solution:
-      "Award-level UI direction: refined visuals, scroll-driven motion, and smooth flows that feel intentional — not template-built.",
-    outcomes: ["Visual identity online", "Motion & interaction", "Performance-first build", "Design systems"],
+      "Interfaces with scroll motion, crisp type, and flows that feel considered. Built to load fast and read well on every device.",
+    outcomes: ["Distinct look online", "Scroll motion", "Speed first build", "Reusable parts"],
     diagramKey: "brandExperience" as const,
-    cta: { label: "Elevate your brand", href: "/contact?intent=brand" },
+    cta: { label: "Raise the online bar", href: "/contact?intent=brand" },
   },
   {
     id: "automate",
-    label: "Stuck in repetitive daily work",
+    label: "Staff repeat the same clicks every day",
     problem:
-      "Your team repeats the same steps — data entry, follow-ups, reports, approvals — and growth goals keep getting pushed to next week.",
+      "Data entry, reminders, exports, and sign offs eat the calendar. Big goals keep sliding to next month.",
     solution:
-      "Practical automation and AI-assisted workflows that run reliably in the background, so your people focus on decisions and relationships.",
-    outcomes: ["Process mapping", "Workflow automation", "AI agents & bots", "Monitoring & handoff"],
+      "Mapped routines and smart assistants that run quietly, alert a human when judgment matters, and leave a trail you can audit.",
+    outcomes: ["Process maps", "Background routines", "Smart assistants", "Live status views"],
     diagramKey: "automationFlow" as const,
-    cta: { label: "Automate operations", href: "/contact?intent=automate" },
+    cta: { label: "Remove the repeat work", href: "/contact?intent=automate" },
   },
 ] as const;
 
@@ -104,91 +132,91 @@ export const GROWTH_WORKFLOW_STEPS = [
   {
     id: "build",
     step: "01",
-    title: "Build the foundation",
-    problem: "Without a solid product surface, every marketing dollar leaks.",
+    title: "Lay the product surface",
+    problem: "Spend on ads leaks when the page cannot hold attention or explain the offer.",
     solution:
-      "We design and develop your website or web app — fast, accessible, and structured for conversion and search.",
-    deliverables: ["UX & UI", "Development", "Analytics setup", "Launch checklist"],
+      "Design and code your site or app for speed, clarity, and room to measure what visitors do next.",
+    deliverables: ["Screen design", "Production code", "Event tracking", "Go live checklist"],
   },
   {
     id: "seo",
     step: "02",
-    title: "Engineer for visibility",
-    problem: "Beautiful sites that Google can't read rarely compound over time.",
+    title: "Make pages readable to search",
+    problem: "Pretty layouts that crawlers cannot parse rarely climb over time.",
     solution:
-      "Technical SEO, content structure, and on-page foundations so search engines understand and trust your pages.",
-    deliverables: ["Technical audit", "Site architecture", "Core Web Vitals", "Indexing strategy"],
+      "Fix structure, headings, speed scores, and index rules so search engines trust what you publish.",
+    deliverables: ["Site audit", "Page hierarchy", "Speed targets", "Index plan"],
   },
   {
     id: "rank",
     step: "03",
-    title: "Earn rankings",
-    problem: "Being online isn't the same as being found when buyers are searching.",
+    title: "Win the scroll on results pages",
+    problem: "Being online is not the same as showing up when money is on the table.",
     solution:
-      "Ongoing SEO execution — keywords, content alignment, authority signals — tracked against real ranking movement.",
-    deliverables: ["Keyword roadmap", "Content gaps", "Search Console", "Monthly reporting"],
+      "Target phrases buyers use, close content gaps, and watch rank movement against real queries.",
+    deliverables: ["Phrase map", "Content gaps", "Search console", "Monthly numbers"],
   },
   {
     id: "ads",
     step: "04",
-    title: "Amplify with paid reach",
-    problem: "Organic alone can be slow; you need predictable top-of-funnel when timing matters.",
+    title: "Buy reach with discipline",
+    problem: "Organic alone can take quarters. Sometimes you need volume this month.",
     solution:
-      "Campaign setup and optimization across the channels that fit your offer — with tracking tied to outcomes.",
-    deliverables: ["Campaign structure", "Creative alignment", "Conversion tracking", "Budget efficiency"],
+      "Set up campaigns on channels that fit your price point, with spend tied to form fills and calls.",
+    deliverables: ["Ad structure", "Creative match", "Conversion tags", "Spend review"],
   },
   {
     id: "leads",
     step: "05",
-    title: "Convert to qualified leads",
-    problem: "Traffic without qualification wastes sales time and skews forecasts.",
+    title: "Hand sales ready conversations",
+    problem: "Raw traffic wastes rep hours and skews forecasts.",
     solution:
-      "Funnels, forms, CRM hooks, and nurture flows so marketing hands off conversations that are ready for a call.",
-    deliverables: ["Lead scoring", "CRM integration", "Pipeline reporting", "Iteration cycles"],
+      "Score interest, route to sales records, and nurture cold names until they ask for a meeting.",
+    deliverables: ["Interest scoring", "Sales record hooks", "Pipeline view", "Test cycles"],
   },
   {
     id: "maintain",
     step: "06",
-    title: "Maintain & compound",
-    problem: "Set-and-forget sites decay — speed drops, rankings slip, trust erodes.",
+    title: "Keep gains from eroding",
+    problem: "Ignore a live property and speed drops, ranks slip, and trust thins.",
     solution:
-      "Continuous care: updates, security, performance, and iterative improvements so results compound quarter over quarter.",
-    deliverables: ["Hosting & updates", "Security patches", "Performance tuning", "Roadmap reviews"],
+      "Patch, host, tune, and revisit the roadmap each quarter so earlier wins stack instead of rot.",
+    deliverables: ["Hosting care", "Security patches", "Speed passes", "Quarterly review"],
   },
 ] as const;
 
 export const DELIVERY_CYCLE_STEPS = [
-  { step: "01", title: "Discover", detail: "Goals, constraints, and what success looks like in 90 days." },
-  { step: "02", title: "Scope", detail: "Clear deliverables, timeline, and ownership — no ambiguity." },
-  { step: "03", title: "Design", detail: "UX, visuals, and motion direction aligned to your brand." },
-  { step: "04", title: "Build", detail: "Development in structured sprints with visible progress." },
-  { step: "05", title: "Launch", detail: "Go-live, QA, analytics, and handoff documentation." },
-  { step: "06", title: "Grow", detail: "SEO, campaigns, automation, and maintenance as one program." },
+  { step: "01", title: "Listen", detail: "Goals, limits, and what a good ninety days looks like." },
+  { step: "02", title: "Define", detail: "Written outputs, dates, and who owns each piece." },
+  { step: "03", title: "Sketch", detail: "Screens, motion direction, and brand fit before code." },
+  { step: "04", title: "Ship slices", detail: "Working chunks you can click through each sprint." },
+  { step: "05", title: "Go live", detail: "Checks, analytics, and notes your team can follow." },
+  { step: "06", title: "Extend", detail: "Search, ads, routines, and care as one ongoing program." },
 ] as const;
 
 export const MAINTENANCE_CYCLE_STEPS = [
-  { step: "01", title: "Monitor", detail: "Uptime, speed, search health, and lead flow." },
-  { step: "02", title: "Protect", detail: "Security updates, backups, and access hygiene." },
-  { step: "03", title: "Improve", detail: "Content, UX, and technical refinements." },
-  { step: "04", title: "Automate", detail: "New workflows as repetitive work appears." },
-  { step: "05", title: "Report", detail: "Clear metrics your leadership can act on." },
+  { step: "01", title: "Watch", detail: "Uptime, load time, search health, and enquiry flow." },
+  { step: "02", title: "Guard", detail: "Updates, backups, and who can access what." },
+  { step: "03", title: "Refine", detail: "Copy, screens, and technical tweaks that lift results." },
+  { step: "04", title: "Wire", detail: "New background routines when repeat work shows up." },
+  { step: "05", title: "Share", detail: "Plain numbers leaders can act on without a translator." },
 ] as const;
 
 export const COMPANY_VALUES = [
   {
-    title: "Clarity over noise",
-    body: "Every engagement starts with a written scope and measurable outcomes — so expectations stay aligned.",
+    title: "Write it down first",
+    body: "Every job opens with agreed outcomes on paper so nobody guesses what done means.",
   },
   {
-    title: "Ownership, not handoffs",
-    body: "One team carries build, growth, and maintenance. You are not juggling five vendors for one product.",
+    title: "One crew end to end",
+    body: "Build, search, ads, and care sit with the same people. You are not herding five vendors for one site.",
   },
   {
-    title: "Performance is brand",
-    body: "Speed, accessibility, and polish are not extras. They signal how seriously you take your market.",
+    title: "Speed signals respect",
+    body: "Fast loads and clean screens tell visitors you treat their time seriously.",
   },
   {
-    title: "Automation with intent",
-    body: "We automate what repeats — not what requires judgment — so your team moves faster without losing control.",
+    title: "Automate the boring only",
+    body: "We wire repeat steps, not judgment calls, so people stay in control while hours shrink.",
   },
 ] as const;

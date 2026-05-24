@@ -26,9 +26,9 @@ export default function Home() {
       <ValuesStrip />
       <ProofStrip />
       <CtaBand
-        title="If the bottleneck is clear, the next step should be too."
-        description="Share where growth, operations, or brand experience is stuck. We will map a practical path — build, visibility, leads, or automation — before any commitment."
-        primaryLabel="Discuss your situation"
+        title="If you can name the blocker, we can map the next move."
+        description="Tell us whether revenue, operations, or presence online is stuck. We sketch build, search, enquiries, or back office wiring before you commit."
+        primaryLabel="Describe your situation"
       />
     </main>
   );

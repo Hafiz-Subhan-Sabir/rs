@@ -19,11 +19,11 @@ export const Footer = () => {
               />
             </Link>
             <p className="max-w-xs text-center text-sm text-gray-600 dark:text-gray-400 lg:text-left">
-              Web apps, custom software, CRM, SEO, and AI automation — delivered with clear scope.
+              Sites, bespoke tools, search, and smart routines. Plain language, written plans.
             </p>
           </div>
 
-          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-3 lg:max-w-2xl">
+          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:max-w-xl">
             {FOOTER_DATA.map((column) => (
               <div key={column.title} className="text-center sm:text-left">
                 <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
@@ -51,7 +51,7 @@ export const Footer = () => {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-gray-200/80 pt-8 text-sm text-gray-500 dark:border-white/10 dark:text-gray-400 sm:flex-row">
           <span>&copy; {new Date().getFullYear()} RS Dev. All rights reserved.</span>
-          <span className="text-xs uppercase tracking-[0.18em]">Built for measurable outcomes</span>
+          <span className="text-xs uppercase tracking-[0.18em]">Outcomes you can count</span>
         </div>
       </div>
     </footer>

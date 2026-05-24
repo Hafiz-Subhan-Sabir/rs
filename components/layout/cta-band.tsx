@@ -14,9 +14,9 @@ type CtaBandProps = {
 };
 
 export function CtaBand({
-  title = "Ready to scope your next build?",
-  description = "Share goals, timeline, and constraints. We reply within 24 hours with a clear plan — no black box.",
-  primaryLabel = "Book a scope call",
+  title = "Ready to name what is stuck?",
+  description = "Share the blocker, the deadline, and what good looks like in ninety days. We reply within a day with a plain plan.",
+  primaryLabel = "Book a call",
   primaryHref = "/contact",
   secondaryLabel = "View our work",
   secondaryHref = "/work",

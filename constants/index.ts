@@ -1,9 +1,3 @@
-import {
-  RxGithubLogo,
-  RxLinkedinLogo,
-  RxDownload,
-} from "react-icons/rx";
-
 export const CONTACT_EMAIL = "hafizsubhan909@gmail.com" as const;
 
 export const SKILL_DATA = [
@@ -17,19 +11,6 @@ export const SKILL_DATA = [
   { skill_name: "Python", image: "node.png", width: 80, height: 80 },
   { skill_name: "FastAPI", image: "node.png", width: 80, height: 80 },
   { skill_name: "Git", image: "react.png", width: 80, height: 80 },
-] as const;
-
-export const SOCIALS = [
-  {
-    name: "LinkedIn",
-    icon: RxLinkedinLogo,
-    link: "https://www.linkedin.com/in/hafiz-subhan-soft/",
-  },
-  {
-    name: "GitHub",
-    icon: RxGithubLogo,
-    link: "https://github.com/Hafiz-Subhan-Sabir/rs",
-  },
 ] as const;
 
 export const FRONTEND_SKILL = [
@@ -214,13 +195,6 @@ export const PROJECTS = [
 
 export const FOOTER_DATA = [
   {
-    title: "Profiles",
-    data: [
-      { name: "LinkedIn", icon: RxLinkedinLogo, link: "https://www.linkedin.com/in/hafiz-subhan-soft/" },
-      { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/Hafiz-Subhan-Sabir/rs" },
-    ],
-  },
-  {
     title: "Explore",
     data: [
       { name: "About", icon: null, link: "/about" },
@@ -241,61 +215,61 @@ export const FOOTER_DATA = [
 export const HERO_SOLUTIONS = [
   {
     id: "build",
-    title: "Build & launch",
-    description: "Production-grade websites, web apps, and CRM systems — engineered for performance and scale.",
+    title: "Ship the product",
+    description: "Sites, apps, and sales boards coded for speed, clarity, and room to measure visitor action.",
   },
   {
     id: "rank",
-    title: "Rank & grow",
-    description: "Technical SEO and visibility work so your brand is found by the right audience, consistently.",
+    title: "Earn the click",
+    description: "Structure, speed, and phrase work so your pages climb where buyers actually search.",
   },
   {
     id: "maintain",
-    title: "Maintain & evolve",
-    description: "Ongoing care — updates, hosting, security, and improvements so nothing drifts after go-live.",
+    title: "Guard what went live",
+    description: "Hosting, patches, and tune ups so yesterday’s launch still performs next quarter.",
   },
   {
     id: "leads",
-    title: "Qualified leads",
-    description: "Conversion-focused funnels, tracking, and campaigns aligned to pipeline — not vanity traffic.",
+    title: "Fill the calendar",
+    description: "Landing paths, tags, and ad sets tied to enquiries sales wants to take.",
   },
   {
     id: "automate",
-    title: "Workflow automation",
-    description: "Replace repetitive daily tasks with reliable automations — so your team focuses on high-value work.",
+    title: "Kill the repeat clicks",
+    description: "Background routines and assistants that handle busywork while people stay on decisions.",
   },
 ] as const;
 
 export const BUSINESS_SERVICES = [
   {
     icon: "🌐",
-    title: "Websites & web apps",
-    description: "Conversion-focused sites, dashboards, and product UIs with performance and maintainable architecture.",
+    title: "Sites and apps",
+    description: "Storefronts, portals, and product screens that load fast and explain the offer in seconds.",
   },
   {
     icon: "⚙️",
-    title: "Custom software",
-    description: "Tailored tools, portals, and integrations built around how your team actually works.",
+    title: "Bespoke software",
+    description: "Tools shaped around your process when off the shelf products fight your workflow.",
   },
   {
     icon: "📊",
-    title: "CRM & integrations",
-    description: "CRM setup, data flows, auth, payments, and third-party APIs with clear handoff documentation.",
+    title: "Sales records and links",
+    description: "Pipeline boards, sign in, payments, and live ties between the apps you already run.",
   },
   {
     icon: "📈",
-    title: "SEO & visibility",
-    description: "Technical SEO, structure fixes, and ranking improvements aligned with your product goals.",
+    title: "Search placement",
+    description: "Technical fixes and page structure so Google understands and rewards what you publish.",
   },
   {
     icon: "🤖",
-    title: "AI agents & automation",
-    description: "Practical AI bots, workflow automation, and SaaS-style AI features — scoped and shippable.",
+    title: "Smart assistants",
+    description: "Bots and background routines scoped to real tasks, with logs and human handoff when needed.",
   },
   {
     icon: "📣",
-    title: "Marketing & consultancy",
-    description: "Digital marketing support and honest guidance on what to build first in the next 90 days.",
+    title: "Campaigns and advice",
+    description: "Channel picks, creative direction, and honest sequencing for the next ninety days.",
   },
 ] as const;
 
@@ -308,71 +282,31 @@ export const NAV_LINKS = [
   { title: "Contact", link: "/contact" },
 ] as const;
 
-export const LINKS = {
-  sourceCode: "https://github.com/Hafiz-Subhan-Sabir/rs",
-};
-
 export const TESTIMONIALS = [
   {
     name: "Founder (placeholder)",
-    role: "Product-led business",
-    text: "Clear updates, no black box. We shipped on the date we set.",
+    role: "Product led business",
+    text: "Updates were plain English. We hit the date we agreed without drama.",
   },
   {
     name: "Teammate (placeholder)",
     role: "Engineering partner",
-    text: "The UI system finally felt consistent; onboarding new devs got easier.",
+    text: "Screens finally matched. New hires stopped asking which button style to use.",
   },
   {
     name: "Stakeholder (placeholder)",
     role: "Operations lead",
-    text: "They pushed back once — and saved us a month of wrong work.",
+    text: "They said no once and saved us a month building the wrong thing.",
   },
 ] as const;
 
 export const EDUCATION_HIGHLIGHTS = {
   education:
-    "RS Dev is led by Hafiz Subhan (BS Information Engineering Technology) with full-stack, CRM, SEO, and AI delivery experience.",
+    "RS Dev is led by Hafiz Subhan (BS Information Engineering Technology) with years shipping web products, sales tools, search work, and smart routines.",
   technicalSummary:
-    "Delivery spans web apps, custom software, integrations, SEO improvements, AI agents and automation, and marketing-aligned releases.",
+    "Work spans storefronts, custom apps, live data links, search fixes, assistant bots, and campaign releases that share one plan.",
   satisfiedClients: "Satisfied Clients: 35+",
   soloProjects: "Delivered 10+ solo projects end-to-end.",
   teamProjects: "Collaborated with teams on 20+ projects.",
-} as const;
-
-export const RESUME_DATA = {
-  title: "RS Dev — delivery snapshot",
-  summary:
-    "RS Dev ships websites and web apps, custom software, and CRM-aligned systems. We improve SEO, build practical AI agents and workflow automation, support digital marketing, and provide consultancy so product and growth stay aligned.",
-  targetRoles: [
-    "Web application & custom software delivery",
-    "CRM, SEO, and integration projects",
-    "AI automation & digital marketing support",
-  ],
-  coreSkills:
-    "React, Next.js, TypeScript, Tailwind CSS, Python, FastAPI, REST APIs, JWT, RBAC, Git, CRM integrations, technical SEO, AI agents & automation, campaign tracking",
-  experience: [
-    {
-      title: "RS Dev — client & product delivery",
-      period: "2024 - Present",
-      bullets: [
-        "Web apps, dashboards, and e-commerce flows with performance, accessibility, and maintainable architecture.",
-        "CRM-related integrations, auth (JWT + RBAC), payments, and third-party APIs with clear handoff docs.",
-        "SEO remediation, AI-assisted workflows, and marketing-aligned releases with realistic timelines.",
-      ],
-    },
-    {
-      title: "Engineering & project delivery",
-      period: "2022 - 2024",
-      bullets: [
-        "Full-stack and AI projects across academic, freelance, and team settings with strong debugging and optimization habits.",
-        "Reusable UI systems, documentation, and collaboration patterns for multi-developer delivery.",
-      ],
-    },
-  ],
-  education: "BS Information Engineering Technology (lead: Hafiz Subhan)",
-  resumeLink: "/resume/Hafiz_Subhan_Resume.pdf",
-  resumeLinkLabel: "Download Resume PDF",
-  downloadIcon: RxDownload,
 } as const;
 
