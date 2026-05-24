@@ -38,158 +38,116 @@ export const OTHER_SKILL = [{ skill_name: "Deployment & Maintenance", image: "go
 
 export const PROJECTS = [
   {
-    title: "E-commerce Car Website",
+    title: "Automotive retail storefront",
     description:
-      "A full e-commerce car platform with listing discovery, filters, product details, checkout workflow, and responsive conversion-focused UI.",
-    image:
-      "/projects/car.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+      "Catalog, filters, and checkout shaped for enquiry flow. Built to measure which listings pull interest before sales calls.",
+    image: "/projects/car.png",
+    link: "/contact?project=Automotive%20retail%20storefront",
     featured: true,
-    stack: "React, Next.js, TypeScript, Payment Integrations",
+    stack: "Next.js · TypeScript · Payments",
+    category: "Commerce",
   },
   {
-    title: "Real-Time Vegetable Detection",
+    title: "Operations ERP modules",
     description:
-      "Computer vision project for real-time vegetable detection with dataset preparation, model training, inference flow, and deployment-ready pipeline.",
-    image:
-      "/projects/vegetable.jpg",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+      "User roles, reporting, and daily workflows in one place instead of scattered sheets and inbox threads.",
+    image: "/projects/erp.jpg",
+    link: "/contact?project=Operations%20ERP%20modules",
     featured: true,
-    stack: "Python, AI, ML, DL, Data Collection & Training",
+    stack: "Custom software · RBAC · Reporting",
+    category: "Operations",
   },
   {
-    title: "Movie Website",
+    title: "Secure access product",
     description:
-      "Netflix-like UI/UX with dynamic sections, content previews, watchlist patterns, and high-quality streaming-oriented layout structure.",
-    image:
-      "/projects/movie.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+      "Sign in, roles, and session rules designed for a product moving from demo to production handoff.",
+    image: "/projects/eye.webp",
+    link: "/contact?project=Secure%20access%20product",
     featured: true,
-    stack: "React, TailwindCSS, Proper Layout & Grid Structuring",
+    stack: "Auth · JWT · RBAC",
+    category: "Security",
   },
   {
-    title: "Real-Time Eye Scanning Unlock System",
+    title: "Vision sorting pipeline",
     description:
-      "Biometric-inspired real-time eye scanning flow for unlock and identification use-cases, focused on secure authentication and system design.",
-    image:
-      "/projects/eye.webp",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+      "Camera to classification flow for inventory signals, with a path from training data to live inference.",
+    image: "/projects/vegetable.jpg",
+    link: "/contact?project=Vision%20sorting%20pipeline",
     featured: true,
-    stack: "Authentication Systems, JWT, RBAC, Secure Password Hashing",
+    stack: "Python · Vision · API",
+    category: "Automation",
   },
   {
-    title: "Pet Adoption Website",
-    description:
-      "End-to-end adoption platform with searchable pets, profile pages, application workflow, communication flow, and admin moderation.",
-    image:
-      "/projects/pet.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+    title: "Pet adoption platform",
+    description: "Search, applications, and admin moderation for a full adoption journey online.",
+    image: "/projects/pet.png",
+    link: "/contact?project=Pet%20adoption%20platform",
     featured: false,
-    stack: "Next.js, TypeScript, ORM, Team Collaboration",
+    stack: "Next.js · TypeScript",
+    category: "Portal",
   },
   {
-    title: "Food Ordering Restaurant Website",
-    description:
-      "Restaurant ordering experience with menu browsing, cart, order management, and payment integration for local and bank methods.",
-    image:
-      "/projects/food.webp",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+    title: "Restaurant ordering",
+    description: "Menu, cart, and local payment paths for a hospitality brand going digital.",
+    image: "/projects/food.webp",
+    link: "/contact?project=Restaurant%20ordering",
     featured: false,
-    stack: "React, Payment Integrations, Deployment & Maintenance",
+    stack: "React · Payments",
+    category: "Commerce",
   },
   {
-    title: "ERP System",
-    description:
-      "Comprehensive ERP with modules for users, operations, reporting, and business workflow automation with role-based access and maintainability.",
-    image:
-      "/projects/erp.jpg",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+    title: "AI interview practice",
+    description: "Structured rounds with feedback for technical and behavioral practice sessions.",
+    image: "/projects/ai-interview.png",
+    link: "/contact?project=AI%20interview%20practice",
     featured: false,
-    stack: "System Design, DFDs, ERDs, Agile & Waterfall",
+    stack: "AI integrations · SaaS flow",
+    category: "AI product",
   },
   {
-    title: "AI Interview Simulator",
-    description:
-      "AI-powered interview practice system that simulates realistic technical and behavioral rounds, evaluates responses, and returns structured feedback.",
-    image:
-      "/projects/ai-interview.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+    title: "Hospital records module",
+    description: "Appointments and patient workflows with backend logic tuned for daily clinic load.",
+    image: "/projects/hospital-management.png",
+    link: "/contact?project=Hospital%20records%20module",
     featured: false,
-    stack: "AI Integrations, Prompt Engineering, SaaS-style Workflows",
+    stack: "Backend · Data structures",
+    category: "Healthcare",
   },
   {
-    title: "Script to AI Video Generator",
-    description:
-      "A script-to-video pipeline that transforms textual input into scene-based AI video drafts with timing, structure, and workflow automation.",
-    image:
-      "/projects/script-to-video.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+    title: "Feedback portal",
+    description: "Categorized responses and review views for internal quality tracking.",
+    image: "/projects/feedback-portal.png",
+    link: "/contact?project=Feedback%20portal",
     featured: false,
-    stack: "AI Tools Usage, API Integrations, System Design",
+    stack: "Portal design · Reporting",
+    category: "Internal tools",
   },
   {
-    title: "Hospital Management System",
-    description:
-      "Hospital management solution designed with core DSA principles for optimized records, appointments, patient workflows, and operational efficiency.",
-    image:
-      "/projects/hospital-management.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+    title: "Expense and data pipeline",
+    description: "Structured capture and cleaning for analytics ready datasets.",
+    image: "/projects/expense-tracker.png",
+    link: "/contact?project=Expense%20pipeline",
     featured: false,
-    stack: "DSA, Backend Logic, Optimization",
+    stack: "Python · Automation",
+    category: "Data",
   },
   {
-    title: "Tic Tac Toe Game",
-    description:
-      "A responsive game module featuring clean board UX, score tracking, and optimized interaction flow for quick gameplay sessions.",
-    image:
-      "/projects/tic-tac-toe.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+    title: "Script to video draft",
+    description: "Scene based video drafts from text input with timing and structure for review.",
+    image: "/projects/script-to-video.png",
+    link: "/contact?project=Script%20to%20video",
     featured: false,
-    stack: "JavaScript, UI Logic, Problem Solving",
+    stack: "AI tools · API",
+    category: "AI product",
   },
   {
-    title: "Bubble Game",
-    description:
-      "Arcade-style bubble game with performance-focused mechanics, scoring logic, and interactive UI behavior for smooth browser gameplay.",
-    image:
-      "/projects/bubble-game.jpg",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
+    title: "Streaming layout study",
+    description: "Content discovery UI patterns for browse, preview, and watchlist flows.",
+    image: "/projects/movie.png",
+    link: "/contact?project=Streaming%20layout%20study",
     featured: false,
-    stack: "Game Logic, Debugging, Frontend Interactions",
-  },
-  {
-    title: "Feedback Portal Module",
-    description:
-      "A structured feedback collection module with categorized responses, reporting views, and workflow-friendly review mechanics.",
-    image:
-      "/projects/feedback-portal.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
-    featured: false,
-    stack: "Requirements Gathering, SRS, Portal Design",
-  },
-  {
-    title: "Expense Tracker",
-    description:
-      "Data extraction workflows for collecting structured web information, with cleaning and processing pipelines for analytics and AI preparation.",
-    image:
-      "/projects/expense-tracker.png",
-    link: "https://github.com/Hafiz-Subhan-Sabir",
-    github: "https://github.com/Hafiz-Subhan-Sabir",
-    featured: false,
-    stack: "Python, Data Collection, Automation",
+    stack: "React · Layout systems",
+    category: "UI study",
   },
 ] as const;
 
@@ -197,17 +155,17 @@ export const FOOTER_DATA = [
   {
     title: "Explore",
     data: [
-      { name: "About", icon: null, link: "/about" },
-      { name: "Services", icon: null, link: "/services" },
-      { name: "Work", icon: null, link: "/work" },
-      { name: "Journey", icon: null, link: "/journey" },
+      { name: "About", link: "/about" },
+      { name: "Services", link: "/services" },
+      { name: "Work", link: "/work" },
+      { name: "Journey", link: "/journey" },
     ],
   },
   {
     title: "Contact",
     data: [
-      { name: "Contact", icon: null, link: "/contact" },
-      { name: "Email", icon: null, link: `mailto:${CONTACT_EMAIL}` },
+      { name: "Contact", link: "/contact" },
+      { name: "Email", link: `mailto:${CONTACT_EMAIL}` },
     ],
   },
 ] as const;
@@ -282,31 +240,12 @@ export const NAV_LINKS = [
   { title: "Contact", link: "/contact" },
 ] as const;
 
-export const TESTIMONIALS = [
-  {
-    name: "Founder (placeholder)",
-    role: "Product led business",
-    text: "Updates were plain English. We hit the date we agreed without drama.",
-  },
-  {
-    name: "Teammate (placeholder)",
-    role: "Engineering partner",
-    text: "Screens finally matched. New hires stopped asking which button style to use.",
-  },
-  {
-    name: "Stakeholder (placeholder)",
-    role: "Operations lead",
-    text: "They said no once and saved us a month building the wrong thing.",
-  },
-] as const;
-
 export const EDUCATION_HIGHLIGHTS = {
   education:
-    "RS Dev is led by Hafiz Subhan (BS Information Engineering Technology) with years shipping web products, sales tools, search work, and smart routines.",
+    "RS Dev is led by Hafiz Subhan (BS Information Engineering Technology). Small crew, senior execution, direct access to the people building your product.",
   technicalSummary:
-    "Work spans storefronts, custom apps, live data links, search fixes, assistant bots, and campaign releases that share one plan.",
-  satisfiedClients: "Satisfied Clients: 35+",
-  soloProjects: "Delivered 10+ solo projects end-to-end.",
-  teamProjects: "Collaborated with teams on 20+ projects.",
+    "Storefronts, bespoke apps, live data links, search fixes, assistant bots, and campaign releases under one written plan.",
+  soloProjects: "10+ solo products delivered end to end.",
+  teamProjects: "20+ collaborations with product and engineering teams.",
 } as const;
 

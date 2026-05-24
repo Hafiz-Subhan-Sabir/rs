@@ -60,7 +60,7 @@ export const Navbar = () => {
                   className={cn(
                     "rounded-full px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition",
                     active
-                      ? "bg-emerald-500/15 text-emerald-700 dark:bg-[#f7e295]/15 dark:text-[#f7e295]"
+                      ? "brand-button shadow-md shadow-emerald-500/25"
                       : "text-gray-600 hover:bg-gray-100/80 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-white"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -107,7 +107,7 @@ export const Navbar = () => {
                 className={cn(
                   "rounded-xl px-4 py-3 text-sm font-medium transition",
                   active
-                    ? "bg-emerald-500/10 text-emerald-700 dark:bg-[#f7e295]/10 dark:text-[#f7e295]"
+                    ? "brand-button shadow-md shadow-emerald-500/25"
                     : "text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5"
                 )}
                 onClick={() => setIsMobileMenuOpen(false)}

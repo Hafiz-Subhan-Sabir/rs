@@ -76,8 +76,8 @@ export const Projects = () => {
     >
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16">
         <div className="mb-6" data-reveal="fade-up">
-          <h2 className="text-3xl sm:text-4xl font-semibold brand-gradient-text">Selected work — featured</h2>
-          <p className="mt-1 text-sm uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Good projects first</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold brand-gradient-text">Featured outcomes</h2>
+          <p className="mt-1 text-sm uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Commerce, ops, security, automation</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5" data-project-group="featured">
           {featuredProjects.map((project) => (
@@ -96,6 +96,11 @@ export const Projects = () => {
                 />
               </div>
               <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">{project.title}</h3>
+              {"category" in project ? (
+                <div className="mt-1 text-[11px] tracking-[0.14em] uppercase text-emerald-600 dark:text-cyan-400">
+                  {(project as { category?: string }).category}
+                </div>
+              ) : null}
               {"stack" in project ? (
                 <div className="mt-1 text-[11px] tracking-[0.14em] uppercase text-gray-500 dark:text-gray-400">
                   {(project as { stack?: string }).stack}
@@ -104,10 +109,10 @@ export const Projects = () => {
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{project.description}</p>
               <div className="mt-4 flex flex-wrap items-center gap-2">
                 <Link
-                  href={`/contact?project=${encodeURIComponent(project.title)}`}
+                  href={project.link}
                   className="inline-flex rounded-full px-3 py-1.5 text-xs font-semibold brand-button"
                 >
-                  Contact
+                  Ask about this build
                 </Link>
               </div>
             </article>
@@ -119,7 +124,7 @@ export const Projects = () => {
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 pb-16">
           <div className="mb-5" data-reveal="fade-up">
             <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white">More builds</h3>
-            <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">Additional builds with clean architecture and practical workflows.</p>
+            <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">Additional products with practical workflows and clear handoff.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5" data-project-group="other">
             {otherProjects.map((project) => (
@@ -138,6 +143,11 @@ export const Projects = () => {
                   />
                 </div>
                 <h4 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">{project.title}</h4>
+                {"category" in project ? (
+                  <div className="mt-1 text-[11px] tracking-[0.14em] uppercase text-emerald-600 dark:text-cyan-400">
+                    {(project as { category?: string }).category}
+                  </div>
+                ) : null}
                 {openDetails[project.title] ? (
                   <>
                     {"stack" in project ? (
@@ -156,6 +166,12 @@ export const Projects = () => {
                   >
                     {openDetails[project.title] ? "Hide details" : "View details"}
                   </button>
+                  <Link
+                    href={project.link}
+                    className="inline-flex rounded-full px-3 py-1.5 text-xs font-semibold brand-button"
+                  >
+                    Ask about this build
+                  </Link>
                 </div>
               </article>
             ))}

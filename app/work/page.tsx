@@ -6,9 +6,9 @@ import { PageShell } from "@/components/layout/page-shell";
 import { Projects } from "@/components/main/projects";
 
 export const metadata: Metadata = {
-  title: "RS Dev | Work that left the repo",
+  title: "RS Dev | Portfolio and delivery snapshots",
   description:
-    "Live builds: retail, vision, streaming UI, secure sign in, ERP, and assistant products with stack notes and links.",
+    "Outcome focused builds across commerce, operations, security, and automation. Ask about a similar project for your sector.",
   alternates: { canonical: "/work" },
 };
 
@@ -16,9 +16,9 @@ export default function WorkPage() {
   return (
     <PageShell className="pb-0">
       <PageHero
-        badge="Built and live"
-        title="Proof the full arc works: idea, ship, keep improving."
-        description="Selected jobs where product quality, search, and back office tools had to work together, not as separate one offs."
+        badge="Portfolio"
+        title="Builds framed by the business outcome, not the repo link."
+        description="Selected work across retail, operations, security, and automation. Each card describes what was stuck and what changed. Contact us for detail on a similar build."
         primaryCta={{ label: "Describe your situation", href: "/contact" }}
         secondaryCta={{ label: "Our services", href: "/services" }}
       />

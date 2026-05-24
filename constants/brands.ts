@@ -1,23 +1,24 @@
-/** Partner / client brands — add logos to public/brands/ (PNG/SVG, ~200×80, transparent) */
+/** Tools we build with — shown in the tech marquee (not client logos) */
 
-export type BrandPartner = {
+export type TechStackItem = {
   name: string;
   logo: string;
-  sector: string;
-  /** RGB channels for CSS vars, e.g. "220 38 38" */
+  category: string;
   accentRgb: string;
   accent: string;
 };
 
-export const BRAND_PARTNERS: BrandPartner[] = [
-  { name: "Metro Motors", logo: "/brands/metro-motors.png", sector: "E-commerce", accent: "#dc2626", accentRgb: "220 38 38" },
-  { name: "FreshCart", logo: "/brands/freshcart.png", sector: "Retail tech", accent: "#16a34a", accentRgb: "22 163 74" },
-  { name: "CareLine Health", logo: "/brands/careline.png", sector: "Healthcare", accent: "#0284c7", accentRgb: "2 132 199" },
-  { name: "PlateHouse", logo: "/brands/platehouse.png", sector: "Hospitality", accent: "#ea580c", accentRgb: "234 88 12" },
-  { name: "LearnSphere", logo: "/brands/learnsphere.png", sector: "EdTech", accent: "#7c3aed", accentRgb: "124 58 237" },
-  { name: "OpsFlow ERP", logo: "/brands/opsflow.png", sector: "Enterprise", accent: "#4f46e5", accentRgb: "79 70 229" },
-  { name: "AdoptPaws", logo: "/brands/adoptpaws.png", sector: "Non-profit", accent: "#0d9488", accentRgb: "13 148 136" },
-  { name: "VisionAI Labs", logo: "/brands/visionai.png", sector: "AI / ML", accent: "#06b6d4", accentRgb: "6 182 212" },
-  { name: "RankLocal", logo: "/brands/ranklocal.png", sector: "Local SEO", accent: "#d97706", accentRgb: "217 119 6" },
-  { name: "StreamVault", logo: "/brands/streamvault.png", sector: "Media", accent: "#db2777", accentRgb: "219 39 119" },
+export const TECH_STACK: TechStackItem[] = [
+  { name: "Next.js", logo: "/skills/next.png", category: "Frontend", accent: "#111827", accentRgb: "17 24 39" },
+  { name: "React", logo: "/skills/react.png", category: "Frontend", accent: "#0ea5e9", accentRgb: "14 165 233" },
+  { name: "TypeScript", logo: "/skills/ts.png", category: "Language", accent: "#2563eb", accentRgb: "37 99 235" },
+  { name: "Tailwind CSS", logo: "/skills/tailwind.png", category: "UI", accent: "#06b6d4", accentRgb: "6 182 212" },
+  { name: "Python", logo: "/skills/node.png", category: "Backend", accent: "#eab308", accentRgb: "234 179 8" },
+  { name: "FastAPI", logo: "/skills/node.png", category: "API", accent: "#10b981", accentRgb: "16 185 129" },
+  { name: "PostgreSQL", logo: "/skills/go.png", category: "Data", accent: "#6366f1", accentRgb: "99 102 241" },
+  { name: "Vercel", logo: "/skills/figma.png", category: "Deploy", accent: "#f8fafc", accentRgb: "248 250 252" },
 ];
+
+/** @deprecated Use TECH_STACK */
+export const BRAND_PARTNERS = TECH_STACK;
+export type BrandPartner = TechStackItem;

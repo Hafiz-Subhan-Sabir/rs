@@ -5,7 +5,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { PageShell } from "@/components/layout/page-shell";
 import { BusinessPaths } from "@/components/pages/business-paths";
 import { DiagramGallery } from "@/components/pages/diagram-gallery";
-import { GrowthWorkflow } from "@/components/pages/growth-workflow";
+import { PackagedOffer } from "@/components/pages/packaged-offer";
 
 export const metadata: Metadata = {
   title: "RS Dev | Services for build, search, enquiries and ops",
@@ -20,12 +20,12 @@ export default function ServicesPage() {
       <PageHero
         badge="What we ship"
         title="Each offer answers one kind of pressure in your week."
-        description="Pick the path that matches today: presence online, product build, search rank, pipeline, or repeat office work."
+        description="Pick the path that matches today: presence online, product build, search rank, pipeline, or repeat office work. Or start with the ninety day revenue loop."
         primaryCta={{ label: "Describe your situation", href: "/contact" }}
         secondaryCta={{ label: "See live work", href: "/work" }}
       />
       <BusinessPaths />
-      <GrowthWorkflow />
+      <PackagedOffer />
       <DiagramGallery />
       <div className="pb-20">
         <CtaBand

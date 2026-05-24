@@ -28,8 +28,11 @@ const containsAny = (q: string, terms: string[]): boolean => terms.some((t) => q
 function getCustomReply(question: string): string {
   const q = question.toLowerCase().replace(/[^\w\s]/g, " ").replace(/\s+/g, " ").trim();
 
+  if (containsAny(q, ["ninety day", "90 day", "revenue loop", "flagship", "packaged"])) {
+    return "RS Dev offers a ninety day revenue loop: product surface, search and traffic, then pipeline and ops wiring under one written plan. Ask on the contact page with intent=growth.";
+  }
   if (containsAny(q, ["what is rs dev", "rs dev", "who are you", "about you", "introduce", "briefly introduce", "intro"])) {
-    return "RS Dev builds sites and apps, bespoke tools, sales boards, search placement, assistant bots, and campaigns with written plans and direct replies.";
+    return "RS Dev is a founder led crew for the full revenue loop: product build, search placement, enquiries, and back office wiring with written plans before code starts.";
   }
   if (containsAny(q, ["your name", "what is your name", "hafiz", "subhan", "founder"])) {
     return "You are speaking with the RS Dev site assistant. RS Dev is led by Hafiz Subhan; use the contact page for a direct conversation.";
@@ -89,7 +92,7 @@ function getCustomReply(question: string): string {
     return "Use the Book a call page: share outcomes, timeline, CRM and stack context, and budget band. RS Dev replies with fit and next steps.";
   }
   if (containsAny(q, ["project", "portfolio", "case study", "selected work"])) {
-    return "Selected work here shows web apps, full stack builds, and assistant products with stack notes and links where available.";
+    return "Portfolio work is framed by outcome and industry. Featured builds cover commerce, operations, security, and automation. Use contact to ask about a similar project.";
   }
   return FALLBACK_TEXT;
 }
@@ -100,7 +103,7 @@ export function ChatBot() {
     {
       role: "bot",
       text:
-        "Welcome. Ask about sites, bespoke tools, search, assistant bots, campaigns, or how to book a call.",
+        "Welcome. Ask about the ninety day revenue loop, services, portfolio work, or how to book a call.",
     },
   ]);
   const [input, setInput] = useState("");

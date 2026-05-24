@@ -16,10 +16,10 @@ export function FeaturedWork() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-600 dark:text-cyan-400/90">
-              Built and live
+              Outcome focused
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              Work that <span className="brand-gradient-text">left the repo</span>
+              Featured <span className="brand-gradient-text">delivery work</span>
             </h2>
           </div>
           <Link
@@ -52,7 +52,7 @@ export function FeaturedWork() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                 <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-                <p className="mt-1 text-xs text-white/75 line-clamp-1">{project.stack}</p>
+                <p className="mt-1 text-xs text-white/75 line-clamp-1">{project.category}</p>
               </div>
             </div>
             <div className="p-5 sm:p-6">
@@ -60,10 +60,10 @@ export function FeaturedWork() {
                 {project.description}
               </p>
               <Link
-                href="/work"
+                href={project.link}
                 className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-emerald-600 dark:text-cyan-300"
               >
-                View project <span className="transition group-hover:translate-x-0.5" aria-hidden>→</span>
+                Ask about a similar build <span className="transition group-hover:translate-x-0.5" aria-hidden>→</span>
               </Link>
             </div>
           </motion.article>

@@ -60,7 +60,7 @@ export const PROBLEM_SOLUTION_INTRO = {
   eyebrow: "Where plans get stuck",
   headline: "Strong ideas fade when nothing behind them moves at the same speed.",
   subhead:
-    "Visitors arrive but never enquire. Pages go live yet stay invisible in search. Spreadsheets multiply while nobody sees the full picture. Mornings disappear into copy paste work. RS Dev closes those gaps with one crew that builds, ranks, sells, and wires the back office.",
+    "Visitors arrive but never enquire. Pages go live yet stay invisible in search. Spreadsheets multiply while nobody sees the full picture. Mornings disappear into copy paste work. RS Dev is one small senior crew that builds, ranks, fills the calendar, and wires the back office. You work with the people doing the work.",
 } as const;
 
 export const PROBLEM_SOLUTION_BLOCKS = [
@@ -201,6 +201,31 @@ export const MAINTENANCE_CYCLE_STEPS = [
   { step: "04", title: "Wire", detail: "New background routines when repeat work shows up." },
   { step: "05", title: "Share", detail: "Plain numbers leaders can act on without a translator." },
 ] as const;
+
+export const PACKAGED_OFFER = {
+  eyebrow: "Flagship program",
+  title: "Ninety day revenue loop",
+  description:
+    "One written plan that covers product, search, enquiries, and back office wiring. Built for owners who want progress they can see in the calendar and in the numbers, not another slide deck.",
+  phases: [
+    {
+      weeks: "Weeks 1–4",
+      title: "Product surface",
+      detail: "Site or app live with analytics, speed targets, and conversion paths that match your offer.",
+    },
+    {
+      weeks: "Weeks 5–8",
+      title: "Search and traffic",
+      detail: "Technical search fixes, page structure, and paid or organic tests tied to real queries.",
+    },
+    {
+      weeks: "Weeks 9–12",
+      title: "Pipeline and ops",
+      detail: "Forms, sales records, and background routines so follow ups and repeat work shrink.",
+    },
+  ],
+  cta: { label: "Ask about the ninety day plan", href: "/contact?intent=growth" },
+} as const;
 
 export const COMPANY_VALUES = [
   {

@@ -4,7 +4,6 @@ import type { PropsWithChildren } from "react";
 
 import { Footer } from "@/components/main/footer";
 import { ChatBot } from "@/components/main/chatbot";
-import { CustomCursor } from "@/components/main/custom-cursor";
 import { Navbar } from "@/components/main/navbar";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/main/ThemeProvider";
@@ -30,18 +29,18 @@ const organizationSchema = {
   "@type": "ProfessionalService",
   name: "RS Dev",
   description:
-    "Websites and web apps, custom software, CRM, SEO, AI agents and workflow automation, AI bots, digital marketing, and consultancy.",
+    "Founder led crew for product build, search placement, enquiries, and back office wiring. One written plan from site to pipeline.",
   url: "https://hafiz-subhan-portfolio.vercel.app",
   image: "https://hafiz-subhan-portfolio.vercel.app/rs-dev-logo.png",
   sameAs: [] as string[],
   knowsAbout: [
     "Web application development",
     "Custom software",
-    "CRM",
     "Search engine optimization",
-    "AI agents",
-    "Business process automation",
+    "CRM and pipeline setup",
+    "AI agents and workflow automation",
     "Digital marketing",
+    "Revenue operations",
   ],
 };
 const websiteSchema = {
@@ -73,7 +72,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
       >
         <ThemeProvider>
           <SmoothScroll />
-          <CustomCursor />
           <RevealEngine />
           <Navbar />
           <div className="flex-1 flex flex-col min-w-0">

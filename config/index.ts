@@ -4,9 +4,9 @@ const siteUrl = "https://hafiz-subhan-portfolio.vercel.app";
 
 export const siteConfig: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "RS Dev | Sites, software, search and smart ops",
+  title: "RS Dev | Revenue loop partner for build, search and ops",
   description:
-    "RS Dev builds sites and apps, bespoke tools, sales boards, search placement, assistant bots, and campaigns with plain updates and written plans.",
+    "Small senior crew for sites, bespoke tools, search placement, enquiry flow, and back office wiring. Written plans before build starts.",
   icons: {
     icon: "/rs-dev-logo.png",
     shortcut: "/rs-dev-logo.png",
@@ -14,17 +14,15 @@ export const siteConfig: Metadata = {
   },
   keywords: [
     "RS Dev",
+    "revenue loop partner",
     "web app development",
     "custom software",
-    "CRM implementation",
     "SEO services",
+    "CRM implementation",
     "AI agents",
     "workflow automation",
     "digital marketing",
-    "React developer",
-    "Next.js developer",
-    "business website",
-    "software consultancy",
+    "founder led development",
   ] as string[],
   authors: {
     name: "RS Dev",
@@ -34,7 +32,7 @@ export const siteConfig: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "RS Dev | Sites, software, search and smart ops",
+    title: "RS Dev | Revenue loop partner for build, search and ops",
     description:
       "One crew for product build, search placement, enquiries, and back office wiring. Plans you can read before you commit.",
     url: siteUrl,
@@ -51,9 +49,9 @@ export const siteConfig: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RS Dev | Sites, software, search and smart ops",
+    title: "RS Dev | Revenue loop partner for build, search and ops",
     description:
-      "Sites, bespoke tools, search, assistant bots, and campaigns from one crew with written plans.",
+      "Sites, bespoke tools, search, assistant bots, and campaigns from one founder led crew with written plans.",
     images: ["/twitter-image"],
   },
 } as const;

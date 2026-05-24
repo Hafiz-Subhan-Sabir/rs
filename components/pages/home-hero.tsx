@@ -15,6 +15,8 @@ import { motion } from "framer-motion";
 import { MotionIn } from "@/components/motion/MotionIn";
 import { HERO_SOLUTIONS } from "@/constants";
 
+import { PROOF_STATS } from "@/constants/case-studies";
+
 const solutionIcons = {
   build: RocketLaunchIcon,
   rank: ChartBarIcon,
@@ -23,11 +25,10 @@ const solutionIcons = {
   automate: BoltIcon,
 } as const;
 
-const trustMetrics = [
-  { value: "35+", label: "Clients served" },
-  { value: "One plan", label: "Written before build" },
-  { value: "24h", label: "Typical reply time" },
-];
+const trustMetrics = PROOF_STATS.map((stat) => ({
+  value: stat.value,
+  label: stat.label,
+}));
 
 export function HomeHero() {
   return (
@@ -58,7 +59,7 @@ export function HomeHero() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
-                Full cycle digital partner
+                Revenue loop partner
               </div>
 
               <h1 className="text-[2.1rem] sm:text-[2.65rem] lg:text-[3.1rem] xl:text-[3.5rem] font-semibold tracking-tight leading-[1.1] text-gray-900 dark:text-white">

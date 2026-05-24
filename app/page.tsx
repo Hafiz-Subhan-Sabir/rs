@@ -1,28 +1,24 @@
 import { CtaBand } from "@/components/layout/cta-band";
 import { BusinessPaths } from "@/components/pages/business-paths";
 import { DeliveryCycle } from "@/components/pages/delivery-cycle";
-import { FeaturedWork } from "@/components/pages/featured-work";
-import { GrowthWorkflow } from "@/components/pages/growth-workflow";
-import { BrandMarquee } from "@/components/pages/brand-marquee";
+import { DeliverySnapshots } from "@/components/pages/delivery-snapshots";
+import { TechMarquee } from "@/components/pages/brand-marquee";
 import { HomeHero } from "@/components/pages/home-hero";
-import { MaintenanceCycle } from "@/components/pages/maintenance-cycle";
+import { PackagedOffer } from "@/components/pages/packaged-offer";
 import { ProblemSolution } from "@/components/pages/problem-solution";
 import { ProofStrip } from "@/components/pages/proof-strip";
-import { ServicesPreview } from "@/components/pages/services-preview";
 import { ValuesStrip } from "@/components/pages/values-strip";
 
 export default function Home() {
   return (
     <main className="h-full w-full">
       <HomeHero />
-      <BrandMarquee />
+      <TechMarquee />
       <ProblemSolution />
+      <PackagedOffer />
       <BusinessPaths />
-      <GrowthWorkflow />
+      <DeliverySnapshots />
       <DeliveryCycle />
-      <MaintenanceCycle />
-      <ServicesPreview />
-      <FeaturedWork />
       <ValuesStrip />
       <ProofStrip />
       <CtaBand

@@ -19,7 +19,7 @@ export const Footer = () => {
               />
             </Link>
             <p className="max-w-xs text-center text-sm text-gray-600 dark:text-gray-400 lg:text-left">
-              Sites, bespoke tools, search, and smart routines. Plain language, written plans.
+              Founder led crew for product, search, enquiries, and ops wiring. Plain language, written plans.
             </p>
           </div>
 
@@ -30,7 +30,7 @@ export const Footer = () => {
                   {column.title}
                 </h3>
                 <ul className="mt-4 space-y-3">
-                  {column.data.map(({ icon: Icon, name, link }) => (
+                  {column.data.map(({ name, link }) => (
                     <li key={`${column.title}-${name}`}>
                       <Link
                         href={link}
@@ -38,7 +38,6 @@ export const Footer = () => {
                         rel={link.startsWith("/") || link.startsWith("#") ? undefined : "noreferrer noopener"}
                         className="inline-flex items-center gap-2 text-sm text-gray-600 transition hover:text-emerald-600 dark:text-gray-300 dark:hover:text-cyan-300"
                       >
-                        {Icon ? <Icon className="h-4 w-4" /> : null}
                         {name}
                       </Link>
                     </li>

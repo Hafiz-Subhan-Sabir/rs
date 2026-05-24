@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { PROOF_STATS } from "@/constants/case-studies";
 import { EDUCATION_HIGHLIGHTS } from "@/constants";
 import { MotionIn } from "@/components/motion/MotionIn";
 
-const stats = [
-  { label: "Satisfied clients", value: "35+", accent: "from-emerald-500/20 to-cyan-500/10" },
-  { label: "Solo projects delivered", value: "10+", accent: "from-cyan-500/20 to-blue-500/10" },
-  { label: "Team collaborations", value: "20+", accent: "from-blue-500/20 to-emerald-500/10" },
+const statAccents = [
+  "from-emerald-500/20 to-cyan-500/10",
+  "from-cyan-500/20 to-blue-500/10",
+  "from-blue-500/20 to-emerald-500/10",
 ] as const;
 
 export function ProofStrip() {
@@ -25,8 +26,8 @@ export function ProofStrip() {
                 Track record
               </p>
               <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
-                People hire RS Dev when the plan has to{" "}
-                <span className="brand-gradient-text">match reality.</span>
+                Small crew.{" "}
+                <span className="brand-gradient-text">Senior hands on your loop.</span>
               </h2>
               <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 {EDUCATION_HIGHLIGHTS.technicalSummary}
@@ -35,30 +36,22 @@ export function ProofStrip() {
                 href="/about"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:underline dark:text-cyan-300"
               >
-                Meet the crew
+                Meet the founder
                 <span aria-hidden>→</span>
               </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {stats.map((stat, i) => (
+              {PROOF_STATS.map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: i * 0.08 }}
-                  className={`rounded-2xl border border-gray-200/80 bg-gradient-to-br ${stat.accent} p-5 text-center dark:border-white/10`}
+                  className={`rounded-2xl border border-gray-200/80 bg-gradient-to-br ${statAccents[i]} p-5 text-center dark:border-white/10`}
                 >
-                  <motion.div
-                    className="text-3xl sm:text-4xl font-bold brand-gradient-text"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.15 + i * 0.08 }}
-                  >
-                    {stat.value}
-                  </motion.div>
+                  <div className="text-3xl sm:text-4xl font-bold brand-gradient-text">{stat.value}</div>
                   <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">
                     {stat.label}
                   </p>
