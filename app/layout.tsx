@@ -7,6 +7,7 @@ import { ChatBot } from "@/components/main/chatbot";
 import { Navbar } from "@/components/main/navbar";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/main/ThemeProvider";
+import { FastNavigation } from "@/components/navigation/fast-navigation";
 import { RevealEngine } from "@/components/motion/RevealEngine";
 import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
@@ -29,7 +30,7 @@ const organizationSchema = {
   "@type": "ProfessionalService",
   name: "RS Dev",
   description:
-    "Founder led crew for product build, search placement, enquiries, and back office wiring. One written plan from site to pipeline.",
+    "We help entrepreneurs solve digital problems with technology so companies can focus on quality work.",
   url: "https://hafiz-subhan-portfolio.vercel.app",
   image: "https://hafiz-subhan-portfolio.vercel.app/rs-dev-logo.png",
   sameAs: [] as string[],
@@ -71,12 +72,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
         )}
       >
         <ThemeProvider>
+          <FastNavigation />
           <SmoothScroll />
           <RevealEngine />
           <Navbar />
-          <div className="flex-1 flex flex-col min-w-0">
-            {children}
-          </div>
+          {children}
           <ChatBot />
           <Footer />
         </ThemeProvider>

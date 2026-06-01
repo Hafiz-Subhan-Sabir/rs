@@ -41,12 +41,12 @@ export function FeaturedWork() {
             transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
             className="group overflow-hidden rounded-2xl border border-gray-200/90 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
           >
-            <div className="relative aspect-[16/10] overflow-hidden">
+            <div className="image-hover-wrap relative aspect-[16/10] overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
-                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                className="image-hover-scale object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />

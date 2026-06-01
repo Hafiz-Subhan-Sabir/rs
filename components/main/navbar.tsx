@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { FastLink } from "@/components/navigation/fast-link";
 import { NAV_LINKS } from "@/constants";
 import { ThemeToggle } from "@/components/main/ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -29,7 +29,7 @@ export const Navbar = () => {
       )}
     >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-10">
-        <Link
+        <FastLink
           href="/"
           className="group flex shrink-0 items-center rounded-2xl p-1 transition hover:opacity-90"
           onClick={() => setIsMobileMenuOpen(false)}
@@ -44,7 +44,7 @@ export const Navbar = () => {
             priority
             className="h-12 w-12 sm:h-14 sm:w-14 object-contain rounded-xl bg-white p-1 shadow-sm ring-1 ring-gray-200/80 dark:ring-white/15 transition group-hover:scale-[1.03]"
           />
-        </Link>
+        </FastLink>
 
         <nav
           className="hidden lg:flex flex-1 max-w-2xl items-center justify-center"
@@ -54,7 +54,7 @@ export const Navbar = () => {
             {NAV_LINKS.map((link) => {
               const active = isActive(pathname, link.link);
               return (
-                <Link
+                <FastLink
                   key={link.title}
                   href={link.link}
                   className={cn(
@@ -66,7 +66,7 @@ export const Navbar = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.title}
-                </Link>
+                </FastLink>
               );
             })}
           </div>
@@ -101,7 +101,7 @@ export const Navbar = () => {
           {NAV_LINKS.map((link) => {
             const active = isActive(pathname, link.link);
             return (
-              <Link
+              <FastLink
                 key={link.title}
                 href={link.link}
                 className={cn(
@@ -113,7 +113,7 @@ export const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}
-              </Link>
+              </FastLink>
             );
           })}
         </nav>

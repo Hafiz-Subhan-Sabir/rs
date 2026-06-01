@@ -1,4 +1,10 @@
-export const CONTACT_EMAIL = "hafizsubhan909@gmail.com" as const;
+export const CONTACT_EMAIL = "rs.dev.soft@gmail.com" as const;
+
+export const SITE_TAGLINE =
+  "We solve company problems with technology so you can focus on quality work." as const;
+
+export const SITE_SUBTAGLINE =
+  "We help entrepreneurs fix digital problems with websites, software, search, and daily workflows, using practical tech built around how you actually run the business." as const;
 
 export const SKILL_DATA = [
   { skill_name: "HTML", image: "html.png", width: 80, height: 80 },
@@ -158,7 +164,7 @@ export const FOOTER_DATA = [
       { name: "About", link: "/about" },
       { name: "Services", link: "/services" },
       { name: "Work", link: "/work" },
-      { name: "Journey", link: "/journey" },
+      { name: "Our story", link: "/journey" },
     ],
   },
   {
@@ -236,7 +242,7 @@ export const NAV_LINKS = [
   { title: "About", link: "/about" },
   { title: "Services", link: "/services" },
   { title: "Work", link: "/work" },
-  { title: "Journey", link: "/journey" },
+  { title: "Our story", link: "/journey" },
   { title: "Contact", link: "/contact" },
 ] as const;
 

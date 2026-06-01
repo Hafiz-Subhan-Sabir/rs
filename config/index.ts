@@ -4,9 +4,9 @@ const siteUrl = "https://hafiz-subhan-portfolio.vercel.app";
 
 export const siteConfig: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "RS Dev | Revenue loop partner for build, search and ops",
+  title: "RS Dev | We solve company problems with technology",
   description:
-    "Small senior crew for sites, bespoke tools, search placement, enquiry flow, and back office wiring. Written plans before build starts.",
+    "We help entrepreneurs fix digital problems with websites, software, search, and workflows, so teams can focus on quality work.",
   icons: {
     icon: "/rs-dev-logo.png",
     shortcut: "/rs-dev-logo.png",
@@ -14,15 +14,14 @@ export const siteConfig: Metadata = {
   },
   keywords: [
     "RS Dev",
-    "revenue loop partner",
+    "solve business problems with technology",
+    "entrepreneur digital solutions",
     "web app development",
     "custom software",
     "SEO services",
     "CRM implementation",
-    "AI agents",
     "workflow automation",
     "digital marketing",
-    "founder led development",
   ] as string[],
   authors: {
     name: "RS Dev",
@@ -32,9 +31,9 @@ export const siteConfig: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "RS Dev | Revenue loop partner for build, search and ops",
+    title: "RS Dev | We solve company problems with technology",
     description:
-      "One crew for product build, search placement, enquiries, and back office wiring. Plans you can read before you commit.",
+      "We help entrepreneurs fix digital problems with practical tech so your company can focus on quality work.",
     url: siteUrl,
     siteName: "RS Dev",
     type: "website",
@@ -43,15 +42,15 @@ export const siteConfig: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "RS Dev monogram and positioning",
+        alt: "RS Dev, technology partner for entrepreneurs",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RS Dev | Revenue loop partner for build, search and ops",
+    title: "RS Dev | We solve company problems with technology",
     description:
-      "Sites, bespoke tools, search, assistant bots, and campaigns from one founder led crew with written plans.",
+      "Digital problems solved with tech: websites, software, search, and ops, so entrepreneurs focus on what they do best.",
     images: ["/twitter-image"],
   },
 } as const;

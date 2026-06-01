@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-
+import { FastLink } from "@/components/navigation/fast-link";
 import { MotionIn } from "@/components/motion/MotionIn";
+import { isInternalRoute } from "@/lib/site-routes";
 
 type PageHeroProps = {
   badge?: string;
@@ -27,7 +27,7 @@ export function PageHero({
             <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
             {badge}
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 dark:text-white leading-[1.05] max-w-4xl">
+          <h1 className="hero-headline capitalize text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 dark:text-white leading-[1.05] max-w-4xl">
             {title}
           </h1>
           <p className="max-w-2xl text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -36,20 +36,38 @@ export function PageHero({
           {(primaryCta || secondaryCta) && (
             <div className="flex flex-wrap gap-3 pt-2">
               {primaryCta ? (
-                <Link
-                  href={primaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold brand-button transition hover:scale-[1.02]"
-                >
-                  {primaryCta.label}
-                </Link>
+                isInternalRoute(primaryCta.href) ? (
+                  <FastLink
+                    href={primaryCta.href}
+                    className="btn-cta-float inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold brand-button"
+                  >
+                    {primaryCta.label}
+                  </FastLink>
+                ) : (
+                  <a
+                    href={primaryCta.href}
+                    className="btn-cta-float inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold brand-button"
+                  >
+                    {primaryCta.label}
+                  </a>
+                )
               ) : null}
               {secondaryCta ? (
-                <Link
-                  href={secondaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold border border-gray-300 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 transition"
-                >
-                  {secondaryCta.label}
-                </Link>
+                isInternalRoute(secondaryCta.href) ? (
+                  <FastLink
+                    href={secondaryCta.href}
+                    className="btn-outline-cta btn-outline-cta-float inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold border border-gray-300 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10"
+                  >
+                    {secondaryCta.label}
+                  </FastLink>
+                ) : (
+                  <a
+                    href={secondaryCta.href}
+                    className="btn-outline-cta btn-outline-cta-float inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold border border-gray-300 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10"
+                  >
+                    {secondaryCta.label}
+                  </a>
+                )
               ) : null}
             </div>
           )}

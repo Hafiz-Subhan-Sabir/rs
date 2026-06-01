@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 import { MotionIn } from "@/components/motion/MotionIn";
 import { SectionHeader } from "@/components/ui/section-header";
 import { DELIVERY_SNAPSHOTS } from "@/constants/case-studies";
+import { neonCardClass } from "@/lib/neon-card";
 
 export function DeliverySnapshots() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
       <SectionHeader
-        eyebrow="Delivery snapshots"
-        title="Outcomes we engineer toward."
-        description="Portfolio and client style work, framed by industry. Names withheld where required. Ask us for detail on a similar build for your sector."
+        title="Problems we have helped companies solve."
+        description="Real-style delivery work across industries. Names withheld where required. Ask us about a similar challenge for your business."
         align="center"
       />
 
@@ -25,7 +25,7 @@ export function DeliverySnapshots() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ delay: i * 0.06, duration: 0.45 }}
-            className="rounded-2xl border border-gray-200/90 bg-white/90 p-6 sm:p-7 dark:border-white/10 dark:bg-white/[0.04]"
+            className={neonCardClass(i, "rounded-2xl border border-gray-200/90 bg-white/90 p-6 sm:p-7 dark:border-white/10 dark:bg-white/[0.04]")}
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-600 dark:text-cyan-400">

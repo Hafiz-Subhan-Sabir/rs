@@ -7,6 +7,8 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { DiagramSlot } from "@/components/ui/diagram-slot";
 import { SectionHeader } from "@/components/ui/section-header";
 import { DIAGRAM_SLOTS, GROWTH_WORKFLOW_STEPS } from "@/constants/content";
+import { neonCardClass } from "@/lib/neon-card";
+import { cn } from "@/lib/utils";
 
 export function GrowthWorkflow() {
   const [openId, setOpenId] = useState<string>(GROWTH_WORKFLOW_STEPS[0].id);
@@ -14,14 +16,15 @@ export function GrowthWorkflow() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
       <SectionHeader
-        eyebrow="Revenue program"
         title="Six beats from live site to sales calls worth taking."
         description="Each beat targets one leak. Open a step to see the block, the fix, and the proof we hand over."
         align="center"
       />
 
       <DiagramSlot
-        className="mb-12 max-w-4xl mx-auto"
+        variant="inline"
+        size="large"
+        className="mb-12 max-w-6xl mx-auto"
         imagePath={DIAGRAM_SLOTS.growthFunnel.file}
         title={DIAGRAM_SLOTS.growthFunnel.title}
       />
@@ -38,11 +41,12 @@ export function GrowthWorkflow() {
               <button
                 type="button"
                 onClick={() => setOpenId(isOpen ? "" : item.id)}
-                className={`relative z-10 flex w-full items-start gap-4 rounded-2xl border px-4 py-4 sm:px-5 text-left transition ${
+                className={cn(
+                  neonCardClass(index, "relative z-10 flex w-full items-start gap-4 rounded-2xl border px-4 py-4 sm:px-5 text-left transition"),
                   isOpen
-                    ? "border-emerald-400/40 bg-white shadow-md dark:border-cyan-400/30 dark:bg-white/[0.06]"
-                    : "border-gray-200/80 bg-white/70 hover:bg-white dark:border-white/10 dark:bg-white/[0.03]"
-                }`}
+                    ? "bg-white dark:bg-white/[0.06]"
+                    : "border-gray-200/80 bg-white/70 hover:bg-white dark:border-white/10 dark:bg-white/[0.03]",
+                )}
               >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/10 text-sm font-bold text-emerald-700 dark:text-cyan-300">
                   {item.step}
@@ -66,7 +70,7 @@ export function GrowthWorkflow() {
                     transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="ml-0 sm:ml-16 mt-2 mb-4 rounded-xl border border-gray-200/70 bg-gray-50/90 p-5 dark:border-white/10 dark:bg-white/[0.03]">
+                    <div className={neonCardClass(index, "ml-0 sm:ml-16 mt-2 mb-4 rounded-xl border border-gray-200/70 bg-gray-50/90 p-5 dark:border-white/10 dark:bg-white/[0.03]")}>
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
                           <p className="text-[10px] font-bold uppercase tracking-wider text-rose-600/90 dark:text-rose-400/80">

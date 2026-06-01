@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { BUSINESS_SERVICES } from "@/constants";
+import { neonCardClass } from "@/lib/neon-card";
 import { MotionIn } from "@/components/motion/MotionIn";
 
 export function ServicesPreview() {
@@ -43,7 +44,7 @@ export function ServicesPreview() {
           >
             <Link
               href="/services"
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200/90 bg-white/80 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-emerald-400/30 hover:shadow-xl hover:shadow-emerald-500/5 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-cyan-400/25"
+              className={neonCardClass(i, "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200/90 bg-white/80 p-6 backdrop-blur transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04]")}
             >
               <span className="text-[11px] font-bold tabular-nums text-emerald-600/80 dark:text-cyan-400/70">
                 {String(i + 1).padStart(2, "0")}

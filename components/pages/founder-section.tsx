@@ -5,12 +5,13 @@ import Link from "next/link";
 import { MotionIn } from "@/components/motion/MotionIn";
 import { FOUNDER_NOTE, PROOF_STATS } from "@/constants/case-studies";
 import { EDUCATION_HIGHLIGHTS } from "@/constants";
+import { neonCardClass } from "@/lib/neon-card";
 
 export function FounderSection() {
   return (
     <section className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 py-20 scroll-mt-24">
       <MotionIn>
-        <div className="rounded-3xl border border-gray-200/90 bg-gradient-to-br from-white via-white to-emerald-50/50 p-8 sm:p-10 dark:border-white/10 dark:from-[#0f0b1f] dark:via-[#0c0b12] dark:to-[#06222a]/60">
+        <div className={neonCardClass("neon-purple", "rounded-3xl border border-gray-200/90 bg-gradient-to-br from-white via-white to-emerald-50/50 p-8 sm:p-10 dark:border-white/10 dark:from-[#0f0b1f] dark:via-[#0c0b12] dark:to-[#06222a]/60")}>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-cyan-400">
             Who leads RS Dev
           </p>
@@ -40,15 +41,15 @@ export function FounderSection() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex rounded-full px-6 py-3 text-sm font-semibold brand-button transition"
+              className="btn-cta-float inline-flex rounded-full px-6 py-3 text-sm font-semibold brand-button"
             >
               Start a conversation
             </Link>
             <Link
               href="/journey"
-              className="inline-flex rounded-full px-6 py-3 text-sm font-semibold border border-gray-200 bg-white/80 dark:border-white/10 dark:bg-white/5 transition"
+              className="btn-outline-cta btn-outline-cta-float inline-flex rounded-full px-6 py-3 text-sm font-semibold border border-gray-200 bg-white/80 dark:border-white/10 dark:bg-white/5"
             >
-              Our path
+              Company journey
             </Link>
           </div>
         </div>

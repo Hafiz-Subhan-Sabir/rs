@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { PROJECTS } from '@/constants';
+import { neonCardClass } from '@/lib/neon-card';
 
 export const Projects = () => {
   const [openDetails, setOpenDetails] = useState<Record<string, boolean>>({});
@@ -80,13 +81,13 @@ export const Projects = () => {
           <p className="mt-1 text-sm uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Commerce, ops, security, automation</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5" data-project-group="featured">
-          {featuredProjects.map((project) => (
+          {featuredProjects.map((project, i) => (
             <article
               key={project.title}
               data-project-card="true"
-              className="group rounded-3xl border border-gray-200 bg-white/85 p-4 shadow-lg backdrop-blur dark:border-white/10 dark:bg-white/5"
+              className={neonCardClass(i, "group rounded-3xl border border-gray-200 bg-white/85 p-4 backdrop-blur dark:border-white/10 dark:bg-white/5")}
             >
-              <div className="relative h-60 sm:h-72 w-full overflow-hidden rounded-2xl bg-gray-200 dark:bg-black/30">
+              <div className="image-hover-wrap relative h-60 sm:h-72 w-full overflow-hidden rounded-2xl bg-gray-200 dark:bg-black/30">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -127,13 +128,13 @@ export const Projects = () => {
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">Additional products with practical workflows and clear handoff.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5" data-project-group="other">
-            {otherProjects.map((project) => (
+            {otherProjects.map((project, i) => (
               <article
                 key={project.title}
                 data-project-card="true"
-                className="group rounded-3xl border border-gray-200 bg-white/80 p-4 shadow-lg backdrop-blur dark:border-white/10 dark:bg-white/5"
+                className={neonCardClass(i + 2, "group rounded-3xl border border-gray-200 bg-white/80 p-4 backdrop-blur dark:border-white/10 dark:bg-white/5")}
               >
-                <div className="relative h-52 w-full overflow-hidden rounded-2xl bg-gray-200 dark:bg-black/30">
+                <div className="image-hover-wrap relative h-52 w-full overflow-hidden rounded-2xl bg-gray-200 dark:bg-black/30">
                   <Image
                     src={project.image}
                     alt={project.title}

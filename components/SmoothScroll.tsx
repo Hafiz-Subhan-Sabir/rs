@@ -135,13 +135,21 @@ export function SmoothScroll() {
   }, []);
 
   useLayoutEffect(() => {
-    if (pathname !== '/') return;
     const lenis = lenisRef.current;
-    if (!lenis) return;
-
     const pending = sessionStorage.getItem('pending_anchor');
     const targetHash = pending || window.location.hash || '';
-    if (!targetHash || !targetHash.startsWith('#')) return;
+    const hasHomeAnchor = pathname === '/' && targetHash && targetHash.startsWith('#');
+
+    if (!hasHomeAnchor) {
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
+    }
+
+    if (pathname !== '/' || !hasHomeAnchor) return;
+    if (!lenis) return;
 
     let attempts = 0;
     let rafId: number | null = null;
@@ -172,6 +180,14 @@ export function SmoothScroll() {
       if (rafId) cancelAnimationFrame(rafId);
     };
   }, [pathname]);
+
+  useEffect(() => {
+    const onRouteTop = () => {
+      lenisRef.current?.scrollTo(0, { immediate: true });
+    };
+    window.addEventListener('rsdev:route-scroll-top', onRouteTop);
+    return () => window.removeEventListener('rsdev:route-scroll-top', onRouteTop);
+  }, []);
 
   return null;
 }

@@ -1,7 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
-
+import { FastLink } from "@/components/navigation/fast-link";
 import { FOOTER_DATA } from "@/constants";
+import { neonCardClass } from "@/lib/neon-card";
+import { isInternalRoute } from "@/lib/site-routes";
 
 export const Footer = () => {
   return (
@@ -9,17 +10,17 @@ export const Footer = () => {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-10">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-col items-center lg:items-start gap-4">
-            <Link href="/" className="inline-block">
+            <FastLink href="/" className="inline-block">
               <Image
                 src="/rs-dev-logo.png"
                 alt="RS Dev"
                 width={52}
                 height={52}
-                className="h-12 w-12 rounded-xl bg-white p-1 ring-1 ring-gray-200/80 dark:ring-white/15"
+                className={neonCardClass("neon-brown", "h-12 w-12 rounded-xl bg-white p-1 ring-1 ring-gray-200/80 dark:ring-white/15")}
               />
-            </Link>
+            </FastLink>
             <p className="max-w-xs text-center text-sm text-gray-600 dark:text-gray-400 lg:text-left">
-              Founder led crew for product, search, enquiries, and ops wiring. Plain language, written plans.
+              We solve digital problems with technology so entrepreneurs and teams can focus on quality work.
             </p>
           </div>
 
@@ -32,14 +33,23 @@ export const Footer = () => {
                 <ul className="mt-4 space-y-3">
                   {column.data.map(({ name, link }) => (
                     <li key={`${column.title}-${name}`}>
-                      <Link
-                        href={link}
-                        target={link.startsWith("/") || link.startsWith("#") ? undefined : "_blank"}
-                        rel={link.startsWith("/") || link.startsWith("#") ? undefined : "noreferrer noopener"}
-                        className="inline-flex items-center gap-2 text-sm text-gray-600 transition hover:text-emerald-600 dark:text-gray-300 dark:hover:text-cyan-300"
-                      >
-                        {name}
-                      </Link>
+                      {isInternalRoute(link) ? (
+                        <FastLink
+                          href={link}
+                          className="inline-flex items-center gap-2 text-sm text-gray-600 transition hover:text-emerald-600 dark:text-gray-300 dark:hover:text-cyan-300"
+                        >
+                          {name}
+                        </FastLink>
+                      ) : (
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="inline-flex items-center gap-2 text-sm text-gray-600 transition hover:text-emerald-600 dark:text-gray-300 dark:hover:text-cyan-300"
+                        >
+                          {name}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

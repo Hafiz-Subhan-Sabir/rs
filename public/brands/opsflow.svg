@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="OpsFlow mark">
+  <rect x="5" y="8" width="8" height="8" rx="2" stroke="#2563eb" stroke-width="2.75"/>
+  <rect x="19" y="8" width="8" height="8" rx="2" stroke="#2563eb" stroke-width="2.75"/>
+  <rect x="12" y="18" width="8" height="8" rx="2" stroke="#2563eb" stroke-width="2.75"/>
+  <path d="M13 12h6M16 16v2" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+</svg>

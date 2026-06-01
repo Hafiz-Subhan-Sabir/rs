@@ -3,12 +3,12 @@
 import { MotionIn } from "@/components/motion/MotionIn";
 import { SectionHeader } from "@/components/ui/section-header";
 import { PROBLEM_SOLUTION_BLOCKS, PROBLEM_SOLUTION_INTRO } from "@/constants/content";
+import { neonCardClass } from "@/lib/neon-card";
 
 export function ProblemSolution() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 pt-8 pb-20 md:pt-12 md:pb-28">
       <SectionHeader
-        eyebrow={PROBLEM_SOLUTION_INTRO.eyebrow}
         title={PROBLEM_SOLUTION_INTRO.headline}
         description={PROBLEM_SOLUTION_INTRO.subhead}
         align="center"
@@ -17,7 +17,7 @@ export function ProblemSolution() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {PROBLEM_SOLUTION_BLOCKS.map((block, i) => (
           <MotionIn key={block.problem} delay={i * 0.06}>
-            <article className="h-full rounded-2xl border border-gray-200/90 bg-white/80 p-6 dark:border-white/10 dark:bg-white/[0.04] transition hover:border-emerald-400/30 hover:shadow-lg dark:hover:border-cyan-400/20">
+            <article className={neonCardClass(i, "h-full rounded-2xl border border-gray-200/90 bg-white/80 p-6 dark:border-white/10 dark:bg-white/[0.04] transition hover:-translate-y-0.5")}>
               <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-rose-600/90 dark:text-rose-400/90">
                 What is stuck
               </p>

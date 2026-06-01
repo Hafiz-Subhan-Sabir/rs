@@ -1,19 +1,21 @@
 # Client / partner logos
 
-Add logo files here to replace the text placeholders in the brand marquee.
+Each partner has a **mark** (icon SVG) and displays **name + sector** in the marquee.
 
-| File | Brand name |
-|------|------------|
-| `metro-motors.png` | Metro Motors |
-| `freshcart.png` | FreshCart |
-| `careline.png` | CareLine Health |
-| `platehouse.png` | PlateHouse |
-| `learnsphere.png` | LearnSphere |
-| `opsflow.png` | OpsFlow ERP |
-| `adoptpaws.png` | AdoptPaws |
-| `visionai.png` | VisionAI Labs |
-| `ranklocal.png` | RankLocal |
-| `streamvault.png` | StreamVault |
+| File | Company | Sector |
+|------|---------|--------|
+| `metro-motors.svg` | Metro Motors | Automotive retail |
+| `platehouse.svg` | PlateHouse | Food supply |
+| `opsflow.svg` | OpsFlow | Operations software |
+| `visionai.svg` | VisionAI Labs | Computer vision |
+| `careline.svg` | CareLine Health | Healthcare |
+| `ranklocal.svg` | RankLocal | Local search |
+| `streamvault.svg` | StreamVault | Media platform |
+| `adoptpaws.svg` | AdoptPaws | Pet adoption |
+| `learnsphere.svg` | LearnSphere | EdTech |
+| `freshcart.svg` | FreshCart | Grocery commerce |
 
-**Specs:** PNG or SVG, transparent background, ~280×80px (or similar wide aspect).  
+**Specs:** SVG mark ~32×32 viewBox, brand color strokes/fills.  
 **Edit list:** `constants/brands.ts`
+
+Replace any mark with a PNG (same filename) if you get real client logos later.

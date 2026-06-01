@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { CONTACT_EMAIL, PROJECTS } from '@/constants';
 import { MotionIn } from '@/components/motion/MotionIn';
 import { API_BASE_URL, apiUrl } from '@/lib/api';
+import { neonCardClass } from '@/lib/neon-card';
 
 const CONTACT_REQUEST_TIMEOUT_MS = 70000;
 const BACKEND_WARMUP_TIMEOUT_MS = 20000;
@@ -231,24 +232,20 @@ export function ContactPage() {
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
           <MotionIn>
             <div className="flex flex-col gap-4">
-              <div className="inline-flex items-center gap-2 self-start rounded-full border border-gray-200 bg-white/70 px-4 py-2 text-sm font-semibold text-gray-700 backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-gray-200">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                Available for new work
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Name what done looks like.
+              <h1 className="hero-headline capitalize text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Tell us the digital problem your company is facing.
               </h1>
               <p className="max-w-2xl text-base sm:text-lg text-gray-600 dark:text-gray-300">
-                Share the outcome you want in thirty to ninety days, your deadline, and whether you need build, advice, or both.
-                Mention your site, sales tool, search goal, or routine you want gone. We usually reply within a day.
+                We help entrepreneurs fix websites, software, search, and workflow issues with practical technology,
+                so your team can get back to quality work. Share what is broken and when you need it solved. We usually
+                reply within a day.
               </p>
             </div>
           </MotionIn>
 
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8">
             <MotionIn delay={0.05}>
-              <div className="rounded-3xl border border-gray-200 bg-white/80 backdrop-blur p-6 sm:p-8 shadow-xl dark:border-white/10 dark:bg-white/5 dark:shadow-[#1a0a2e]/50">
+              <div className={neonCardClass("neon-green", "rounded-3xl border border-gray-200 bg-white/80 backdrop-blur p-6 sm:p-8 dark:border-white/10 dark:bg-white/5")}>
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="min-w-0">
                     <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Send the brief</h2>
@@ -355,7 +352,7 @@ export function ContactPage() {
                     type="button"
                     onClick={handleSubmit}
                     disabled={submitting}
-                    className="inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold brand-button transition disabled:opacity-70"
+                    className="btn-cta-float inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold brand-button disabled:opacity-70 disabled:animate-none"
                   >
                     {submitting ? 'Sending...' : 'Send message'}
                   </button>
@@ -400,7 +397,7 @@ export function ContactPage() {
             </MotionIn>
 
             <MotionIn delay={0.1}>
-              <div className="rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 shadow-xl dark:border-white/10 dark:bg-white/5 dark:shadow-[#1a0a2e]/50">
+              <div className={neonCardClass("neon-blue", "rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 dark:border-white/10 dark:bg-white/5")}>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Direct email</h3>
                 <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
                   Prefer email over the form? Write anytime.
@@ -408,14 +405,14 @@ export function ContactPage() {
 
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="mt-5 flex items-center justify-between rounded-2xl border border-gray-200 bg-white/70 px-4 py-3 hover:bg-white transition dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+                  className={neonCardClass("neon-purple", "mt-5 flex items-center justify-between rounded-2xl border border-gray-200 bg-white/70 px-4 py-3 hover:bg-white transition dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10")}
                 >
                   <span className="text-sm font-semibold text-gray-900 dark:text-white break-all">{CONTACT_EMAIL}</span>
                   <span className="text-sm text-gray-500 shrink-0 ml-2 dark:text-gray-400">Open →</span>
                 </a>
 
                 <motion.div
-                  className="mt-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 p-4 dark:border-white/10"
+                  className={neonCardClass("neon-orange", "mt-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 p-4 dark:border-white/10")}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -444,10 +441,10 @@ export function ContactPage() {
                 title: '3) Build and tune',
                 text: 'We focus on clean screens, scroll motion, and speed that feels premium.',
               },
-            ].map((item) => (
+            ].map((item, i) => (
               <div
                 key={item.title}
-                className="rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 transition hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-white/5"
+                className={neonCardClass(i, "rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5")}
               >
                 <div className="text-sm font-semibold brand-gradient-text">{item.title}</div>
                 <div className="mt-2 text-sm text-gray-600 dark:text-gray-300">{item.text}</div>
@@ -456,7 +453,7 @@ export function ContactPage() {
           </div>
 
           <div className="mt-10">
-            <div className="rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 sm:p-8 dark:border-white/10 dark:bg-white/5">
+            <div className={neonCardClass("neon-blue", "rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 sm:p-8 dark:border-white/10 dark:bg-white/5")}>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Quick FAQ</h3>
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
@@ -476,10 +473,10 @@ export function ContactPage() {
                     q: 'How soon can you start?',
                     a: 'Often immediately. Send requirements and we confirm the calendar.',
                   },
-                ].map((f) => (
+                ].map((f, i) => (
                   <div
                     key={f.q}
-                    className="rounded-2xl border border-gray-200 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-white/5"
+                    className={neonCardClass(i + 1, "rounded-2xl border border-gray-200 bg-white/70 p-5 transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5")}
                   >
                     <div className="text-sm font-semibold text-gray-900 dark:text-white">{f.q}</div>
                     <div className="mt-2 text-sm text-gray-600 dark:text-gray-300">{f.a}</div>

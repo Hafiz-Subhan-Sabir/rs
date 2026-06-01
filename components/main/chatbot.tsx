@@ -28,11 +28,11 @@ const containsAny = (q: string, terms: string[]): boolean => terms.some((t) => q
 function getCustomReply(question: string): string {
   const q = question.toLowerCase().replace(/[^\w\s]/g, " ").replace(/\s+/g, " ").trim();
 
-  if (containsAny(q, ["ninety day", "90 day", "revenue loop", "flagship", "packaged"])) {
-    return "RS Dev offers a ninety day revenue loop: product surface, search and traffic, then pipeline and ops wiring under one written plan. Ask on the contact page with intent=growth.";
+  if (containsAny(q, ["ninety day", "90 day", "revenue loop", "flagship", "packaged", "digital fix"])) {
+    return "RS Dev offers a ninety day digital fix plan: product, search and traffic, then pipeline and workflow tech under one written plan. Ask on the contact page with intent=growth.";
   }
   if (containsAny(q, ["what is rs dev", "rs dev", "who are you", "about you", "introduce", "briefly introduce", "intro"])) {
-    return "RS Dev is a founder led crew for the full revenue loop: product build, search placement, enquiries, and back office wiring with written plans before code starts.";
+    return "RS Dev helps entrepreneurs solve digital problems with technology: websites, software, search, and workflows, so companies can focus on quality work.";
   }
   if (containsAny(q, ["your name", "what is your name", "hafiz", "subhan", "founder"])) {
     return "You are speaking with the RS Dev site assistant. RS Dev is led by Hafiz Subhan; use the contact page for a direct conversation.";
@@ -103,7 +103,7 @@ export function ChatBot() {
     {
       role: "bot",
       text:
-        "Welcome. Ask about the ninety day revenue loop, services, portfolio work, or how to book a call.",
+        "Welcome. Ask how we solve digital problems for companies, our services, portfolio work, or how to book a call.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -131,7 +131,7 @@ export function ChatBot() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="brand-button rounded-full px-5 py-3 text-sm font-semibold shadow-xl shadow-black/25 ring-1 ring-white/20 transition hover:scale-[1.02]"
+        className="btn-cta-float brand-button rounded-full px-5 py-3 text-sm font-semibold ring-1 ring-white/20"
         aria-label="Open chat"
       >
         Ask RS Dev

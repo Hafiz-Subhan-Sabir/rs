@@ -6,13 +6,12 @@ import { PageShell } from "@/components/layout/page-shell";
 import { DeliveryCycle } from "@/components/pages/delivery-cycle";
 import { DeliverySnapshots } from "@/components/pages/delivery-snapshots";
 import { FounderSection } from "@/components/pages/founder-section";
-import { ProblemSolution } from "@/components/pages/problem-solution";
 import { ValuesStrip } from "@/components/pages/values-strip";
 
 export const metadata: Metadata = {
   title: "RS Dev | About the crew behind the work",
   description:
-    "Founder led crew for product build, search placement, enquiry systems, and back office wiring with written plans and plain updates.",
+    "We help entrepreneurs solve digital problems with technology so their teams can focus on quality work.",
   alternates: { canonical: "/about" },
 };
 
@@ -21,19 +20,18 @@ export default function AboutPage() {
     <PageShell>
       <PageHero
         badge="Who we are"
-        title="For operators who need results, not another handoff email."
-        description="One small senior crew owns the site, the search rank, the enquiry path, and the routines behind daily ops. You talk to the people who build."
-        primaryCta={{ label: "Describe your situation", href: "/contact" }}
-        secondaryCta={{ label: "See what we ship", href: "/services" }}
+        title="We solve digital problems so companies can focus on what they do best."
+        description="RS Dev is a small senior team. Entrepreneurs come to us when websites, software, search, or daily tech drag gets in the way of quality work, and they want it fixed properly."
+        primaryCta={{ label: "Describe your problem", href: "/contact" }}
+        secondaryCta={{ label: "See our services", href: "/services" }}
       />
       <FounderSection />
-      <ProblemSolution />
       <DeliverySnapshots />
-      <ValuesStrip />
-      <DeliveryCycle />
+      <ValuesStrip showDiagram={false} />
+      <DeliveryCycle showDiagram={false} />
       <CtaBand
-        title="Clarity on paper first. Build second."
-        description="Whether the pressure is a new product surface, a rank slide, or office drag, we agree outcomes before code starts."
+        title="Problems first. Technology second."
+        description="We agree what needs to change for your business before we write code, so the fix matches how your team actually works."
       />
     </PageShell>
   );

@@ -57,10 +57,9 @@ export const DIAGRAM_GALLERY_ITEMS = [
 ] as const;
 
 export const PROBLEM_SOLUTION_INTRO = {
-  eyebrow: "Where plans get stuck",
-  headline: "Strong ideas fade when nothing behind them moves at the same speed.",
+  headline: "Your team should be doing quality work, not fighting broken digital systems.",
   subhead:
-    "Visitors arrive but never enquire. Pages go live yet stay invisible in search. Spreadsheets multiply while nobody sees the full picture. Mornings disappear into copy paste work. RS Dev is one small senior crew that builds, ranks, fills the calendar, and wires the back office. You work with the people doing the work.",
+    "We help entrepreneurs and growing companies fix websites, software, search visibility, and messy daily workflows using technology that fits how you operate. You talk to the people who build and support it.",
 } as const;
 
 export const PROBLEM_SOLUTION_BLOCKS = [
@@ -203,23 +202,22 @@ export const MAINTENANCE_CYCLE_STEPS = [
 ] as const;
 
 export const PACKAGED_OFFER = {
-  eyebrow: "Flagship program",
-  title: "Ninety day revenue loop",
+  title: "Ninety day digital fix plan",
   description:
-    "One written plan that covers product, search, enquiries, and back office wiring. Built for owners who want progress they can see in the calendar and in the numbers, not another slide deck.",
+    "One clear plan for product, search, enquiries, and back office tech. Built for owners who want problems solved in the real world, not another deck to sit on a shelf.",
   phases: [
     {
-      weeks: "Weeks 1–4",
+      weeks: "Weeks 1 to 4",
       title: "Product surface",
       detail: "Site or app live with analytics, speed targets, and conversion paths that match your offer.",
     },
     {
-      weeks: "Weeks 5–8",
+      weeks: "Weeks 5 to 8",
       title: "Search and traffic",
       detail: "Technical search fixes, page structure, and paid or organic tests tied to real queries.",
     },
     {
-      weeks: "Weeks 9–12",
+      weeks: "Weeks 9 to 12",
       title: "Pipeline and ops",
       detail: "Forms, sales records, and background routines so follow ups and repeat work shrink.",
     },
