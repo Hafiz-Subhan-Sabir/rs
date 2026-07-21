@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/layout/cta-band";
 import { PageHero } from "@/components/layout/page-hero";
 import { PageShell } from "@/components/layout/page-shell";
+import { CapabilitiesGrid } from "@/components/pages/capabilities-grid";
 import { BusinessPaths } from "@/components/pages/business-paths";
 import { PackagedOffer } from "@/components/pages/packaged-offer";
 import { SITE_SUBTAGLINE } from "@/constants";
@@ -18,12 +19,13 @@ export default function ServicesPage() {
   return (
     <PageShell className="pb-0">
       <PageHero
-        badge="RS Dev"
+        badge="Services"
         title="Technology that solves real company problems."
         description={SITE_SUBTAGLINE}
         primaryCta={{ label: "Describe your problem", href: "/contact" }}
         secondaryCta={{ label: "See our work", href: "/work" }}
       />
+      <CapabilitiesGrid showCta={false} />
       <BusinessPaths />
       <PackagedOffer />
       <div className="pb-20">

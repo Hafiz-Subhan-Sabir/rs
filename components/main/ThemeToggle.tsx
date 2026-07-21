@@ -62,7 +62,7 @@ export function ThemeToggle({ compact = false }: { compact?: boolean }) {
 
   return (
     <div
-      className="flex rounded-full border border-gray-300/80 dark:border-white/10 bg-white/70 dark:bg-white/5 p-0.5 backdrop-blur"
+      className="flex rounded-lg border border-stone-300/80 dark:border-white/10 bg-white/70 dark:bg-white/5 p-0.5 backdrop-blur"
       role="group"
       aria-label="Theme"
       title={
@@ -76,12 +76,12 @@ export function ThemeToggle({ compact = false }: { compact?: boolean }) {
           key={id}
           type="button"
           onClick={() => pickMode(id)}
-          className={`rounded-full ${btnBase} font-medium transition inline-flex items-center justify-center gap-1.5 ${
+          className={`rounded-md ${btnBase} font-medium transition inline-flex items-center justify-center gap-1.5 ${
             isActive(id)
               ? id === 'dark'
                 ? 'brand-button shadow'
-                : 'bg-white text-gray-900 shadow dark:bg-white/90'
-              : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+                : 'bg-white text-stone-900 shadow dark:bg-white/90'
+              : 'text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-white'
           }`}
           aria-pressed={isActive(id)}
           aria-label={label}

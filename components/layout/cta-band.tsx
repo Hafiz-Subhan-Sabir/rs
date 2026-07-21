@@ -2,7 +2,6 @@
 
 import { FastLink } from "@/components/navigation/fast-link";
 import { MotionIn } from "@/components/motion/MotionIn";
-import { neonCardClass } from "@/lib/neon-card";
 
 type CtaBandProps = {
   title?: string;
@@ -25,26 +24,29 @@ export function CtaBand({
     <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 mt-12 md:mt-16 pb-16 md:pb-24">
       <MotionIn>
         <div
-          className={neonCardClass("neon-green", "relative overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-white/90 via-emerald-50/40 to-cyan-50/50 p-10 sm:p-12 lg:p-14 dark:border-white/10 dark:from-[#0f0b1f]/95 dark:via-[#0a1620]/80 dark:to-[#06222a]/70")}
+          className="relative overflow-hidden rounded-2xl border border-stone-200/90 bg-gradient-to-br from-white via-stone-50 to-orange-50/50 p-10 sm:p-12 lg:p-14 dark:border-white/10 dark:from-stone-900 dark:via-[#1c1917] dark:to-orange-950/25"
           data-reveal="fade-up"
         >
-          <div className="pointer-events-none absolute inset-0 ai-scanline opacity-40" />
-          <h2 className="relative text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 dark:text-white max-w-2xl">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
+          <p className="relative text-xs font-semibold uppercase tracking-[0.22em] text-accent mb-3">
+            Get in touch
+          </p>
+          <h2 className="relative font-display text-2xl sm:text-3xl lg:text-4xl font-semibold text-stone-900 dark:text-white max-w-2xl">
             {title}
           </h2>
-          <p className="relative mt-4 max-w-2xl text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300">
+          <p className="relative mt-4 max-w-2xl text-sm sm:text-base lg:text-lg text-stone-600 dark:text-stone-300 leading-relaxed">
             {description}
           </p>
           <div className="relative mt-8 flex flex-wrap gap-3">
             <FastLink
               href={primaryHref}
-              className="btn-cta-float inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold brand-button"
+              className="btn-cta-float inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold brand-button"
             >
               {primaryLabel}
             </FastLink>
             <FastLink
               href={secondaryHref}
-              className="btn-outline-cta btn-outline-cta-float inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold border border-gray-300 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10"
+              className="btn-outline-cta inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold border border-stone-300 bg-white/80 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10"
             >
               {secondaryLabel}
             </FastLink>

@@ -18,7 +18,7 @@ export default function WorkPage() {
       <PageHero
         badge="Portfolio"
         title="Builds framed by the business outcome, not the repo link."
-        description="Selected work across retail, operations, security, and automation. Each card describes what was stuck and what changed. Contact us for detail on a similar build."
+        description="Live deployed sites — stores, tools, and website chat helpers. Open any build in a new tab, or contact us for something similar."
         primaryCta={{ label: "Describe your situation", href: "/contact" }}
         secondaryCta={{ label: "Our services", href: "/services" }}
       />

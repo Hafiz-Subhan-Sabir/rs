@@ -64,7 +64,7 @@ export default function OpenGraphImage() {
               fontFamily: "Arial, sans-serif",
             }}
           >
-            Sites, bespoke tools, search, assistants, and campaign advice
+            Sites, bespoke tools, search, and campaign advice
           </div>
 
           <div style={{ fontSize: 22, color: "#555555", fontFamily: "Arial, sans-serif" }}>

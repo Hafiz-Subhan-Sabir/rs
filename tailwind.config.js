@@ -9,33 +9,26 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
       },
       colors: {
-        jet: 'hsl(0, 0%, 22%)',
-        onyx: 'hsl(240, 1%, 17%)',
-        'eerie-black-1': 'hsl(240, 2%, 13%)',
-        'eerie-black-2': 'hsl(240, 2%, 12%)',
-        'smoky-black': 'hsl(0, 0%, 7%)',
-        'orange-yellow': 'hsl(45, 100%, 72%)',
-        'vegas-gold': 'hsl(45, 54%, 58%)',
-        'light-gray': 'hsl(0, 0%, 84%)',
-        'light-gray-70': 'hsla(0, 0%, 84%, 0.7)',
-        /* Light mode surface/text */
-        'surface': 'hsl(0, 0%, 98%)',
-        'surface-card': 'hsl(0, 0%, 100%)',
-        'surface-muted': 'hsl(0, 0%, 96%)',
-        'text-primary': 'hsl(0, 0%, 9%)',
-        'text-muted': 'hsl(0, 0%, 35%)',
-        'border-light': 'hsl(0, 0%, 90%)',
+        accent: {
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          soft: 'rgb(var(--accent-soft) / <alpha-value>)',
+        },
+        ink: 'rgb(var(--ink) / <alpha-value>)',
+        brand: {
+          copper: '#C2410C',
+          ember: '#EA580C',
+          charcoal: '#1C1917',
+          stone: '#FAF9F7',
+        },
       },
       boxShadow: {
-        'vcard-1': '-4px 8px 24px hsla(0, 0%, 0%, 0.25)',
-        'vcard-2': '0 16px 30px hsla(0, 0%, 0%, 0.25)',
-        'vcard-5': '0 24px 80px hsla(0, 0%, 0%, 0.25)',
-      },
-      backgroundImage: {
-        'gradient-yellow': 'linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%))',
+        soft: '0 8px 28px rgba(28, 25, 23, 0.06)',
+        'soft-lg': '0 16px 48px rgba(28, 25, 23, 0.08)',
+        brand: '0 8px 28px rgba(194, 65, 12, 0.22)',
       },
     },
   },

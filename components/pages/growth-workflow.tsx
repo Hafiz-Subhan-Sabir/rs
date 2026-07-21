@@ -1,109 +1,42 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
-import { DiagramSlot } from "@/components/ui/diagram-slot";
 import { SectionHeader } from "@/components/ui/section-header";
-import { DIAGRAM_SLOTS, GROWTH_WORKFLOW_STEPS } from "@/constants/content";
-import { neonCardClass } from "@/lib/neon-card";
-import { cn } from "@/lib/utils";
+import { GROWTH_WORKFLOW_STEPS } from "@/constants/content";
 
 export function GrowthWorkflow() {
-  const [openId, setOpenId] = useState<string>(GROWTH_WORKFLOW_STEPS[0].id);
-
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
       <SectionHeader
-        title="Six beats from live site to sales calls worth taking."
-        description="Each beat targets one leak. Open a step to see the block, the fix, and the proof we hand over."
+        eyebrow="Growth workflow"
+        title="From discovery to compounding results"
+        description="A clear sequence so marketing and product work reinforce each other instead of competing for attention."
         align="center"
       />
 
-      <DiagramSlot
-        variant="inline"
-        size="large"
-        className="mb-12 max-w-6xl mx-auto"
-        imagePath={DIAGRAM_SLOTS.growthFunnel.file}
-        title={DIAGRAM_SLOTS.growthFunnel.title}
-      />
-
-      <div className="max-w-3xl mx-auto space-y-2">
-        {GROWTH_WORKFLOW_STEPS.map((item, index) => {
-          const isOpen = openId === item.id;
-          const isLast = index === GROWTH_WORKFLOW_STEPS.length - 1;
-          return (
-            <div key={item.id} className="relative">
-              {!isLast ? (
-                <div className="absolute left-[1.65rem] top-14 bottom-0 w-px bg-gradient-to-b from-emerald-400/50 to-cyan-400/20" />
-              ) : null}
-              <button
-                type="button"
-                onClick={() => setOpenId(isOpen ? "" : item.id)}
-                className={cn(
-                  neonCardClass(index, "relative z-10 flex w-full items-start gap-4 rounded-2xl border px-4 py-4 sm:px-5 text-left transition"),
-                  isOpen
-                    ? "bg-white dark:bg-white/[0.06]"
-                    : "border-gray-200/80 bg-white/70 hover:bg-white dark:border-white/10 dark:bg-white/[0.03]",
-                )}
-              >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/10 text-sm font-bold text-emerald-700 dark:text-cyan-300">
-                  {item.step}
-                </span>
-                <div className="min-w-0 flex-1 pt-0.5">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-base font-semibold text-gray-900 dark:text-white">{item.title}</h3>
-                    <ChevronDownIcon
-                      className={`h-5 w-5 shrink-0 text-gray-500 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                    />
-                  </div>
-                </div>
-              </button>
-
-              <AnimatePresence initial={false}>
-                {isOpen ? (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-                    className="overflow-hidden"
-                  >
-                    <div className={neonCardClass(index, "ml-0 sm:ml-16 mt-2 mb-4 rounded-xl border border-gray-200/70 bg-gray-50/90 p-5 dark:border-white/10 dark:bg-white/[0.03]")}>
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-[10px] font-bold uppercase tracking-wider text-rose-600/90 dark:text-rose-400/80">
-                            The block
-                          </p>
-                          <p className="mt-1.5 text-sm text-gray-700 dark:text-gray-300">{item.problem}</p>
-                        </div>
-                        <div>
-                          <p className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-cyan-400">
-                            The fix
-                          </p>
-                          <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">{item.solution}</p>
-                        </div>
-                      </div>
-                      <p className="mt-4 text-[10px] font-bold uppercase tracking-wider text-gray-500">You get</p>
-                      <ul className="mt-2 flex flex-wrap gap-2">
-                        {item.deliverables.map((d) => (
-                          <li
-                            key={d}
-                            className="rounded-md bg-white px-2.5 py-1 text-xs font-medium text-gray-700 ring-1 ring-gray-200/80 dark:bg-white/5 dark:text-gray-300 dark:ring-white/10"
-                          >
-                            {d}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </motion.div>
-                ) : null}
-              </AnimatePresence>
-            </div>
-          );
-        })}
-      </div>
+      <ol className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2">
+        {GROWTH_WORKFLOW_STEPS.map((step, i) => (
+          <motion.li
+            key={step.id}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: i * 0.06, duration: 0.4 }}
+            className="rounded-xl border border-stone-200/90 bg-white p-5 dark:border-white/10 dark:bg-white/[0.03]"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">
+              {step.step}
+            </p>
+            <h3 className="mt-2 font-display text-base font-semibold text-stone-900 dark:text-white">
+              {step.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+              {step.solution}
+            </p>
+          </motion.li>
+        ))}
+      </ol>
     </section>
   );
 }

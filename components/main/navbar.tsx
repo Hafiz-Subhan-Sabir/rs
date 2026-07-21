@@ -23,34 +23,37 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        "w-full fixed top-0 left-0 right-0 z-50 border-b border-gray-200/60 dark:border-white/[0.08]",
-        "bg-white/80 dark:bg-[#0c0b12]/85 backdrop-blur-2xl shadow-[0_4px_24px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_32px_rgba(0,0,0,0.45)]",
+        "w-full fixed top-0 left-0 right-0 z-50 border-b border-stone-200/80 dark:border-white/[0.07]",
+        "bg-white/90 dark:bg-[#1c1917]/90 backdrop-blur-xl",
         NAVBAR_H
       )}
     >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-10">
         <FastLink
           href="/"
-          className="group flex shrink-0 items-center rounded-2xl p-1 transition hover:opacity-90"
+          className="group flex shrink-0 items-center gap-3 rounded-xl p-1 transition hover:opacity-90"
           onClick={() => setIsMobileMenuOpen(false)}
           aria-label="Home"
         >
           <Image
             src="/rs-dev-logo.png"
             alt="RS Dev"
-            width={56}
-            height={56}
+            width={48}
+            height={48}
             draggable={false}
             priority
-            className="h-12 w-12 sm:h-14 sm:w-14 object-contain rounded-xl bg-white p-1 shadow-sm ring-1 ring-gray-200/80 dark:ring-white/15 transition group-hover:scale-[1.03]"
+            className="h-11 w-11 sm:h-12 sm:w-12 object-contain rounded-lg bg-white p-1 ring-1 ring-stone-200/80 dark:ring-white/10"
           />
+          <span className="hidden sm:block font-display text-lg font-semibold tracking-tight text-stone-900 dark:text-white">
+            RS <span className="text-accent">Dev</span>
+          </span>
         </FastLink>
 
         <nav
           className="hidden lg:flex flex-1 max-w-2xl items-center justify-center"
           aria-label="Main"
         >
-          <div className="flex items-center gap-1 rounded-full border border-gray-200/80 bg-white/60 px-2 py-1.5 dark:border-white/10 dark:bg-white/[0.04]">
+          <div className="flex items-center gap-0.5">
             {NAV_LINKS.map((link) => {
               const active = isActive(pathname, link.link);
               return (
@@ -58,10 +61,10 @@ export const Navbar = () => {
                   key={link.title}
                   href={link.link}
                   className={cn(
-                    "rounded-full px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition",
+                    "rounded-lg px-3.5 py-2 text-[13px] font-medium transition",
                     active
-                      ? "brand-button shadow-md shadow-emerald-500/25"
-                      : "text-gray-600 hover:bg-gray-100/80 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-white"
+                      ? "text-accent bg-orange-50 dark:bg-orange-950/40"
+                      : "text-stone-600 hover:text-stone-900 hover:bg-stone-100/80 dark:text-stone-300 dark:hover:text-white dark:hover:bg-white/5"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -74,13 +77,19 @@ export const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <ThemeToggle compact />
+          <FastLink
+            href="/contact"
+            className="brand-button inline-flex items-center rounded-lg px-4 py-2.5 text-sm font-semibold"
+          >
+            Let&apos;s talk
+          </FastLink>
         </div>
 
         <div className="flex md:hidden items-center gap-2 shrink-0">
           <ThemeToggle compact />
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-xl border border-gray-200/80 bg-white/70 text-lg leading-none text-gray-800 dark:border-white/10 dark:bg-white/5 dark:text-white"
+            className="grid h-10 w-10 place-items-center rounded-lg border border-stone-200/80 bg-white/70 text-lg leading-none text-stone-800 dark:border-white/10 dark:bg-white/5 dark:text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle menu"
@@ -93,7 +102,7 @@ export const Navbar = () => {
       {isMobileMenuOpen ? (
         <nav
           className={cn(
-            "absolute left-0 right-0 top-[80px] border-b border-gray-200 bg-white/95 p-5 backdrop-blur-xl dark:border-white/10 dark:bg-[#0c0b12]/95 md:hidden",
+            "absolute left-0 right-0 top-[80px] border-b border-stone-200 bg-white/95 p-5 backdrop-blur-xl dark:border-white/10 dark:bg-[#1c1917]/95 md:hidden",
             "flex flex-col gap-1"
           )}
           aria-label="Mobile"
@@ -105,10 +114,10 @@ export const Navbar = () => {
                 key={link.title}
                 href={link.link}
                 className={cn(
-                  "rounded-xl px-4 py-3 text-sm font-medium transition",
+                  "rounded-lg px-4 py-3 text-sm font-medium transition",
                   active
-                    ? "brand-button shadow-md shadow-emerald-500/25"
-                    : "text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5"
+                    ? "brand-button"
+                    : "text-stone-700 hover:bg-stone-50 dark:text-stone-200 dark:hover:bg-white/5"
                 )}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -116,6 +125,13 @@ export const Navbar = () => {
               </FastLink>
             );
           })}
+          <FastLink
+            href="/contact"
+            className="brand-button mt-2 rounded-lg px-4 py-3 text-center text-sm font-semibold"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Let&apos;s talk
+          </FastLink>
         </nav>
       ) : null}
     </header>

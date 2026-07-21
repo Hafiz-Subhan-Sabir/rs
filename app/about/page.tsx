@@ -19,16 +19,16 @@ export default function AboutPage() {
   return (
     <PageShell>
       <PageHero
-        badge="Who we are"
+        badge="About RS Dev"
         title="We solve digital problems so companies can focus on what they do best."
-        description="RS Dev is a small senior team. Entrepreneurs come to us when websites, software, search, or daily tech drag gets in the way of quality work, and they want it fixed properly."
+        description="RS Dev is a small studio. Entrepreneurs come to us when websites, software, search, or daily tech drag gets in the way of quality work — and they want it fixed properly."
         primaryCta={{ label: "Describe your problem", href: "/contact" }}
         secondaryCta={{ label: "See our services", href: "/services" }}
       />
       <FounderSection />
       <DeliverySnapshots />
-      <ValuesStrip showDiagram={false} />
-      <DeliveryCycle showDiagram={false} />
+      <ValuesStrip />
+      <DeliveryCycle />
       <CtaBand
         title="Problems first. Technology second."
         description="We agree what needs to change for your business before we write code, so the fix matches how your team actually works."

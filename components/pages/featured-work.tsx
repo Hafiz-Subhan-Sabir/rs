@@ -8,30 +8,30 @@ import { PROJECTS } from "@/constants";
 import { MotionIn } from "@/components/motion/MotionIn";
 
 export function FeaturedWork() {
-  const featured = PROJECTS.filter((p) => p.featured).slice(0, 4);
+  const featured = PROJECTS.filter((p) => p.featured).slice(0, 3);
 
   return (
-    <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-16 md:py-24 bg-gray-50/80 dark:bg-white/[0.02]">
+    <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
       <MotionIn>
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-600 dark:text-cyan-400/90">
-              Outcome focused
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+              Live work
             </p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              Featured <span className="brand-gradient-text">delivery work</span>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold tracking-tight text-stone-900 dark:text-white">
+              Sites you can open today
             </h2>
           </div>
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 self-start rounded-full border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold transition hover:border-emerald-400/50 dark:border-white/10 dark:bg-white/5 dark:hover:text-cyan-300"
+            className="btn-outline-cta inline-flex items-center gap-2 self-start rounded-lg border border-stone-200 bg-white px-5 py-2.5 text-sm font-semibold transition dark:border-white/10 dark:bg-white/5"
           >
-            Full portfolio <span aria-hidden>→</span>
+            All live projects <span aria-hidden>→</span>
           </Link>
         </div>
       </MotionIn>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {featured.map((project, i) => (
           <motion.article
             key={project.title}
@@ -39,7 +39,7 @@ export function FeaturedWork() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-            className="group overflow-hidden rounded-2xl border border-gray-200/90 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+            className="group overflow-hidden rounded-xl border border-stone-200/90 bg-white dark:border-white/10 dark:bg-white/[0.03]"
           >
             <div className="image-hover-wrap relative aspect-[16/10] overflow-hidden">
               <Image
@@ -47,24 +47,31 @@ export function FeaturedWork() {
                 alt={project.title}
                 fill
                 className="image-hover-scale object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-                <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-                <p className="mt-1 text-xs text-white/75 line-clamp-1">{project.category}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-orange-200">
+                  {project.category}
+                </p>
+                <h3 className="mt-1 font-display text-lg font-semibold text-white">{project.title}</h3>
               </div>
             </div>
-            <div className="p-5 sm:p-6">
-              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">
+            <div className="p-5">
+              <p className="text-sm text-stone-600 dark:text-stone-400 line-clamp-2 leading-relaxed">
                 {project.description}
               </p>
-              <Link
-                href={project.link}
-                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-emerald-600 dark:text-cyan-300"
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent"
               >
-                Ask about a similar build <span className="transition group-hover:translate-x-0.5" aria-hidden>→</span>
-              </Link>
+                Visit live site{" "}
+                <span className="transition group-hover:translate-x-0.5" aria-hidden>
+                  →
+                </span>
+              </a>
             </div>
           </motion.article>
         ))}

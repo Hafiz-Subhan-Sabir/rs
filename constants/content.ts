@@ -120,8 +120,8 @@ export const BUSINESS_PATHS = [
     problem:
       "Data entry, reminders, exports, and sign offs eat the calendar. Big goals keep sliding to next month.",
     solution:
-      "Mapped routines and smart assistants that run quietly, alert a human when judgment matters, and leave a trail you can audit.",
-    outcomes: ["Process maps", "Background routines", "Smart assistants", "Live status views"],
+      "Mapped routines that run quietly, alert a person when judgment matters, and leave a trail you can audit.",
+    outcomes: ["Process maps", "Background routines", "Alerts", "Live status views"],
     diagramKey: "automationFlow" as const,
     cta: { label: "Remove the repeat work", href: "/contact?intent=automate" },
   },

@@ -1,25 +1,25 @@
 import { CtaBand } from "@/components/layout/cta-band";
 import { ClientTestimonials } from "@/components/pages/client-testimonials";
 import { BusinessPaths } from "@/components/pages/business-paths";
+import { CapabilitiesGrid } from "@/components/pages/capabilities-grid";
 import { DeliveryCycle } from "@/components/pages/delivery-cycle";
-import { DeliverySnapshots } from "@/components/pages/delivery-snapshots";
 import { TechMarquee } from "@/components/pages/brand-marquee";
+import { FeaturedWork } from "@/components/pages/featured-work";
 import { HomeHero } from "@/components/pages/home-hero";
-import { MaintenanceCycle } from "@/components/pages/maintenance-cycle";
+import { ImpactStrip } from "@/components/pages/impact-strip";
 import { PackagedOffer } from "@/components/pages/packaged-offer";
-import { ValuesStrip } from "@/components/pages/values-strip";
 
 export default function Home() {
   return (
     <main className="h-full w-full">
       <HomeHero />
       <TechMarquee />
+      <CapabilitiesGrid />
+      <ImpactStrip />
       <BusinessPaths />
-      <PackagedOffer showDiagram={false} />
       <DeliveryCycle />
-      <DeliverySnapshots />
-      <MaintenanceCycle />
-      <ValuesStrip />
+      <FeaturedWork />
+      <PackagedOffer />
       <ClientTestimonials />
       <CtaBand
         title="Tell us the digital problem. We will show you the tech fix."

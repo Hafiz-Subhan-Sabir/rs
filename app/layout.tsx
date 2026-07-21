@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Syne } from "next/font/google";
 import type { PropsWithChildren } from "react";
 
 import { Footer } from "@/components/main/footer";
@@ -15,12 +15,22 @@ import { themeInitScript } from "@/lib/theme";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#030014" },
+    { media: "(prefers-color-scheme: light)", color: "#faf9f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c1917" },
   ],
 };
 
@@ -39,9 +49,8 @@ const organizationSchema = {
     "Custom software",
     "Search engine optimization",
     "CRM and pipeline setup",
-    "AI agents and workflow automation",
     "Digital marketing",
-    "Revenue operations",
+    "Software consulting",
   ],
 };
 const websiteSchema = {
@@ -67,8 +76,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
       </head>
       <body
         className={cn(
-          "min-h-screen flex flex-col bg-gray-50 text-gray-900 dark:bg-[#030014] dark:text-gray-100 overflow-y-scroll overflow-x-clip transition-colors",
-          inter.className
+          "min-h-screen flex flex-col bg-stone-50 text-stone-900 dark:bg-[#1c1917] dark:text-stone-100 overflow-y-scroll overflow-x-clip transition-colors font-sans",
+          plusJakarta.variable,
+          syne.variable,
+          plusJakarta.className
         )}
       >
         <ThemeProvider>

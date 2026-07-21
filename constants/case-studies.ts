@@ -49,5 +49,5 @@ export const FOUNDER_NOTE = {
   name: "Hafiz Subhan",
   role: "Founder, RS Dev",
   credentials: "BS Information Engineering Technology",
-  bio: "I lead RS Dev as a small senior crew. We solve digital problems with technology so entrepreneurs and their teams can focus on quality work, not broken websites, messy software, or repeat admin.",
+  bio: "I run RS Dev as a small, hands-on studio. Clients come to me when a website, tool, or daily workflow is getting in the way — and they want it fixed properly by someone they can actually talk to.",
 } as const;

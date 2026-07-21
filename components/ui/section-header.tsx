@@ -20,17 +20,17 @@ export function SectionHeader({
     <MotionIn>
       <header className={`mb-10 md:mb-14 ${alignClass}`}>
         {eyebrow ? (
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-600 dark:text-cyan-400/90">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
             {eyebrow}
           </p>
         ) : null}
         <h2
-          className={`${eyebrow ? "mt-3" : ""} text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold tracking-tight text-gray-900 dark:text-white leading-[1.1] ${maxW}`}
+          className={`${eyebrow ? "mt-3" : ""} font-display text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold tracking-tight text-stone-900 dark:text-white leading-[1.1] ${maxW}`}
         >
           {title}
         </h2>
         {description ? (
-          <p className={`mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed ${maxW}`}>
+          <p className={`mt-4 text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed ${maxW}`}>
             {description}
           </p>
         ) : null}

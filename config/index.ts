@@ -20,8 +20,8 @@ export const siteConfig: Metadata = {
     "custom software",
     "SEO services",
     "CRM implementation",
-    "workflow automation",
     "digital marketing",
+    "web consulting",
   ] as string[],
   authors: {
     name: "RS Dev",

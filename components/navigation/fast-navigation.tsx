@@ -84,7 +84,7 @@ export function FastNavigation() {
   return (
     <div
       aria-hidden
-      className="route-progress pointer-events-none fixed inset-x-0 top-0 z-[60] h-[2px] origin-left scale-x-0 bg-gradient-to-r from-emerald-500 via-cyan-400 to-emerald-400 opacity-0"
+      className="route-progress pointer-events-none fixed inset-x-0 top-0 z-[60] h-[2px] origin-left scale-x-0 bg-accent opacity-0"
     />
   );
 }

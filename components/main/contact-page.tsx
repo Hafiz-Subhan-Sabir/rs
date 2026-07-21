@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 import { CONTACT_EMAIL, PROJECTS } from '@/constants';
 import { MotionIn } from '@/components/motion/MotionIn';
 import { API_BASE_URL, apiUrl } from '@/lib/api';
-import { neonCardClass } from '@/lib/neon-card';
 
 const CONTACT_REQUEST_TIMEOUT_MS = 70000;
 const BACKEND_WARMUP_TIMEOUT_MS = 20000;
@@ -74,7 +73,8 @@ export function ContactPage() {
   const messageTemplates = useMemo(
     () => [
       'We need a business site with sales hooks and room to grow in search.',
-      'Looking for bespoke software or background routines tied to tools we already use.',
+      'Looking for bespoke software or CRM links tied to tools we already use.',
+      'We want a custom chat helper on our website for FAQs and lead capture.',
       'Want advice on search, campaigns, and what to tackle first in the next ninety days.',
     ],
     []
@@ -225,17 +225,17 @@ export function ContactPage() {
       <section className="relative overflow-hidden pt-[96px] pb-16 min-h-[calc(100vh-80px)]">
         {/* background glow */}
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl dark:bg-emerald-400/10" />
-          <div className="absolute top-44 right-[-120px] h-[420px] w-[420px] rounded-full bg-cyan-400/20 blur-3xl dark:bg-cyan-400/10" />
+          <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl dark:bg-accent/10" />
+          <div className="absolute top-44 right-[-120px] h-[420px] w-[420px] rounded-full bg-accent-soft/10 blur-3xl dark:bg-accent/6" />
         </div>
 
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
           <MotionIn>
             <div className="flex flex-col gap-4">
-              <h1 className="hero-headline capitalize text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h1 className="hero-headline capitalize text-4xl sm:text-5xl font-bold tracking-tight text-stone-900 dark:text-white">
                 Tell us the digital problem your company is facing.
               </h1>
-              <p className="max-w-2xl text-base sm:text-lg text-gray-600 dark:text-gray-300">
+              <p className="max-w-2xl text-base sm:text-lg text-stone-600 dark:text-stone-300">
                 We help entrepreneurs fix websites, software, search, and workflow issues with practical technology,
                 so your team can get back to quality work. Share what is broken and when you need it solved. We usually
                 reply within a day.
@@ -245,17 +245,17 @@ export function ContactPage() {
 
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8">
             <MotionIn delay={0.05}>
-              <div className={neonCardClass("neon-green", "rounded-3xl border border-gray-200 bg-white/80 backdrop-blur p-6 sm:p-8 dark:border-white/10 dark:bg-white/5")}>
+              <div className="rounded-xl border border-stone-200 bg-white/80 backdrop-blur p-6 sm:p-8 dark:border-white/10 dark:bg-white/5">
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Send the brief</h2>
-                    <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                    <h2 className="text-xl font-semibold text-stone-900 dark:text-white">Send the brief</h2>
+                    <p className="mt-1 text-sm text-stone-600 dark:text-stone-300">
                       Optional: tag a reference project, then spell out goals and limits.
                     </p>
                   </div>
                   <Link
                     href="/work"
-                    className="text-sm font-semibold text-emerald-600 hover:underline dark:text-cyan-300"
+                    className="text-sm font-semibold text-accent hover:underline dark:text-accent"
                   >
                     View selected work →
                   </Link>
@@ -263,41 +263,41 @@ export function ContactPage() {
 
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <label className="flex flex-col gap-2">
-                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">Your name</span>
+                    <span className="text-sm font-semibold text-stone-700 dark:text-stone-200">Your name</span>
                     <input
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Ali Khan"
-                      className="h-11 rounded-xl border border-gray-200 bg-white px-4 text-gray-900 outline-none ring-0 focus:border-violet-400 dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-cyan-400"
+                      className="h-11 rounded-xl border border-stone-200 bg-white px-4 text-stone-900 outline-none ring-0 focus:border-accent dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-accent"
                     />
                   </label>
                   <label className="flex flex-col gap-2">
-                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">Your email</span>
+                    <span className="text-sm font-semibold text-stone-700 dark:text-stone-200">Your email</span>
                     <input
                       value={fromEmail}
                       onChange={(e) => setFromEmail(e.target.value)}
                       placeholder="e.g. you@email.com"
                       inputMode="email"
-                      className="h-11 rounded-xl border border-gray-200 bg-white px-4 text-gray-900 outline-none ring-0 focus:border-violet-400 dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-cyan-400"
+                      className="h-11 rounded-xl border border-stone-200 bg-white px-4 text-stone-900 outline-none ring-0 focus:border-accent dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-accent"
                     />
                   </label>
                   <label className="flex flex-col gap-2 sm:col-span-2">
-                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">Project</span>
+                    <span className="text-sm font-semibold text-stone-700 dark:text-stone-200">Project</span>
                     <div ref={projectMenuRef} className="relative">
                       <button
                         type="button"
                         onClick={() => setProjectMenuOpen((v) => !v)}
-                        className="h-11 w-full rounded-xl border border-gray-200 bg-white px-4 text-left text-gray-900 outline-none ring-0 transition focus:border-violet-400 dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-cyan-400"
+                        className="h-11 w-full rounded-xl border border-stone-200 bg-white px-4 text-left text-stone-900 outline-none ring-0 transition focus:border-accent dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-accent"
                       >
                         <span className="truncate block pr-6">{project}</span>
-                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500 dark:text-gray-300">▼</span>
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-500 dark:text-stone-300">▼</span>
                       </button>
                       {projectMenuOpen ? (
                         <motion.div
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.16, ease: 'easeOut' }}
-                          className="absolute z-20 mt-2 w-full max-h-64 overflow-auto rounded-xl border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#110a22]"
+                          className="absolute z-20 mt-2 w-full max-h-64 overflow-auto rounded-xl border border-stone-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#110a22]"
                         >
                           {projectOptions.map((p) => {
                             const isActive = p === project;
@@ -311,8 +311,8 @@ export function ContactPage() {
                                 }}
                                 className={`w-full px-4 py-2.5 text-left text-sm transition ${
                                   isActive
-                                    ? 'bg-emerald-500/15 text-emerald-700 dark:text-cyan-200'
-                                    : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-white/10'
+                                    ? 'bg-accent/15 text-accent dark:text-accent'
+                                    : 'text-stone-700 hover:bg-stone-100 dark:text-stone-200 dark:hover:bg-white/10'
                                 }`}
                               >
                                 {p}
@@ -324,13 +324,13 @@ export function ContactPage() {
                     </div>
                   </label>
                   <label className="flex flex-col gap-2 sm:col-span-2">
-                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">Message</span>
+                    <span className="text-sm font-semibold text-stone-700 dark:text-stone-200">Message</span>
                     <textarea
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Outcome for the next thirty to ninety days, budget band, site URL, sales tool name, search goal, links to designs or staging."
                       rows={6}
-                      className="resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none ring-0 focus:border-violet-400 dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-cyan-400"
+                      className="resize-none rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-900 outline-none ring-0 focus:border-accent dark:border-white/10 dark:bg-black/20 dark:text-white dark:focus:border-accent"
                     />
                     <div className="flex flex-wrap gap-2">
                       {messageTemplates.map((template) => (
@@ -338,7 +338,7 @@ export function ContactPage() {
                           key={template}
                           type="button"
                           onClick={() => setMessage(template)}
-                          className="rounded-full border border-emerald-400/35 px-3 py-1 text-xs font-semibold text-emerald-700 hover:bg-emerald-500/10 dark:border-cyan-400/35 dark:text-cyan-200 dark:hover:bg-cyan-400/10"
+                          className="rounded-lg border border-accent/35 px-3 py-1 text-xs font-semibold text-accent hover:bg-accent/10 dark:border-accent/35 dark:text-accent dark:hover:bg-accent/10"
                         >
                           Use template
                         </button>
@@ -352,13 +352,13 @@ export function ContactPage() {
                     type="button"
                     onClick={handleSubmit}
                     disabled={submitting}
-                    className="btn-cta-float inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold brand-button disabled:opacity-70 disabled:animate-none"
+                    className="btn-cta-float inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold brand-button disabled:opacity-70 disabled:animate-none"
                   >
                     {submitting ? 'Sending...' : 'Send message'}
                   </button>
                   <a
                     href={mailto}
-                    className="inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold border border-gray-300 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 transition"
+                    className="inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold border border-stone-300 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 transition"
                   >
                     Open email app
                   </a>
@@ -373,7 +373,7 @@ export function ContactPage() {
                         setCopied(false);
                       }
                     }}
-                    className="inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold border border-gray-300 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 transition"
+                    className="inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold border border-stone-300 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 transition"
                   >
                     {copied ? 'Copied!' : 'Copy email'}
                   </button>
@@ -382,7 +382,7 @@ export function ContactPage() {
                   <div
                     className={`mt-4 rounded-xl px-4 py-3 text-sm ${
                       submitState === 'success'
-                        ? 'border border-emerald-400/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300'
+                        ? 'border border-accent/40 bg-accent/10 text-accent dark:text-accent'
                         : 'border border-rose-400/40 bg-rose-500/10 text-rose-700 dark:text-rose-300'
                     }`}
                   >
@@ -390,35 +390,35 @@ export function ContactPage() {
                   </div>
                 ) : null}
 
-                <div className="mt-6 rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-600 dark:border-white/10 dark:bg-white/5 dark:text-gray-300">
+                <div className="mt-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm text-stone-600 dark:border-white/10 dark:bg-white/5 dark:text-stone-300">
                   Tip: if your email app doesn’t open, just copy my email and send a message directly.
                 </div>
               </div>
             </MotionIn>
 
             <MotionIn delay={0.1}>
-              <div className={neonCardClass("neon-blue", "rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 dark:border-white/10 dark:bg-white/5")}>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Direct email</h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+              <div className="rounded-xl border border-stone-200 bg-white/70 backdrop-blur p-6 dark:border-white/10 dark:bg-white/5">
+                <h3 className="text-lg font-semibold text-stone-900 dark:text-white">Direct email</h3>
+                <p className="mt-1 text-sm text-stone-600 dark:text-stone-300">
                   Prefer email over the form? Write anytime.
                 </p>
 
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className={neonCardClass("neon-purple", "mt-5 flex items-center justify-between rounded-2xl border border-gray-200 bg-white/70 px-4 py-3 hover:bg-white transition dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10")}
+                  className="mt-5 flex items-center justify-between rounded-xl border border-stone-200 bg-white/70 px-4 py-3 hover:bg-white transition dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
                 >
-                  <span className="text-sm font-semibold text-gray-900 dark:text-white break-all">{CONTACT_EMAIL}</span>
-                  <span className="text-sm text-gray-500 shrink-0 ml-2 dark:text-gray-400">Open →</span>
+                  <span className="text-sm font-semibold text-stone-900 dark:text-white break-all">{CONTACT_EMAIL}</span>
+                  <span className="text-sm text-stone-500 shrink-0 ml-2 dark:text-stone-400">Open →</span>
                 </a>
 
                 <motion.div
-                  className={neonCardClass("neon-orange", "mt-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 p-4 dark:border-white/10")}
+                  className="mt-6 rounded-xl border border-stone-200 bg-gradient-to-r from-accent/10 to-accent/5 p-4 dark:border-white/10"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
                 >
-                  <div className="text-sm font-semibold text-gray-900 dark:text-white">Response time</div>
-                  <div className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="text-sm font-semibold text-stone-900 dark:text-white">Response time</div>
+                  <div className="mt-1 text-sm text-stone-600 dark:text-stone-300">
                     Usually within 24 hours.
                   </div>
                 </motion.div>
@@ -444,17 +444,17 @@ export function ContactPage() {
             ].map((item, i) => (
               <div
                 key={item.title}
-                className={neonCardClass(i, "rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5")}
+                className="rounded-xl border border-stone-200 bg-white/70 backdrop-blur p-6 transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5"
               >
-                <div className="text-sm font-semibold brand-gradient-text">{item.title}</div>
-                <div className="mt-2 text-sm text-gray-600 dark:text-gray-300">{item.text}</div>
+                <div className="text-sm font-semibold text-accent font-display">{item.title}</div>
+                <div className="mt-2 text-sm text-stone-600 dark:text-stone-300">{item.text}</div>
               </div>
             ))}
           </div>
 
           <div className="mt-10">
-            <div className={neonCardClass("neon-blue", "rounded-3xl border border-gray-200 bg-white/70 backdrop-blur p-6 sm:p-8 dark:border-white/10 dark:bg-white/5")}>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Quick FAQ</h3>
+            <div className="rounded-xl border border-stone-200 bg-white/70 backdrop-blur p-6 sm:p-8 dark:border-white/10 dark:bg-white/5">
+              <h3 className="text-xl font-semibold text-stone-900 dark:text-white">Quick FAQ</h3>
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   {
@@ -476,10 +476,10 @@ export function ContactPage() {
                 ].map((f, i) => (
                   <div
                     key={f.q}
-                    className={neonCardClass(i + 1, "rounded-2xl border border-gray-200 bg-white/70 p-5 transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5")}
+                    className="rounded-xl border border-stone-200 bg-white/70 p-5 transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5"
                   >
-                    <div className="text-sm font-semibold text-gray-900 dark:text-white">{f.q}</div>
-                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-300">{f.a}</div>
+                    <div className="text-sm font-semibold text-stone-900 dark:text-white">{f.q}</div>
+                    <div className="mt-2 text-sm text-stone-600 dark:text-stone-300">{f.a}</div>
                   </div>
                 ))}
               </div>
