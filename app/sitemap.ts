@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://hafiz-subhan-portfolio.vercel.app";
+const baseUrl = "https://the-rsdev.com";
 
 const routes = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },

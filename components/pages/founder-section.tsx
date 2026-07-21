@@ -42,7 +42,7 @@ export function FounderSection() {
                 {FOUNDER.name}
               </h2>
               <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
-                {FOUNDER.role} · {FOUNDER.credentials}
+                {FOUNDER.role} | {FOUNDER.credentials}
               </p>
               <p className="mt-5 text-base leading-relaxed text-stone-700 dark:text-stone-300">
                 {FOUNDER.bio}

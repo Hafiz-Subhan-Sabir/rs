@@ -48,6 +48,6 @@ export const PROOF_STATS = [
 export const FOUNDER_NOTE = {
   name: "Hafiz Subhan",
   role: "Founder, RS Dev",
-  credentials: "BS Information Engineering Technology",
+  credentials: "Full Stack Engineer",
   bio: "I run RS Dev as a small, hands-on studio. Clients come to me when a website, tool, or daily workflow is getting in the way — and they want it fixed properly by someone they can actually talk to.",
 } as const;

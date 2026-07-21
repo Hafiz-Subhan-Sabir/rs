@@ -1,3 +1,12 @@
+import { useEffect, useState } from "react";
+
+/** Gate motion props until after hydration to avoid SSR/client DOM mismatches. */
+export function useMotionReady() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => setReady(true), []);
+  return ready;
+}
+
 export function slideInFromLeft(delay: number) {
   return {
     hidden: { x: -100, opacity: 0 },

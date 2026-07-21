@@ -1,5 +1,5 @@
 export const siteConfig = {
-  url: 'https://hafiz-subhan-portfolio.vercel.app',
+  url: 'https://the-rsdev.com',
   name: 'RS Dev',
   role:
     'Websites · custom software · CRM · SEO · marketing consultancy',
@@ -48,7 +48,7 @@ export const siteConfig = {
     degree: 'Engineering-led digital delivery',
     period: 'Ongoing',
     description:
-      'Led by Hafiz Subhan (BS Information Engineering Technology) with full-stack and product delivery experience.',
+      'Led by Hafiz Subhan (Founder, RS Dev | Full Stack Engineer) with full-stack and product delivery experience.',
   },
   skills: [
     { name: 'Web & product engineering', percent: 90, level: 'Advanced' },

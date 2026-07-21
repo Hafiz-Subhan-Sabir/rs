@@ -41,8 +41,8 @@ const organizationSchema = {
   name: "RS Dev",
   description:
     "We help entrepreneurs solve digital problems with technology so companies can focus on quality work.",
-  url: "https://hafiz-subhan-portfolio.vercel.app",
-  image: "https://hafiz-subhan-portfolio.vercel.app/rs-dev-logo.png",
+  url: "https://the-rsdev.com",
+  image: "https://the-rsdev.com/rs-dev-logo.png",
   sameAs: [] as string[],
   knowsAbout: [
     "Web application development",
@@ -57,7 +57,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "RS Dev",
-  url: "https://hafiz-subhan-portfolio.vercel.app",
+  url: "https://the-rsdev.com",
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {

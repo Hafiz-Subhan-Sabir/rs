@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FastLink } from "@/components/navigation/fast-link";
 import { motion } from "framer-motion";
+import { useMotionReady } from "@/lib/motion";
 
 const PROBLEM_CHIPS = [
   { label: "Site looks outdated", href: "/contact?intent=brand" },
@@ -12,6 +13,8 @@ const PROBLEM_CHIPS = [
 ] as const;
 
 export function HomeHero() {
+  const motionReady = useMotionReady();
+
   return (
     <section className="relative isolate scroll-mt-24 overflow-hidden min-h-[calc(100svh-80px)]">
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -23,8 +26,8 @@ export function HomeHero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-14 xl:gap-16 items-center">
           <div className="text-center lg:text-left">
             <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={motionReady ? { opacity: 0, y: 12 } : false}
+              animate={motionReady ? { opacity: 1, y: 0 } : undefined}
               transition={{ duration: 0.45 }}
               className="font-display text-sm sm:text-base font-semibold tracking-[0.14em] uppercase text-accent"
             >
@@ -32,8 +35,8 @@ export function HomeHero() {
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={motionReady ? { opacity: 0, y: 18 } : false}
+              animate={motionReady ? { opacity: 1, y: 0 } : undefined}
               transition={{ duration: 0.55, delay: 0.06 }}
               className="mt-4 font-display text-[2.2rem] sm:text-[2.85rem] lg:text-[3.35rem] xl:text-[3.7rem] font-semibold tracking-tight leading-[1.06] text-stone-900 dark:text-white"
             >
@@ -42,8 +45,8 @@ export function HomeHero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={motionReady ? { opacity: 0, y: 16 } : false}
+              animate={motionReady ? { opacity: 1, y: 0 } : undefined}
               transition={{ duration: 0.5, delay: 0.14 }}
               className="mt-6 text-base sm:text-lg text-stone-600 dark:text-stone-300/90 max-w-[540px] mx-auto lg:mx-0 leading-relaxed"
             >
@@ -52,8 +55,8 @@ export function HomeHero() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={motionReady ? { opacity: 0, y: 16 } : false}
+              animate={motionReady ? { opacity: 1, y: 0 } : undefined}
               transition={{ duration: 0.5, delay: 0.22 }}
               className="mt-8"
             >
@@ -64,8 +67,8 @@ export function HomeHero() {
                 {PROBLEM_CHIPS.map((chip, i) => (
                   <motion.div
                     key={chip.label}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={motionReady ? { opacity: 0, y: 10 } : false}
+                    animate={motionReady ? { opacity: 1, y: 0 } : undefined}
                     transition={{ duration: 0.35, delay: 0.28 + i * 0.05 }}
                   >
                     <FastLink
@@ -86,8 +89,8 @@ export function HomeHero() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={motionReady ? { opacity: 0, y: 16 } : false}
+              animate={motionReady ? { opacity: 1, y: 0 } : undefined}
               transition={{ duration: 0.5, delay: 0.42 }}
               className="mt-9 flex flex-wrap justify-center lg:justify-start gap-3"
             >
@@ -107,8 +110,8 @@ export function HomeHero() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={motionReady ? { opacity: 0, x: 20 } : false}
+            animate={motionReady ? { opacity: 1, x: 0 } : undefined}
             transition={{ duration: 0.55, delay: 0.2 }}
             className="relative mx-auto w-full max-w-[420px] lg:max-w-none"
           >
@@ -116,8 +119,8 @@ export function HomeHero() {
             <div className="hero-delivery-panel relative flex flex-col items-center justify-center rounded-2xl border border-stone-200/80 bg-white/95 px-8 py-14 sm:py-16 dark:border-white/[0.1] dark:bg-stone-900/90 overflow-hidden">
               <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-accent via-accent-soft to-amber-400" />
               <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                animate={motionReady ? { y: [0, -6, 0] } : undefined}
+                transition={motionReady ? { duration: 5.5, repeat: Infinity, ease: "easeInOut" } : undefined}
               >
                 <Image
                   src="/rs-dev-logo.png"

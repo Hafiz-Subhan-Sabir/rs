@@ -128,7 +128,7 @@ export const PROJECTS = [
 export const FOUNDER = {
   name: "Hafiz Subhan",
   role: "Founder, RS Dev",
-  credentials: "BS Information Engineering Technology",
+  credentials: "Full Stack Engineer",
   photo: "/founder-hafiz-subhan.png",
   linkedin: "https://www.linkedin.com/in/hafiz-subhan-soft/",
   bio: "I run RS Dev as a small, hands-on studio. Clients come to me when a website, tool, or daily workflow is getting in the way — and they want it fixed properly by someone they can actually talk to.",
@@ -224,7 +224,7 @@ export const NAV_LINKS = [
 
 export const EDUCATION_HIGHLIGHTS = {
   education:
-    "RS Dev is led by Hafiz Subhan (BS Information Engineering Technology). Small crew, senior execution, direct access to the people building your product.",
+    "RS Dev is led by Hafiz Subhan (Founder, RS Dev | Full Stack Engineer). Small crew, senior execution, direct access to the people building your product.",
   technicalSummary:
     "Live websites, custom tools, search fixes, CRM links, and website chat — built and supported by the same people you talk to.",
   soloProjects: "10+ solo products delivered end to end.",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const siteUrl = "https://hafiz-subhan-portfolio.vercel.app";
+const siteUrl = "https://the-rsdev.com";
 
 export const siteConfig: Metadata = {
   metadataBase: new URL(siteUrl),
