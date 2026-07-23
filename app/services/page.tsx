@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 
-import { CtaBand } from "@/components/layout/cta-band";
+import { BookConsultationCta } from "@/components/layout/book-consultation-cta";
 import { PageHero } from "@/components/layout/page-hero";
 import { PageShell } from "@/components/layout/page-shell";
 import { CapabilitiesGrid } from "@/components/pages/capabilities-grid";
 import { BusinessPaths } from "@/components/pages/business-paths";
 import { PackagedOffer } from "@/components/pages/packaged-offer";
+import { PageTestimonials } from "@/components/pages/page-testimonials";
+import { WhyChooseUs } from "@/components/pages/why-choose-us";
 import { SITE_SUBTAGLINE } from "@/constants";
 
 export const metadata: Metadata = {
@@ -26,14 +28,11 @@ export default function ServicesPage() {
         secondaryCta={{ label: "See our work", href: "/work" }}
       />
       <CapabilitiesGrid showCta={false} />
+      <WhyChooseUs />
       <BusinessPaths />
       <PackagedOffer />
-      <div className="pb-20">
-        <CtaBand
-          title="Not sure where to start?"
-          description="Tell us what is broken digitally and we will recommend the right mix of build, search, and workflow tech for your business."
-        />
-      </div>
+      <PageTestimonials />
+      <BookConsultationCta note="Cloud guidance from Daniyal Sheikh when you need scale." />
     </PageShell>
   );
 }

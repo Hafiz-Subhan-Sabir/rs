@@ -37,12 +37,12 @@ export const siteConfig = {
       workingOn: 'Enterprise-level system design for the full operating stack now in active build.',
     },
     {
-      title: 'AI automation & workflow systems',
+      title: 'DevOps & automation systems',
       description:
-        'Agents, transcript pipelines, cross-app filtering, and integrations that cut repeat clicks for ops teams.',
-      expertise: 'AI Automation Expert',
+        'Pipelines, environments, and workflow automation that keep products reliable and teams free of repeat ops work.',
+      expertise: 'DevOps & Automation Expert',
       lead: 'Omar Farooq',
-      workedOn: 'Video Transcript Studio and Filtering from Any App — automation already in use.',
+      workedOn: 'Delivery pipelines and product automations already in live client systems.',
       workingOn: 'New automation lanes tying CRM, SEO ops, and internal tools into one workflow line.',
     },
     {
@@ -64,13 +64,13 @@ export const siteConfig = {
       workingOn: 'SEO foundations and content systems inside the enterprise delivery now underway.',
     },
     {
-      title: 'Consultancy',
+      title: 'Cloud solutions & scale',
       description:
-        'Roadmaps, tool choices, scope, and what to build first — standalone advice or bundled with delivery.',
-      expertise: 'Business Development Expert',
+        'Cloud architecture, hosting, and scale paths — so products stay fast, secure, and ready to grow with demand.',
+      expertise: 'Cloud Solution Expert',
       lead: 'Daniyal Sheikh',
-      workedOn: 'Scoped partnerships, ninety-day plans, and clear delivery paths for growing teams.',
-      workingOn: 'Active advisory on fit, priorities, and phased rollout for new client engagements.',
+      workedOn: 'Cloud setups, environment planning, and delivery paths for growing teams.',
+      workingOn: 'Active cloud advisory on fit, hosting, and phased scale for new client engagements.',
     },
   ],
   education: {

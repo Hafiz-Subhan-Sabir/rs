@@ -16,11 +16,35 @@ html {
   overflow-x: hidden;
   max-width: 100%;
   color-scheme: light dark;
+  /* Fluid root — components use clamp on top of this */
+  font-size: clamp(16px, 0.35vw + 15px, 18.5px);
 }
 
 body {
   overflow-x: hidden;
   max-width: 100%;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* Shared fluid section rhythm */
+.section-pad {
+  padding-block: clamp(2.5rem, 7vw, 6rem);
+}
+
+.fluid-h2 {
+  font-size: clamp(1.65rem, 4.2vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.fluid-body {
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
+  line-height: 1.65;
+}
+
+.fluid-container {
+  width: min(90vw, 1280px);
+  margin-inline: auto;
 }
 
 :root {
@@ -358,12 +382,39 @@ html.dark .crew-member-card {
   transform: translateY(-2px);
 }
 
+@keyframes svc-term-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.svc-line-1 {
+  animation: svc-term-pulse 2.4s ease-in-out infinite;
+}
+.svc-line-2 {
+  animation: svc-term-pulse 2.4s ease-in-out 0.4s infinite;
+}
+.svc-line-3 {
+  animation: svc-term-pulse 2.4s ease-in-out 0.8s infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .crew-member-card:hover,
   .crew-member-card-hot,
   .svc-card:hover,
   .svc-cta:hover {
     transform: none;
+  }
+
+  .svc-line-1,
+  .svc-line-2,
+  .svc-line-3 {
+    animation: none;
+    opacity: 1;
   }
 }
 

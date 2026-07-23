@@ -5,6 +5,7 @@ import type { PropsWithChildren } from "react";
 import { Footer } from "@/components/main/footer";
 import { ChatBot } from "@/components/main/chatbot";
 import { Navbar } from "@/components/main/navbar";
+import { ConsultationPopup } from "@/components/layout/consultation-popup";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/main/ThemeProvider";
 import { FastNavigation } from "@/components/navigation/fast-navigation";
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           <Navbar />
           {children}
           <ChatBot />
+          <ConsultationPopup />
           <Footer />
         </ThemeProvider>
       </body>

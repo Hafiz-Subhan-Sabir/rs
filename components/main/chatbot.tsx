@@ -3,6 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { CONTACT_EMAIL, WHATSAPP_URL } from "@/constants";
+import { FaWhatsapp } from "react-icons/fa";
+import { EnvelopeIcon } from "@heroicons/react/24/solid";
 
 type Msg = { role: "user" | "bot"; text: string };
 
@@ -18,7 +21,7 @@ const QUICK_TOPICS = [
 ] as const;
 
 const FALLBACK_TEXT =
-  "RS Bot here — send a short note on the contact page and the crew will reply with fit, approach, and next steps.";
+  "RS Bot here — WhatsApp us, email intelligence@the-rsdev.com, or send a note on the contact page and the crew will reply with fit and next steps.";
 
 const containsAny = (q: string, terms: string[]): boolean => terms.some((t) => q.includes(t));
 
@@ -26,31 +29,37 @@ function getCustomReply(question: string): string {
   const q = question.toLowerCase().replace(/[^\w\s]/g, " ").replace(/\s+/g, " ").trim();
 
   if (containsAny(q, ["rs bot", "your name", "who are you", "what are you"])) {
-    return "I'm RS Bot — the RS Dev assistant. I can brief you on our six-person crew, services, flagship projects, SEO AI work, and how to start. For scoped quotes, use the contact page.";
+    return "I'm RS Bot — the RS Dev assistant. I can brief you on our six-person crew, services, flagship projects, SEO AI work, and how to start. Prefer WhatsApp or email intelligence@the-rsdev.com for a human reply.";
   }
   if (containsAny(q, ["crew", "team", "members", "who is on", "specialist", "ayesha", "omar", "maria", "layla", "bilal", "daniyal"])) {
-    return "Our crew of six: Hafiz Subhan (Full Stack Engineer), Ayesha Rahman (System Architect Designing Expert), Omar Farooq (AI Automation Expert), Maria Hassan (App Developer Expert), Bilal Siddiqui (SEO AI Optimization Expert), and Daniyal Sheikh (Business Development Expert).";
+    return "Our crew of six: Hafiz Subhan (Full Stack Engineer), Ayesha Rahman (System Architect Designing Expert), Omar Farooq (DevOps & Automation Expert), Maria Hassan (App Developer Expert), Bilal Siddiqui (SEO AI Optimization Expert), and Daniyal Sheikh (Cloud Solution Expert).";
   }
   if (containsAny(q, ["ninety day", "90 day", "revenue loop", "flagship", "packaged", "digital fix"])) {
-    return "We offer a ninety day digital fix plan: product, SEO AI and traffic, then pipeline and day-to-day tools under one written plan. Ask on the contact page.";
+    return "We offer a ninety day digital fix plan: product, SEO AI and traffic, then pipeline and day-to-day tools under one written plan. Book a 45-minute meeting on the contact page or email intelligence@the-rsdev.com.";
   }
   if (containsAny(q, ["what is rs dev", "rs dev", "about you", "introduce", "briefly introduce", "intro"])) {
-    return "RS Dev is a six-person studio led by Hafiz Subhan. We design enterprise systems, ship apps, automate with AI, and run SEO AI optimization so teams can focus on real work.";
+    return "RS Dev is a six-person studio led by Hafiz Subhan. We design enterprise systems, ship apps, run DevOps & automation, cloud solutions, and SEO AI optimization so teams can focus on real work.";
   }
   if (containsAny(q, ["hafiz", "subhan", "founder"])) {
-    return "Hafiz Subhan is Founder and Full Stack Engineer at RS Dev. He leads delivery with a specialist crew — reach him via the contact page.";
+    return "Hafiz Subhan Sabir is Founder and Full Stack Engineer at RS Dev. Book a 45-minute meeting on Contact, WhatsApp, or email intelligence@the-rsdev.com.";
+  }
+  if (containsAny(q, ["whatsapp", "phone", "call", "number"])) {
+    return "WhatsApp us at 03221723864 — or email intelligence@the-rsdev.com. You can also book a 45-minute meeting with Hafiz Subhan Sabir on the contact page.";
+  }
+  if (containsAny(q, ["email", "mail", "intelligence"])) {
+    return "Reach us at intelligence@the-rsdev.com — we usually reply within a day.";
   }
   if (containsAny(q, ["syndicate"])) {
-    return "The Syndicate is a full web app we built: membership hub, AI mission agent, streaks, leaderboard, affiliate tracking, and Stripe onboarding — system-designed for scale. See it under Work.";
+    return "The Syndicate is our membership web app: AI automations, strong system architecture, Cloudflare delivery, YouTube-style course video segments, AI-generated articles, role-based access, secure login, and payment validation with IP-aware GBP/USD charging. See Work for the full list.";
   }
-  if (containsAny(q, ["transcript", "whisper", "video transcript"])) {
-    return "Video Transcript Studio generates accurate transcripts, optional translation, Google Docs export, and a protected Sheet registry — built for ops teams. Ask on contact for a walkthrough.";
+  if (containsAny(q, ["affiliate", "commission"])) {
+    return "We built a custom Affiliate Dashboard System on a complex, strong architecture — partner tracking, commissions, and ops views in one secure control surface.";
   }
-  if (containsAny(q, ["filter", "filtering", "triage"])) {
-    return "Filtering from Any App is our cross-app triage layer — pull records from scattered tools, apply smart rules, and surface only what teams need to act on.";
+  if (containsAny(q, ["inteliquiz", "quiz", "proctor", "exam", "fyp"])) {
+    return "InteliQuiz is an AI-driven online MCQ quiz system with basic proctoring for FYP local demo: teacher/student roles, quiz builder, webcam face detection, tab/fullscreen warnings, results and cheating logs. V1 keeps scope simple; advanced AI is planned for V2.";
   }
   if (containsAny(q, ["enterprise", "architect", "system design", "full system"])) {
-    return "Yes. Ayesha leads system architecture; we are actively building an enterprise-level full system covering portals, SEO AI, CRM links, automation, and multi-role admin. Contact us for scope.";
+    return "Yes. Ayesha leads system architecture. Flagship examples include The Syndicate and our Affiliate Dashboard — designed for scale with clear service boundaries. Contact us for scope.";
   }
   if (containsAny(q, ["experience", "how many years", "years of experience", "how long have you", "exp"])) {
     return "Multi-year experience shipping web products, enterprise designs, AI automation, and SEO systems with startups and growth teams.";
@@ -70,14 +79,14 @@ function getCustomReply(question: string): string {
   if (containsAny(q, ["chatbot", "chat bot", "website chat", "site chat", "ai bot", "live chat", "rs bot"])) {
     return "You're talking to RS Bot. We also build custom chat for business websites — FAQ answers, lead capture, and routing. Ask on the contact page with your site URL.";
   }
-  if (containsAny(q, ["automation", "workflow", "integrate", "integration", "ai automation"])) {
-    return "Yes. Omar leads AI Automation — we connect tools you already use and set up agents and workflows so teams spend less time on copy-paste work.";
+  if (containsAny(q, ["automation", "workflow", "integrate", "integration", "devops", "ci cd", "pipeline"])) {
+    return "Yes. Omar leads DevOps & Automation — pipelines, environments, and workflow systems so teams spend less time on repeat ops work.";
   }
   if (containsAny(q, ["app", "mobile", "dashboard", "portal"])) {
     return "Maria leads app development. We ship polished web and member portals, dashboards, and product UX that feel fast and clear.";
   }
-  if (containsAny(q, ["business", "partnership", "bd", "growth"])) {
-    return "Daniyal leads Business Development — turning goals into clear scopes, partnerships, and delivery plans you can trust.";
+  if (containsAny(q, ["business", "partnership", "bd", "cloud", "hosting", "aws", "azure"])) {
+    return "Daniyal leads Cloud Solutions — hosting, environments, and scale paths so products stay fast, secure, and ready to grow.";
   }
   if (containsAny(q, ["skill", "tech stack", "technology", "stack", "react", "next", "python", "fastapi", "typescript"])) {
     return "Typical stacks: React, Next.js, TypeScript, Tailwind, Python, FastAPI/Django, OpenAI, plus SEO and integration patterns matched to the job.";
@@ -116,7 +125,7 @@ function getCustomReply(question: string): string {
     return "Use the contact page: share outcomes, timeline, tools you use, and budget band. The crew replies with fit and next steps.";
   }
   if (containsAny(q, ["project", "portfolio", "case study", "selected work", "work"])) {
-    return "Flagship work includes Video Transcript Studio, Filtering from Any App, The Syndicate web app, and an enterprise full system in active development — plus earlier live builds. Open /work.";
+    return "Flagship work: The Syndicate Web App, our custom Affiliate Dashboard System, and InteliQuiz (AI online proctoring). Open /work for details.";
   }
   return FALLBACK_TEXT;
 }
@@ -172,7 +181,30 @@ export function ChatBot() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[70]">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[70] flex flex-col items-end gap-3">
+      {!open ? (
+        <div className="flex flex-col items-end gap-2.5">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-emerald-500/50 bg-[#25D366] text-white shadow-[0_0_22px_rgba(37,211,102,0.45)] transition hover:scale-105"
+            aria-label="Chat on WhatsApp 03221723864"
+            title="WhatsApp 03221723864"
+          >
+            <FaWhatsapp className="h-6 w-6" />
+          </a>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-accent/45 bg-white text-accent shadow-[0_0_22px_rgba(194,65,12,0.25)] transition hover:scale-105 dark:bg-stone-950"
+            aria-label={`Email ${CONTACT_EMAIL}`}
+            title={CONTACT_EMAIL}
+          >
+            <EnvelopeIcon className="h-5 w-5" />
+          </a>
+        </div>
+      ) : null}
+
       <AnimatePresence>
         {!open ? (
           <motion.button
@@ -321,12 +353,25 @@ export function ChatBot() {
                 <p className="text-[10px] text-stone-500 dark:text-stone-400 line-clamp-1 flex-1">
                   {lastBot}
                 </p>
-                <Link
-                  href="/contact"
-                  className="shrink-0 text-xs font-semibold text-accent hover:underline"
-                >
-                  Contact →
-                </Link>
+                <div className="flex shrink-0 items-center gap-2">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-xs font-semibold text-emerald-600 hover:underline dark:text-emerald-400"
+                  >
+                    WhatsApp
+                  </a>
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="text-xs font-semibold text-accent hover:underline"
+                  >
+                    Email
+                  </a>
+                  <Link href="/contact" className="text-xs font-semibold text-sky-700 hover:underline dark:text-sky-300">
+                    Book →
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>

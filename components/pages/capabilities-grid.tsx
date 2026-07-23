@@ -5,16 +5,19 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { FastLink } from "@/components/navigation/fast-link";
+import {
+  SERVICE_ICONS,
+  SERVICE_VISUALS,
+} from "@/components/pages/service-visuals";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 
 const SERVICE_THEME = [
   { color: "#C2410C", soft: "rgba(194,65,12,0.12)", label: "Build" },
   { color: "#0284C7", soft: "rgba(2,132,199,0.12)", label: "Architect" },
-  { color: "#059669", soft: "rgba(5,150,105,0.12)", label: "Automate" },
+  { color: "#059669", soft: "rgba(5,150,105,0.12)", label: "DevOps" },
   { color: "#C2410C", soft: "rgba(194,65,12,0.12)", label: "Ship apps" },
   { color: "#0284C7", soft: "rgba(2,132,199,0.12)", label: "Grow" },
-  { color: "#059669", soft: "rgba(5,150,105,0.12)", label: "Advise" },
+  { color: "#059669", soft: "rgba(5,150,105,0.12)", label: "Cloud" },
 ] as const;
 
 type CapabilitiesGridProps = {
@@ -102,6 +105,8 @@ export function CapabilitiesGrid({ showCta = true }: CapabilitiesGridProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6">
         {siteConfig.services.map((service, i) => {
           const theme = SERVICE_THEME[i % SERVICE_THEME.length];
+          const Icon = SERVICE_ICONS[i % SERVICE_ICONS.length];
+          const Visual = SERVICE_VISUALS[i % SERVICE_VISUALS.length];
 
           return (
             <article
@@ -125,20 +130,24 @@ export function CapabilitiesGrid({ showCta = true }: CapabilitiesGridProps) {
               <div className="relative flex flex-1 flex-col p-6 sm:p-7">
                 <div className="flex flex-wrap items-center gap-2">
                   <span
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl border-2 font-display text-sm font-bold text-white"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl border-2 text-white"
                     style={{
                       background: theme.color,
                       borderColor: theme.color,
                       boxShadow: `0 0 16px ${theme.color}55`,
                     }}
+                    aria-hidden
                   >
-                    {String(i + 1).padStart(2, "0")}
+                    <Icon className="h-5 w-5" />
                   </span>
                   <span
                     className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
                     style={{ background: theme.soft, color: theme.color }}
                   >
                     {theme.label}
+                  </span>
+                  <span className="ml-auto font-display text-xs font-bold text-stone-400 dark:text-stone-500">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 
@@ -151,6 +160,8 @@ export function CapabilitiesGrid({ showCta = true }: CapabilitiesGridProps) {
                 <p className="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
                   {service.description}
                 </p>
+
+                <Visual accent={theme.color} />
 
                 <div className="mt-5 space-y-3">
                   <div className="rounded-xl border border-emerald-600/25 bg-emerald-50/80 px-3.5 py-2.5 dark:border-emerald-400/25 dark:bg-emerald-950/35">

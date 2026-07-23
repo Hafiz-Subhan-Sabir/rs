@@ -1,10 +1,14 @@
-export const CONTACT_EMAIL = "rs.dev.soft@gmail.com" as const;
+export const CONTACT_EMAIL = "intelligence@the-rsdev.com" as const;
+export const WHATSAPP_NUMBER = "03221723864" as const;
+/** E.164 for wa.me (Pakistan +92) */
+export const WHATSAPP_URL = "https://wa.me/923221723864" as const;
+export const FOUNDER_FULL_NAME = "Hafiz Subhan Sabir" as const;
 
 export const SITE_TAGLINE =
   "Six specialists. One clear delivery line." as const;
 
 export const SITE_SUBTAGLINE =
-  "Websites, software, SEO AI, and automation — scoped clearly, designed at system level, and supported by the same people who ship the work." as const;
+  "Websites, software, SEO AI, DevOps & automation, and cloud solutions — scoped clearly, designed at system level, and supported by the same people who ship the work." as const;
 
 export const SKILL_DATA = [
   { skill_name: "HTML", image: "html.png", width: 80, height: 80 },
@@ -44,92 +48,61 @@ export const OTHER_SKILL = [{ skill_name: "Deployment & Maintenance", image: "go
 
 export const PROJECTS = [
   {
-    title: "Video Transcript Studio",
+    title: "The Syndicate Web App",
     description:
-      "Enterprise-ready transcription pipeline: accurate video transcripts, optional translation, Google Docs export, and a protected Sheet registry for ops teams.",
+      "Membership platform with AI automations, strong system architecture, Cloudflare edge delivery, YouTube-style course video segments that stream without heavy reloads, AI-generated articles, role-based access, secure login, and payment validation with IP-aware charging in pounds or dollars.",
+    image: "/projects/ai-interview.png",
+    liveUrl: "",
+    featured: true,
+    stack: "Next.js · Architecture · Cloudflare · AI · Payments",
+    category: "Enterprise Product",
+    status: "live" as const,
+    highlights: [
+      "AI automations across missions and member workflows",
+      "Complex, scalable system architecture",
+      "Cloudflare for performance and edge delivery",
+      "YouTube-style segmented course video playback",
+      "AI-generated articles for content scale",
+      "Role-based access control (RBAC)",
+      "Secure login and payment validation",
+      "IP tracking for GBP / USD charging rules",
+    ],
+  },
+  {
+    title: "Affiliate Dashboard System",
+    description:
+      "Custom affiliate operations dashboard built on a complex, strong architecture — tracking partners, commissions, and performance in one secure control surface designed for growth teams.",
+    image: "/projects/feedback-portal.png",
+    liveUrl: "",
+    featured: true,
+    stack: "Full stack · System architecture · Dashboards",
+    category: "Affiliate Platform",
+    status: "live" as const,
+    highlights: [
+      "Custom-built affiliate control panel",
+      "Complex architected data and service layers",
+      "Partner, commission, and performance views",
+      "Secure multi-role access for ops teams",
+    ],
+  },
+  {
+    title: "InteliQuiz — AI Online Proctoring",
+    description:
+      "AI-driven online MCQ quiz system with basic proctoring for FYP local demo: Admin/Teacher and Student roles, quiz builder, webcam face checks, tab-switch and fullscreen warnings, results and cheating logs with screenshots.",
     image: "/projects/script-to-video.png",
     liveUrl: "",
     featured: true,
-    stack: "Next.js · FastAPI · Whisper · Google APIs",
-    category: "AI Automation",
+    stack: "Local demo · Webcam AI · RBAC · Quizzes",
+    category: "EdTech / FYP",
     status: "live" as const,
-  },
-  {
-    title: "Filtering from Any App",
-    description:
-      "Cross-app filtering and triage layer — pull records from scattered tools, apply smart rules, and surface only what teams need to act on.",
-    image: "/projects/feedback-portal.png",
-    liveUrl: "",
-    featured: true,
-    stack: "Python · Integrations · Rule engine",
-    category: "AI Automation",
-    status: "live" as const,
-  },
-  {
-    title: "The Syndicate",
-    description:
-      "Full web app with membership hub, AI mission agent, streaks, leaderboard, affiliate tracking, and Stripe onboarding — system-designed for scale.",
-    image: "/projects/ai-interview.png",
-    liveUrl: "",
-    featured: true,
-    stack: "Next.js · Django · OpenAI · Stripe",
-    category: "Enterprise Product",
-    status: "live" as const,
-  },
-  {
-    title: "Enterprise Full System",
-    description:
-      "Currently in build: an enterprise-level operating system covering portals, SEO AI optimization, CRM links, automation, and multi-role admin — architected for long-term growth.",
-    image: "/projects/car.png",
-    liveUrl: "",
-    featured: true,
-    stack: "System architecture · SEO AI · Full stack",
-    category: "Enterprise System",
-    status: "in-development" as const,
-  },
-  {
-    title: "Interview practice tool",
-    description:
-      "A live practice app for technical and behavioral rounds, with structured feedback after each session.",
-    image: "/projects/ai-interview.png",
-    liveUrl: "https://ai-interview-simulator.vercel.app",
-    featured: false,
-    stack: "React · FastAPI · Live app",
-    category: "Product",
-    status: "live" as const,
-  },
-  {
-    title: "Website chat for businesses",
-    description:
-      "Custom chat widget for company sites — FAQ answers, lead capture, and routing without burying the inbox.",
-    image: "/projects/feedback-portal.png",
-    liveUrl: "https://ai-chatbot-website.vercel.app",
-    featured: false,
-    stack: "Next.js · Chat widget",
-    category: "Website chat",
-    status: "live" as const,
-  },
-  {
-    title: "Restaurant ordering",
-    description:
-      "Menu, cart, and ordering flow for a hospitality brand that needed a clean digital path for guests.",
-    image: "/projects/food.webp",
-    liveUrl: "https://restaurant-ordering.vercel.app",
-    featured: false,
-    stack: "Next.js · Ordering UX",
-    category: "Commerce",
-    status: "live" as const,
-  },
-  {
-    title: "Automotive storefront",
-    description:
-      "Vehicle listings with filters and enquiry-minded detail pages so sales can follow up on real interest.",
-    image: "/projects/car.png",
-    liveUrl: "https://car-platform.vercel.app",
-    featured: false,
-    stack: "Next.js · Catalog UX · SEO structure",
-    category: "Commerce + SEO",
-    status: "live" as const,
+    highlights: [
+      "Admin/Teacher: create quizzes, manage students, view results & cheating logs",
+      "Student: timed MCQs, one question per page, auto-submit",
+      "Webcam on quiz start + face detection (5s missing → warning + screenshot)",
+      "Tab change & fullscreen exit detection with warning counts",
+      "Demo flow: Admin → Create Quiz → Student → Camera → Quiz → Logs",
+      "V1 scope only — voice/mobile/advanced AI reports planned for V2",
+    ],
   },
 ] as const;
 
@@ -176,17 +149,17 @@ export const CREW = [
   },
   {
     name: "Omar Farooq",
-    role: "AI Automation Expert",
-    focus: "Workflows · Agents · Integrations",
+    role: "DevOps & Automation Expert",
+    focus: "Pipelines · Cloud ops · Workflow automation",
     gender: "male" as const,
     initials: "OF",
     accent: "copper" as const,
     photo: null,
     linkedin: null,
-    bio: "Builds AI-driven automation that cuts repeat work across apps, transcripts, and ops pipelines.",
-    specialty: "AI Automation",
-    lane: "Workflows & agents",
-    strengths: "Wire · Automate · Free",
+    bio: "Owns DevOps and automation — CI/CD, environments, and workflow systems that keep delivery reliable and teams unblocked.",
+    specialty: "DevOps & Automation",
+    lane: "Ops & pipelines",
+    strengths: "Ship · Automate · Stabilize",
     color: "#EA580C",
   },
   {
@@ -221,17 +194,17 @@ export const CREW = [
   },
   {
     name: "Daniyal Sheikh",
-    role: "Business Development Expert",
-    focus: "Partnerships · Scope · Growth paths",
+    role: "Cloud Solution Expert",
+    focus: "Cloud architecture · Hosting · Scale paths",
     gender: "male" as const,
     initials: "DS",
     accent: "ember" as const,
     photo: null,
     linkedin: null,
-    bio: "Turns business goals into clear scopes, partnerships, and delivery plans clients can trust.",
-    specialty: "Business Development",
-    lane: "Partnerships & scope",
-    strengths: "Scope · Partner · Win",
+    bio: "Designs cloud solutions — hosting, environments, and scale paths so products stay fast, secure, and ready to grow.",
+    specialty: "Cloud Solutions",
+    lane: "Cloud & scale",
+    strengths: "Host · Secure · Scale",
     color: "#A16207",
   },
 ] as const;
@@ -251,6 +224,7 @@ export const FOOTER_DATA = [
     data: [
       { name: "Contact", link: "/contact" },
       { name: "Email", link: `mailto:${CONTACT_EMAIL}` },
+      { name: "WhatsApp", link: WHATSAPP_URL },
       { name: "LinkedIn", link: "https://www.linkedin.com/in/hafiz-subhan-soft/" },
     ],
   },
@@ -326,7 +300,7 @@ export const NAV_LINKS = [
 
 export const EDUCATION_HIGHLIGHTS = {
   education:
-    "RS Dev is a six-person crew led by Hafiz Subhan (Founder | Full Stack Engineer). System architecture, AI automation, apps, SEO AI, and business development — senior execution with direct access.",
+    "RS Dev is a six-person crew led by Hafiz Subhan (Founder | Full Stack Engineer). System architecture, DevOps & automation, apps, SEO AI, and cloud solutions — senior execution with direct access.",
   technicalSummary:
     "Enterprise system design, SEO AI optimization, AI automation tools, custom apps, and CRM links — built and supported by the same specialists you talk to.",
   soloProjects: "10+ flagship products delivered end to end.",

@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 
 import { CONTACT_EMAIL, PROJECTS } from '@/constants';
 import { MotionIn } from '@/components/motion/MotionIn';
+import { MeetingScheduler } from '@/components/pages/meeting-scheduler';
 import { API_BASE_URL, apiUrl } from '@/lib/api';
 
 const CONTACT_REQUEST_TIMEOUT_MS = 70000;
@@ -427,6 +428,10 @@ export function ContactPage() {
           </div>
 
           {/* Scroll content so the page doesn't "stop" */}
+          <div className="mt-14">
+            <MeetingScheduler />
+          </div>
+
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-4">
             {[
               {

@@ -12,7 +12,7 @@ import { ValuesStrip } from "@/components/pages/values-strip";
 export const metadata: Metadata = {
   title: "RS Dev | Meet the six-person crew",
   description:
-    "Hafiz Subhan and a six-person RS Dev crew — full stack, system architecture, AI automation, apps, SEO AI, and business development.",
+    "Hafiz Subhan and a six-person RS Dev crew — full stack, system architecture, DevOps & automation, apps, SEO AI, and cloud solutions.",
   alternates: { canonical: "/about" },
 };
 

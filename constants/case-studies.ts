@@ -1,46 +1,41 @@
-/** Anonymized delivery snapshots — honest framing for portfolio and client-style work */
+/** Delivery snapshots for About / proof sections */
 
 export const DELIVERY_SNAPSHOTS = [
   {
     id: "syndicate",
     industry: "Membership platform",
-    headline: "The Syndicate — AI missions, membership, and affiliate scale",
-    problem: "Programs, missions, and affiliates lived in disconnected tools with no shared progress loop.",
-    outcome: "Unified portal with AI mission agent, streaks, leaderboard, Stripe onboarding, and affiliate tracking.",
-    metric: "Enterprise-ready product surface",
-    tags: ["Next.js", "Django", "OpenAI", "Stripe"],
+    headline: "The Syndicate — AI, architecture, Cloudflare & payments",
+    problem:
+      "Memberships, course video, content, roles, and payments needed one secure product surface — not a pile of disconnected tools.",
+    outcome:
+      "Web app with AI automations, strong architecture, Cloudflare delivery, segmented course video, AI articles, RBAC, secure login, and IP-aware GBP/USD charging.",
+    metric: "Enterprise membership product",
+    tags: ["AI", "Cloudflare", "RBAC", "Payments"],
   },
   {
-    id: "transcript",
-    industry: "Media operations",
-    headline: "Video Transcript Studio for accurate, registered transcripts",
-    problem: "Manual transcription and scattered Google Docs made ops slow and hard to audit.",
-    outcome: "Whisper pipeline with translation, Docs export, and a password-protected Sheet registry.",
-    metric: "Ops-grade AI automation",
-    tags: ["FastAPI", "Whisper", "Google APIs"],
+    id: "affiliate",
+    industry: "Growth operations",
+    headline: "Affiliate Dashboard — custom ops on strong architecture",
+    problem: "Affiliate tracking and commissions were hard to run without a dedicated, designed control system.",
+    outcome:
+      "Custom affiliate dashboard with complex architected services for partners, performance, and secure ops access.",
+    metric: "Affiliate control surface",
+    tags: ["Architecture", "Dashboard", "Full stack"],
   },
   {
-    id: "filtering",
-    industry: "Multi-app ops",
-    headline: "Filtering from Any App — triage across tools",
-    problem: "Teams drowned in records spread across apps with no shared filter rules.",
-    outcome: "Cross-app filtering layer that surfaces only actionable items for the right people.",
-    metric: "Less noise, faster action",
-    tags: ["Integrations", "Rules", "Automation"],
-  },
-  {
-    id: "enterprise",
-    industry: "Enterprise systems",
-    headline: "Enterprise full system — currently in build",
-    problem: "Growing companies need portals, SEO AI, CRM links, and admin roles under one architecture.",
-    outcome: "System-designed blueprint and active development of a multi-role enterprise operating layer.",
-    metric: "Architecture-first delivery",
-    tags: ["System design", "SEO AI", "Full stack"],
+    id: "inteliquiz",
+    industry: "EdTech / FYP",
+    headline: "InteliQuiz — AI proctoring for online MCQ exams",
+    problem: "Remote quizzes needed basic anti-cheat without a heavy hosted stack — local demo for FYP.",
+    outcome:
+      "Teacher/student panels, quiz builder, webcam face checks, tab & fullscreen warnings, results and cheating logs with screenshots.",
+    metric: "Local AI proctoring demo",
+    tags: ["Webcam AI", "RBAC", "Quizzes"],
   },
 ] as const;
 
 export const PROOF_STATS = [
-  { label: "Products shipped solo", value: "10+", numeric: 10, suffix: "+" },
+  { label: "Flagship products", value: "3", numeric: 3, suffix: "" },
   { label: "Team deliveries", value: "26+", numeric: 26, suffix: "+" },
   { label: "Reply window", value: "24h", numeric: 24, suffix: "h" },
 ] as const;

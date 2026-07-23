@@ -35,14 +35,11 @@ export function FounderSection() {
             </div>
 
             <div className="min-w-0 flex-1 text-center md:text-left">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                Founder · Full Stack Engineer
-              </p>
-              <h2 className="mt-3 font-display text-2xl sm:text-3xl font-semibold text-stone-900 dark:text-white">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold text-stone-900 dark:text-white">
                 {FOUNDER.name}
               </h2>
               <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
-                {FOUNDER.role} | {FOUNDER.credentials}
+                {FOUNDER.role}
               </p>
               <p className="mt-5 text-base leading-relaxed text-stone-700 dark:text-stone-300">
                 {FOUNDER.bio}
