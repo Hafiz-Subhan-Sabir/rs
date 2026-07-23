@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 export function MotionIn({
@@ -10,7 +11,14 @@ export function MotionIn({
   delay?: number;
 }) {
   const reduceMotion = useReducedMotion();
-  const skipMotion = reduceMotion === true;
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
+
+  // Gate motion until after hydration — useReducedMotion is null on SSR.
+  const skipMotion = !ready || reduceMotion === true;
 
   return (
     <motion.div

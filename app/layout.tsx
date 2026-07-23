@@ -75,6 +75,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
       </head>
       <body
+        suppressHydrationWarning
         className={cn(
           "min-h-screen flex flex-col bg-stone-50 text-stone-900 dark:bg-[#1c1917] dark:text-stone-100 overflow-y-scroll overflow-x-clip transition-colors font-sans",
           plusJakarta.variable,

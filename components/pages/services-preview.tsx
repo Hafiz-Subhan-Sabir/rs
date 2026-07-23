@@ -43,7 +43,7 @@ export function ServicesPreview() {
           >
             <Link
               href="/services"
-              className="surface-card group relative flex h-full flex-col overflow-hidden rounded-xl border border-stone-200/90 bg-white p-6 dark:border-white/10 dark:bg-white/[0.03]"
+              className="surface-card group relative flex h-full flex-col overflow-hidden rounded-xl border-2 bg-white p-6 dark:bg-white/[0.03]"
             >
               <span className="text-[11px] font-semibold tabular-nums text-accent">
                 {String(i + 1).padStart(2, "0")}

@@ -25,12 +25,12 @@ export function SectionHeader({
           </p>
         ) : null}
         <h2
-          className={`${eyebrow ? "mt-3" : ""} font-display text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold tracking-tight text-stone-900 dark:text-white leading-[1.1] ${maxW}`}
+          className={`${eyebrow ? "mt-3" : ""} font-display text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold tracking-tight text-stone-900 dark:text-white leading-[1.1] ${maxW} ${align === "center" ? "mx-auto" : ""}`}
         >
           {title}
         </h2>
         {description ? (
-          <p className={`mt-4 text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed ${maxW}`}>
+          <p className={`mt-4 text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed ${maxW} ${align === "center" ? "mx-auto" : ""}`}>
             {description}
           </p>
         ) : null}

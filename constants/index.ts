@@ -1,10 +1,10 @@
 export const CONTACT_EMAIL = "rs.dev.soft@gmail.com" as const;
 
 export const SITE_TAGLINE =
-  "Your digital problems, fixed by people you can reach." as const;
+  "Six specialists. One clear delivery line." as const;
 
 export const SITE_SUBTAGLINE =
-  "Websites, software, search, and day-to-day tools — scoped clearly, built carefully, and supported by the same hands that ship the work." as const;
+  "Websites, software, SEO AI, and automation — scoped clearly, designed at system level, and supported by the same people who ship the work." as const;
 
 export const SKILL_DATA = [
   { skill_name: "HTML", image: "html.png", width: 80, height: 80 },
@@ -44,34 +44,70 @@ export const OTHER_SKILL = [{ skill_name: "Deployment & Maintenance", image: "go
 
 export const PROJECTS = [
   {
+    title: "Video Transcript Studio",
+    description:
+      "Enterprise-ready transcription pipeline: accurate video transcripts, optional translation, Google Docs export, and a protected Sheet registry for ops teams.",
+    image: "/projects/script-to-video.png",
+    liveUrl: "",
+    featured: true,
+    stack: "Next.js · FastAPI · Whisper · Google APIs",
+    category: "AI Automation",
+    status: "live" as const,
+  },
+  {
+    title: "Filtering from Any App",
+    description:
+      "Cross-app filtering and triage layer — pull records from scattered tools, apply smart rules, and surface only what teams need to act on.",
+    image: "/projects/feedback-portal.png",
+    liveUrl: "",
+    featured: true,
+    stack: "Python · Integrations · Rule engine",
+    category: "AI Automation",
+    status: "live" as const,
+  },
+  {
+    title: "The Syndicate",
+    description:
+      "Full web app with membership hub, AI mission agent, streaks, leaderboard, affiliate tracking, and Stripe onboarding — system-designed for scale.",
+    image: "/projects/ai-interview.png",
+    liveUrl: "",
+    featured: true,
+    stack: "Next.js · Django · OpenAI · Stripe",
+    category: "Enterprise Product",
+    status: "live" as const,
+  },
+  {
+    title: "Enterprise Full System",
+    description:
+      "Currently in build: an enterprise-level operating system covering portals, SEO AI optimization, CRM links, automation, and multi-role admin — architected for long-term growth.",
+    image: "/projects/car.png",
+    liveUrl: "",
+    featured: true,
+    stack: "System architecture · SEO AI · Full stack",
+    category: "Enterprise System",
+    status: "in-development" as const,
+  },
+  {
     title: "Interview practice tool",
     description:
       "A live practice app for technical and behavioral rounds, with structured feedback after each session.",
     image: "/projects/ai-interview.png",
     liveUrl: "https://ai-interview-simulator.vercel.app",
-    featured: true,
+    featured: false,
     stack: "React · FastAPI · Live app",
     category: "Product",
-  },
-  {
-    title: "Script to video draft",
-    description:
-      "Turn a written script into a narrated video draft you can review before a full edit.",
-    image: "/projects/script-to-video.png",
-    liveUrl: "https://script-to-video.vercel.app",
-    featured: true,
-    stack: "FastAPI · Media pipeline",
-    category: "Product",
+    status: "live" as const,
   },
   {
     title: "Website chat for businesses",
     description:
-      "A custom chat widget for company websites — answers common questions and captures leads without burying the inbox.",
+      "Custom chat widget for company sites — FAQ answers, lead capture, and routing without burying the inbox.",
     image: "/projects/feedback-portal.png",
     liveUrl: "https://ai-chatbot-website.vercel.app",
-    featured: true,
+    featured: false,
     stack: "Next.js · Chat widget",
     category: "Website chat",
+    status: "live" as const,
   },
   {
     title: "Restaurant ordering",
@@ -79,9 +115,10 @@ export const PROJECTS = [
       "Menu, cart, and ordering flow for a hospitality brand that needed a clean digital path for guests.",
     image: "/projects/food.webp",
     liveUrl: "https://restaurant-ordering.vercel.app",
-    featured: true,
+    featured: false,
     stack: "Next.js · Ordering UX",
     category: "Commerce",
+    status: "live" as const,
   },
   {
     title: "Automotive storefront",
@@ -90,38 +127,9 @@ export const PROJECTS = [
     image: "/projects/car.png",
     liveUrl: "https://car-platform.vercel.app",
     featured: false,
-    stack: "Next.js · Catalog UX",
-    category: "Commerce",
-  },
-  {
-    title: "Feedback portal",
-    description:
-      "Collect and review structured feedback in one place instead of scattered forms and chats.",
-    image: "/projects/feedback-portal.png",
-    liveUrl: "https://feedback-portal-rho.vercel.app",
-    featured: false,
-    stack: "Next.js · Reporting",
-    category: "Internal tools",
-  },
-  {
-    title: "Expense tracker",
-    description:
-      "Simple expense capture and overview for day-to-day spending visibility.",
-    image: "/projects/expense-tracker.png",
-    liveUrl: "https://react-expense-tracker.vercel.app",
-    featured: false,
-    stack: "React · Dashboard",
-    category: "Tools",
-  },
-  {
-    title: "Bubble Crusher game",
-    description:
-      "A light browser game built to practice interactive UI and timing logic.",
-    image: "/projects/bubble-game.jpg",
-    liveUrl: "https://bubble-game-eta.vercel.app",
-    featured: false,
-    stack: "HTML · CSS · JS",
-    category: "Games",
+    stack: "Next.js · Catalog UX · SEO structure",
+    category: "Commerce + SEO",
+    status: "live" as const,
   },
 ] as const;
 
@@ -131,8 +139,102 @@ export const FOUNDER = {
   credentials: "Full Stack Engineer",
   photo: "/founder-hafiz-subhan.png",
   linkedin: "https://www.linkedin.com/in/hafiz-subhan-soft/",
-  bio: "I run RS Dev as a small, hands-on studio. Clients come to me when a website, tool, or daily workflow is getting in the way — and they want it fixed properly by someone they can actually talk to.",
+  bio: "I lead a six-person crew at RS Dev. Clients come to us when a website, tool, or daily workflow is getting in the way — and they want it fixed properly by specialists they can actually talk to.",
 } as const;
+
+/** Six-person RS Dev crew — founder + specialists */
+export const CREW = [
+  {
+    name: "Hafiz Subhan",
+    role: "Full Stack Engineer",
+    focus: "Founder · End-to-end product delivery",
+    gender: "male" as const,
+    initials: "HS",
+    accent: "copper" as const,
+    photo: "/founder-hafiz-subhan.png",
+    linkedin: "https://www.linkedin.com/in/hafiz-subhan-soft/",
+    bio: "Leads architecture decisions and ships full-stack products from scope to production.",
+    specialty: "Full Stack",
+    lane: "Product delivery",
+    strengths: "Ship · Scale · Support",
+    color: "#C2410C",
+  },
+  {
+    name: "Ayesha Rahman",
+    role: "System Architect Designing Expert",
+    focus: "Enterprise systems · Scalable blueprints",
+    gender: "female" as const,
+    initials: "AR",
+    accent: "ember" as const,
+    photo: null,
+    linkedin: null,
+    bio: "Designs enterprise-level system maps, service boundaries, and data flows before a single screen ships.",
+    specialty: "Architecture",
+    lane: "Enterprise design",
+    strengths: "Map · Bound · Scale",
+    color: "#1D4ED8",
+  },
+  {
+    name: "Omar Farooq",
+    role: "AI Automation Expert",
+    focus: "Workflows · Agents · Integrations",
+    gender: "male" as const,
+    initials: "OF",
+    accent: "copper" as const,
+    photo: null,
+    linkedin: null,
+    bio: "Builds AI-driven automation that cuts repeat work across apps, transcripts, and ops pipelines.",
+    specialty: "AI Automation",
+    lane: "Workflows & agents",
+    strengths: "Wire · Automate · Free",
+    color: "#EA580C",
+  },
+  {
+    name: "Maria Hassan",
+    role: "App Developer Expert",
+    focus: "Mobile & web apps · Product UX",
+    gender: "female" as const,
+    initials: "MH",
+    accent: "ember" as const,
+    photo: null,
+    linkedin: null,
+    bio: "Ships polished app experiences — dashboards, portals, and member flows that feel fast and clear.",
+    specialty: "App Development",
+    lane: "Product UX",
+    strengths: "Build · Polish · Launch",
+    color: "#BE185D",
+  },
+  {
+    name: "Bilal Siddiqui",
+    role: "SEO AI Optimization Expert",
+    focus: "Search · Structure · AI content systems",
+    gender: "male" as const,
+    initials: "BS",
+    accent: "copper" as const,
+    photo: null,
+    linkedin: null,
+    bio: "Pairs technical SEO with AI-assisted content systems so pages earn the clicks that matter.",
+    specialty: "SEO AI",
+    lane: "Search & growth",
+    strengths: "Rank · Structure · Compound",
+    color: "#15803D",
+  },
+  {
+    name: "Daniyal Sheikh",
+    role: "Business Development Expert",
+    focus: "Partnerships · Scope · Growth paths",
+    gender: "male" as const,
+    initials: "DS",
+    accent: "ember" as const,
+    photo: null,
+    linkedin: null,
+    bio: "Turns business goals into clear scopes, partnerships, and delivery plans clients can trust.",
+    specialty: "Business Development",
+    lane: "Partnerships & scope",
+    strengths: "Scope · Partner · Win",
+    color: "#A16207",
+  },
+] as const;
 
 export const FOOTER_DATA = [
   {
@@ -188,28 +290,28 @@ export const BUSINESS_SERVICES = [
     description: "Storefronts, portals, and product screens that load fast and explain the offer in seconds.",
   },
   {
-    title: "Bespoke software",
-    description: "Tools shaped around your process when off-the-shelf products fight your workflow.",
+    title: "Enterprise system design",
+    description: "Architecture blueprints for multi-role portals, data flows, and long-term full systems — not just screens.",
+  },
+  {
+    title: "AI automation",
+    description: "Agents, transcript pipelines, cross-app filtering, and workflows that cut repeat clicks.",
+  },
+  {
+    title: "SEO AI optimization",
+    description: "Technical structure plus AI-assisted content systems so search engines reward what you publish.",
   },
   {
     title: "Sales records and links",
     description: "Pipeline boards, sign in, payments, and live ties between the apps you already run.",
   },
   {
-    title: "Search placement",
-    description: "Technical fixes and page structure so search engines understand and reward what you publish.",
-  },
-  {
-    title: "Workflows & integrations",
-    description: "Connect the tools you already pay for so data stops living in five places.",
-  },
-  {
     title: "Website chat helpers",
-    description: "Custom chat on your site for FAQs, lead capture, and routing people to the right next step.",
+    description: "Custom chat on your site — including RS Bot-style assistants — for FAQs, leads, and routing.",
   },
   {
-    title: "Campaigns and advice",
-    description: "Channel picks, creative direction, and honest sequencing for the next ninety days.",
+    title: "Business development support",
+    description: "Clear scopes, partnership paths, and ninety-day plans tied to revenue outcomes.",
   },
 ] as const;
 
@@ -224,10 +326,10 @@ export const NAV_LINKS = [
 
 export const EDUCATION_HIGHLIGHTS = {
   education:
-    "RS Dev is led by Hafiz Subhan (Founder, RS Dev | Full Stack Engineer). Small crew, senior execution, direct access to the people building your product.",
+    "RS Dev is a six-person crew led by Hafiz Subhan (Founder | Full Stack Engineer). System architecture, AI automation, apps, SEO AI, and business development — senior execution with direct access.",
   technicalSummary:
-    "Live websites, custom tools, search fixes, CRM links, and website chat — built and supported by the same people you talk to.",
-  soloProjects: "10+ solo products delivered end to end.",
-  teamProjects: "20+ collaborations with product and engineering teams.",
+    "Enterprise system design, SEO AI optimization, AI automation tools, custom apps, and CRM links — built and supported by the same specialists you talk to.",
+  soloProjects: "10+ flagship products delivered end to end.",
+  teamProjects: "26+ enterprise and team collaborations shipped.",
 } as const;
 

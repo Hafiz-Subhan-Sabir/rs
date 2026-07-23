@@ -11,7 +11,7 @@ export function FounderSection() {
   return (
     <section className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 py-20 scroll-mt-24">
       <MotionIn>
-        <div className="rounded-2xl border border-stone-200/90 bg-gradient-to-br from-white via-white to-orange-50/40 p-8 sm:p-10 dark:border-white/10 dark:from-stone-900 dark:via-[#292524] dark:to-orange-950/20">
+        <div className="surface-card glow-border rounded-2xl border-2 bg-gradient-to-br from-white via-white to-orange-50/40 p-8 sm:p-10 dark:from-stone-900 dark:via-[#292524] dark:to-orange-950/20">
           <div className="flex flex-col gap-8 md:flex-row md:items-start">
             <div className="mx-auto md:mx-0 shrink-0">
               <div className="relative h-44 w-44 sm:h-52 sm:w-52 overflow-hidden rounded-2xl border border-stone-200 bg-stone-100 shadow-soft dark:border-white/10 dark:bg-stone-800">
@@ -36,7 +36,7 @@ export function FounderSection() {
 
             <div className="min-w-0 flex-1 text-center md:text-left">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                Who leads RS Dev
+                Founder · Full Stack Engineer
               </p>
               <h2 className="mt-3 font-display text-2xl sm:text-3xl font-semibold text-stone-900 dark:text-white">
                 {FOUNDER.name}

@@ -34,6 +34,8 @@
     "app/**/*",
     "components/**/*",
     "config/**/*",
+    "constants/**/*",
+    "lib/**/*",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],

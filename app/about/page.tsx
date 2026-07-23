@@ -5,13 +5,14 @@ import { PageHero } from "@/components/layout/page-hero";
 import { PageShell } from "@/components/layout/page-shell";
 import { DeliveryCycle } from "@/components/pages/delivery-cycle";
 import { DeliverySnapshots } from "@/components/pages/delivery-snapshots";
+import { CrewSection } from "@/components/pages/crew-section";
 import { FounderSection } from "@/components/pages/founder-section";
 import { ValuesStrip } from "@/components/pages/values-strip";
 
 export const metadata: Metadata = {
-  title: "RS Dev | About the crew behind the work",
+  title: "RS Dev | Meet the six-person crew",
   description:
-    "We help entrepreneurs solve digital problems with technology so their teams can focus on quality work.",
+    "Hafiz Subhan and a six-person RS Dev crew — full stack, system architecture, AI automation, apps, SEO AI, and business development.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,11 +21,12 @@ export default function AboutPage() {
     <PageShell>
       <PageHero
         badge="About RS Dev"
-        title="We solve digital problems so companies can focus on what they do best."
-        description="RS Dev is a small studio. Entrepreneurs come to us when websites, software, search, or daily tech drag gets in the way of quality work — and they want it fixed properly."
+        title="A six-person crew built for clear delivery."
+        description="Entrepreneurs come to us when websites, software, SEO, or daily tech drag gets in the way — and they want specialists who design, automate, and ship properly."
         primaryCta={{ label: "Describe your problem", href: "/contact" }}
         secondaryCta={{ label: "See our services", href: "/services" }}
       />
+      <CrewSection />
       <FounderSection />
       <DeliverySnapshots />
       <ValuesStrip />

@@ -25,7 +25,7 @@ export function DeliverySnapshots() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ delay: i * 0.06, duration: 0.45 }}
-            className="surface-card rounded-xl border border-stone-200/90 bg-white p-6 sm:p-7 dark:border-white/10 dark:bg-white/[0.03]"
+            className="surface-card rounded-xl border-2 bg-white p-6 sm:p-7 dark:bg-white/[0.03]"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">

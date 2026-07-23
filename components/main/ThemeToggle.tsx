@@ -65,10 +65,13 @@ export function ThemeToggle({ compact = false }: { compact?: boolean }) {
       className="flex rounded-lg border border-stone-300/80 dark:border-white/10 bg-white/70 dark:bg-white/5 p-0.5 backdrop-blur"
       role="group"
       aria-label="Theme"
+      suppressHydrationWarning
       title={
-        mode === 'system'
-          ? `Following system (${theme})`
-          : `${mode.charAt(0).toUpperCase()}${mode.slice(1)} mode`
+        mounted
+          ? mode === 'system'
+            ? `Following system (${theme})`
+            : `${mode.charAt(0).toUpperCase()}${mode.slice(1)} mode`
+          : 'Theme'
       }
     >
       {options.map(({ id, label, icon: Icon }) => (

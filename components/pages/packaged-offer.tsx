@@ -6,8 +6,11 @@ import { motion } from "framer-motion";
 import { MotionIn } from "@/components/motion/MotionIn";
 import { SectionHeader } from "@/components/ui/section-header";
 import { PACKAGED_OFFER } from "@/constants/content";
+import { useMotionReady } from "@/lib/motion";
 
 export function PackagedOffer() {
+  const motionReady = useMotionReady();
+
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28 border-y border-stone-200/80 dark:border-white/[0.06]">
       <SectionHeader
@@ -22,8 +25,8 @@ export function PackagedOffer() {
           {PACKAGED_OFFER.phases.map((phase, i) => (
             <motion.article
               key={phase.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={motionReady ? { opacity: 0, y: 20 } : false}
+              whileInView={motionReady ? { opacity: 1, y: 0 } : undefined}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: i * 0.07, duration: 0.45 }}
               className="surface-card rounded-xl border border-stone-200/90 bg-white p-6 dark:border-white/10 dark:bg-white/[0.03]"

@@ -19,29 +19,58 @@ export const siteConfig = {
   ],
   services: [
     {
-      title: 'Websites & web applications',
+      title: 'Full-stack websites & platforms',
       description:
-        'Marketing sites, portals, and internal web apps — fast, responsive, and structured for SEO and analytics.',
+        'End-to-end sites and web platforms — from architecture to production — led by our Full Stack Engineer.',
+      expertise: 'Full Stack Engineer',
+      lead: 'Hafiz Subhan',
+      workedOn: 'Live storefronts, portals, chat widgets, and multi-page products shipped to production.',
+      workingOn: 'Enterprise full-system surfaces and client platform upgrades currently in delivery.',
     },
     {
-      title: 'Custom software & CRM',
+      title: 'System architecture & enterprise design',
       description:
-        'Bespoke tools and CRM setup: pipelines, reporting, and integrations so sales and ops stay in sync.',
+        'Blueprints for scalable systems: service boundaries, data flows, and multi-role admin before screens ship.',
+      expertise: 'System Architect Designing Expert',
+      lead: 'Ayesha Rahman',
+      workedOn: 'Mapped membership platforms, portal auth layers, and ops systems built for long-term growth.',
+      workingOn: 'Enterprise-level system design for the full operating stack now in active build.',
     },
     {
-      title: 'SEO & growth',
+      title: 'AI automation & workflow systems',
       description:
-        'Technical SEO, page structure, and digital marketing — scoped so you can maintain what we ship.',
+        'Agents, transcript pipelines, cross-app filtering, and integrations that cut repeat clicks for ops teams.',
+      expertise: 'AI Automation Expert',
+      lead: 'Omar Farooq',
+      workedOn: 'Video Transcript Studio and Filtering from Any App — automation already in use.',
+      workingOn: 'New automation lanes tying CRM, SEO ops, and internal tools into one workflow line.',
     },
     {
-      title: 'Website chat helpers',
+      title: 'App development & product UX',
       description:
-        'Custom chat on your site for FAQs, lead capture, and routing visitors to the right next step.',
+        'Polished web and member apps — dashboards, portals, and flows that feel fast and clear to use.',
+      expertise: 'App Developer Expert',
+      lead: 'Maria Hassan',
+      workedOn: 'The Syndicate membership hub, dashboards, and member onboarding experiences.',
+      workingOn: 'Product screens and admin UX for the enterprise full system currently shipping.',
+    },
+    {
+      title: 'SEO & search growth systems',
+      description:
+        'Technical SEO, page structure, and content systems so search engines reward what you publish.',
+      expertise: 'SEO AI Optimization Expert',
+      lead: 'Bilal Siddiqui',
+      workedOn: 'Commerce and marketing sites structured for rankings, speed, and measurable enquiry lift.',
+      workingOn: 'SEO foundations and content systems inside the enterprise delivery now underway.',
     },
     {
       title: 'Consultancy',
       description:
-        'Roadmaps, tool choices, and what to build first — standalone or bundled with delivery.',
+        'Roadmaps, tool choices, scope, and what to build first — standalone advice or bundled with delivery.',
+      expertise: 'Business Development Expert',
+      lead: 'Daniyal Sheikh',
+      workedOn: 'Scoped partnerships, ninety-day plans, and clear delivery paths for growing teams.',
+      workingOn: 'Active advisory on fit, priorities, and phased rollout for new client engagements.',
     },
   ],
   education: {

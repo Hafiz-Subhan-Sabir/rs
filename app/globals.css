@@ -311,36 +311,329 @@ html.dark .hero-delivery-panel {
     0 24px 60px -12px rgba(0, 0, 0, 0.35);
 }
 
-/* Soft surface cards — interactive containers only */
-.surface-card {
+/* —— Crew intro / scroll journey —— */
+.crew-intro-grid {
+  background-image:
+    linear-gradient(rgba(194, 65, 12, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 30% 40%, #000 25%, transparent 78%);
+}
+
+html.dark .crew-intro-grid {
+  background-image:
+    linear-gradient(rgba(251, 146, 60, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+}
+
+.crew-member-card {
+  box-shadow: 0 8px 28px rgba(28, 25, 23, 0.06);
+}
+
+html.dark .crew-member-card {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+
+.crew-member-card:hover {
+  transform: translateY(-3px);
+}
+
+.crew-member-card-hot {
+  transform: translateY(-3px);
+}
+
+/* Services capability cards */
+.svc-card {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.svc-card:hover {
+  transform: translateY(-5px);
+}
+
+.svc-cta:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crew-member-card:hover,
+  .crew-member-card-hot,
+  .svc-card:hover,
+  .svc-cta:hover {
+    transform: none;
+  }
+}
+
+/* Home hero identity */
+.hero-mesh {
+  background-image:
+    linear-gradient(rgba(194, 65, 12, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 40% 35%, #000 15%, transparent 70%);
+}
+
+.hero-identity {
+  backdrop-filter: blur(10px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-identity {
+    /* float handled by framer reduced via motionReady */
+  }
+}
+
+/* Soft surface cards — 2px glow borders, stronger glow on hover */
+.surface-card,
+.glow-border {
+  border-width: 2px;
+  border-style: solid;
   transition:
     border-color 0.3s ease,
-    box-shadow 0.3s ease,
+    box-shadow 0.35s ease,
     transform 0.3s ease;
 }
 
-html.light .surface-card {
-  border-color: rgba(231, 229, 228, 0.95);
-  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04);
+html.light .surface-card,
+html.light .glow-border {
+  border-color: rgba(var(--accent) / 0.28);
+  box-shadow:
+    0 0 0 1px rgba(var(--accent) / 0.06),
+    0 0 18px rgba(var(--accent) / 0.14),
+    0 2px 8px rgba(28, 25, 23, 0.04);
 }
 
-html.dark .surface-card {
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: none;
+html.dark .surface-card,
+html.dark .glow-border {
+  border-color: rgba(var(--accent) / 0.32);
+  box-shadow:
+    0 0 0 1px rgba(var(--accent) / 0.1),
+    0 0 22px rgba(var(--accent) / 0.18);
 }
 
 html.light .surface-card:hover,
-html.light .surface-card:focus-within {
-  border-color: rgba(var(--accent) / 0.4);
-  box-shadow: 0 8px 28px rgba(28, 25, 23, 0.06);
-  transform: translateY(-2px);
+html.light .surface-card:focus-within,
+html.light .glow-border:hover,
+html.light .glow-border:focus-within {
+  border-color: rgba(var(--accent) / 0.72);
+  box-shadow:
+    0 0 0 1px rgba(var(--accent) / 0.18),
+    0 0 32px rgba(var(--accent) / 0.38),
+    0 10px 28px rgba(28, 25, 23, 0.08);
+  transform: translateY(-3px);
 }
 
 html.dark .surface-card:hover,
-html.dark .surface-card:focus-within {
-  border-color: rgba(var(--accent) / 0.35);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-  transform: translateY(-2px);
+html.dark .surface-card:focus-within,
+html.dark .glow-border:hover,
+html.dark .glow-border:focus-within {
+  border-color: rgba(var(--accent) / 0.85);
+  box-shadow:
+    0 0 0 1px rgba(var(--accent) / 0.22),
+    0 0 40px rgba(var(--accent) / 0.45),
+    0 12px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(-3px);
+}
+
+/* Role / category chips — easy visual differentiation */
+.diff-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid rgba(var(--accent) / 0.35);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--accent));
+  background: rgba(var(--accent) / 0.08);
+  box-shadow: 0 0 12px rgba(var(--accent) / 0.15);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.group:hover .diff-chip {
+  border-color: rgba(var(--accent) / 0.7);
+  box-shadow: 0 0 20px rgba(var(--accent) / 0.35);
+}
+
+.diff-chip--dev {
+  border-color: rgba(14, 165, 233, 0.45);
+  color: #0284c7;
+  background: rgba(14, 165, 233, 0.1);
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.2);
+}
+
+html.dark .diff-chip--dev {
+  color: #7dd3fc;
+  border-color: rgba(125, 211, 252, 0.4);
+}
+
+/* —— Crew intro / RS Board (high contrast) —— */
+.crew-intro-grid {
+  background-image:
+    linear-gradient(rgba(251, 146, 60, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 146, 60, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at 30% 40%, #000 20%, transparent 75%);
+}
+
+@keyframes crew-intro-scan {
+  0% {
+    transform: translateY(-120%);
+  }
+  100% {
+    transform: translateY(220%);
+  }
+}
+
+.crew-intro-scan {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(251, 146, 60, 0.14) 45%,
+    transparent
+  );
+  height: 35%;
+  animation: crew-intro-scan 4.8s linear infinite;
+}
+
+@keyframes crew-dice-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.15);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.crew-dice-spin {
+  animation: crew-dice-spin 0.28s linear infinite;
+}
+
+.crew-square-card {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.crew-square-card:hover {
+  transform: translateY(-4px);
+}
+
+.crew-square-card-hot {
+  transform: translateY(-4px);
+}
+
+/* —— RS Board (futuristic monopoly crew) —— */
+.mono-board-grid {
+  background-image:
+    linear-gradient(rgba(var(--accent) / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent) / 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 78%);
+}
+
+@keyframes mono-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.mono-board-scan {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(var(--accent) / 0.07) 48%,
+    transparent 100%
+  );
+  height: 40%;
+  animation: mono-scan 5.5s linear infinite;
+}
+
+.mono-board-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr 1fr;
+  grid-template-rows: 1fr 1.05fr 1fr;
+  gap: 0.65rem;
+}
+
+.mono-tile {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 18px rgba(0, 0, 0, 0.35);
+}
+
+.mono-tile-active {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--tile) 55%, transparent),
+    0 0 28px color-mix(in srgb, var(--tile) 45%, transparent),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.mono-token {
+  z-index: 5;
+}
+
+@keyframes mono-hub-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.mono-hub-pulse {
+  background: radial-gradient(circle at 50% 45%, rgba(var(--accent) / 0.35), transparent 62%);
+  animation: mono-hub-breathe 3.2s ease-in-out infinite;
+}
+
+@keyframes mono-dice-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  40% {
+    transform: rotate(180deg) scale(1.12);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.mono-dice-spin {
+  animation: mono-dice-spin 0.35s ease-in-out infinite;
+}
+
+.mono-deed {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 0 0 1px rgba(var(--accent) / 0.12),
+    0 0 32px rgba(var(--accent) / 0.18),
+    0 18px 40px rgba(28, 25, 23, 0.08);
+}
+
+html.dark .mono-deed {
+  box-shadow:
+    0 0 0 1px rgba(var(--accent) / 0.18),
+    0 0 40px rgba(var(--accent) / 0.22),
+    0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mono-board-scan,
+  .mono-hub-pulse,
+  .mono-dice-spin,
+  .crew-intro-scan,
+  .crew-dice-spin {
+    animation: none;
+  }
 }
 
 .testimonial-card {
@@ -585,9 +878,54 @@ html.dark .brand-marquee-logo {
   }
 }
 
+/* RS Bot floating widget */
+@keyframes rs-bot-pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--accent) / 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(var(--accent) / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--accent) / 0);
+  }
+}
+
+.rs-bot-fab {
+  animation: rs-bot-pulse-ring 2.4s ease-out infinite;
+}
+
+.rs-bot-pulse {
+  pointer-events: none;
+}
+
+@keyframes rs-bot-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.rs-bot-dot {
+  animation: rs-bot-dot 1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-bot-fab,
+  .rs-bot-dot {
+    animation: none;
+  }
+}
+
 /* Legacy aliases — map old neon classes to surface system */
 .neon-card {
-  /* no-op glow; surface-card handles interaction */
+  /* glow handled by surface-card */
 }
 .neon-green,
 .neon-blue,
