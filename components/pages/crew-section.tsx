@@ -144,25 +144,15 @@ export function CrewSection() {
                   boxShadow: `0 0 28px ${member.color}55`,
                 }}
               >
-                {member.photo ? (
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-top"
-                    sizes="224px"
-                    priority
-                  />
-                ) : (
-                  <div
-                    className="flex h-full w-full items-center justify-center font-display text-5xl font-bold text-white"
-                    style={{
-                      background: `linear-gradient(145deg, ${member.color}, #1c1917 75%)`,
-                    }}
-                  >
-                    {member.initials}
-                  </div>
-                )}
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  fill
+                  quality={100}
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 192px, 256px"
+                  priority
+                />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/85 to-transparent p-3">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-orange-200">
                     Member 0{active + 1} of 06
@@ -245,10 +235,10 @@ export function CrewSection() {
                 Talk to the crew
               </Link>
               <Link
-                href="/work"
+                href="/services"
                 className="inline-flex rounded-xl border-2 border-sky-600/40 bg-sky-50 px-6 py-3.5 text-sm font-bold text-sky-800 transition hover:border-sky-600 hover:bg-sky-100 dark:border-sky-400/40 dark:bg-sky-950/40 dark:text-sky-200"
               >
-                See our work
+                See our services
               </Link>
             </div>
           </div>
@@ -353,31 +343,19 @@ export function CrewSection() {
                             !left && "md:flex-row-reverse"
                           )}
                         >
-                          {m.photo ? (
-                            <div
-                              className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 bg-stone-100"
-                              style={{ borderColor: m.color, boxShadow: `0 0 16px ${m.color}44` }}
-                            >
-                              <Image
-                                src={m.photo}
-                                alt={m.name}
-                                fill
-                                className="object-cover object-top"
-                                sizes="64px"
-                              />
-                            </div>
-                          ) : (
-                            <div
-                              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border-2 font-display text-xl font-bold text-white"
-                              style={{
-                                borderColor: m.color,
-                                background: `linear-gradient(145deg, ${m.color}, #292524)`,
-                                boxShadow: `0 0 16px ${m.color}44`,
-                              }}
-                            >
-                              {m.initials}
-                            </div>
-                          )}
+                          <div
+                            className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 bg-stone-100"
+                            style={{ borderColor: m.color, boxShadow: `0 0 16px ${m.color}44` }}
+                          >
+                            <Image
+                              src={m.photo}
+                              alt={m.name}
+                              fill
+                              quality={100}
+                              className="object-cover object-top"
+                              sizes="128px"
+                            />
+                          </div>
                           <div className="min-w-0 flex-1">
                             <h4 className="font-display text-xl md:text-2xl font-semibold text-stone-900 dark:text-white">
                               {m.name}

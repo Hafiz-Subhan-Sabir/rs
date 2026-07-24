@@ -59,13 +59,10 @@ export function DeliveryCycle() {
 
       <div className="relative rounded-[1.75rem] border-2 border-stone-200/90 bg-white/80 px-5 sm:px-8 lg:px-10 py-12 md:py-16 shadow-[0_16px_48px_rgba(28,25,23,0.06)] dark:border-white/12 dark:bg-stone-950/70 dark:shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-accent">
-            How projects run
-          </p>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold tracking-tight text-stone-900 dark:text-white">
-            Six steps from first call to <span className="text-accent">live</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-tight text-stone-900 dark:text-white">
+            Six Steps From First Call To <span className="text-accent">Live</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
             From the first conversation through launch and support, you always know what we are
             building and why — clear owners, written scope, and the same crew end to end.
           </p>
@@ -104,10 +101,10 @@ export function DeliveryCycle() {
                 >
                   {step.step}
                 </span>
-                <h3 className="mt-4 text-sm font-bold text-stone-900 dark:text-white">
+                <h3 className="mt-4 text-base font-bold text-stone-900 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-xs leading-relaxed text-stone-600 dark:text-stone-400">
+                <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
                   {step.detail}
                 </p>
               </li>

@@ -1,6 +1,7 @@
 "use client";
 
 import { FastLink } from "@/components/navigation/fast-link";
+import { openConsultationPopup } from "@/components/layout/consultation-popup";
 import { MotionIn } from "@/components/motion/MotionIn";
 import { FOUNDER_FULL_NAME } from "@/constants";
 
@@ -11,7 +12,6 @@ const STATS = [
 ] as const;
 
 type BookConsultationCtaProps = {
-  /** Optional accent line under headline */
   note?: string;
 };
 
@@ -60,12 +60,13 @@ export function BookConsultationCta({ note }: BookConsultationCtaProps) {
             </div>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-              <FastLink
-                href="/contact"
-                className="btn-cta-float inline-flex items-center justify-center rounded-xl px-8 py-3.5 text-base font-bold brand-button shadow-[0_0_28px_rgba(194,65,12,0.3)]"
+              <button
+                type="button"
+                onClick={() => openConsultationPopup()}
+                className="cta-glow-zoom btn-cta-float inline-flex items-center justify-center rounded-xl px-8 py-3.5 text-base font-bold brand-button"
               >
                 Book free consultation →
-              </FastLink>
+              </button>
               <FastLink
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-xl border-2 border-stone-300 bg-white px-8 py-3.5 text-base font-bold text-stone-800 transition hover:border-accent/40 dark:border-white/15 dark:bg-stone-900 dark:text-stone-100"
@@ -76,7 +77,7 @@ export function BookConsultationCta({ note }: BookConsultationCtaProps) {
 
             <p className="mt-6 text-sm text-stone-500 dark:text-stone-400">
               Prefer to browse first?{" "}
-              <FastLink href="/work" className="font-semibold text-accent hover:underline">
+              <FastLink href="/about" className="font-semibold text-accent hover:underline">
                 See flagship products
               </FastLink>
             </p>

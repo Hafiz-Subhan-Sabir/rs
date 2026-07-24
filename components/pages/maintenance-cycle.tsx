@@ -8,8 +8,7 @@ export function MaintenanceCycle() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
       <SectionHeader
-        eyebrow="Ongoing care"
-        title="After launch, we keep your tech healthy"
+        title="After Launch, We Keep Your Tech Healthy"
         description="Sites and tools need ongoing care. We handle updates, speed, and small fixes so digital problems do not pull you back from quality work."
         align="center"
       />

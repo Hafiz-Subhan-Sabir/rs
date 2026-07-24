@@ -83,47 +83,59 @@ export const PROBLEM_SOLUTION_BLOCKS = [
 export const BUSINESS_PATHS = [
   {
     id: "grow",
-    label: "Revenue has flatlined online",
+    label: "Sales from the website are stuck",
+    question: "Is Your Website Not Bringing In Sales?",
+    answer:
+      "RS Dev makes your website faster, helps people find you on Google, and sets up simple ads when they help. We keep checking each month so more visitors become real customers.",
     problem:
-      "You are ready to expand, yet the site feels small, slow to find, or silent when prospects compare you to rivals.",
+      "You want more sales online, but your site is hard to find or does not turn visitors into buyers.",
     solution:
-      "A fast storefront plus search placement, paid reach where it pays back, and steady tune ups so traffic turns into conversations worth your sales time.",
-    outcomes: ["Sharp web presence", "Search placement", "Pipeline fill", "Monthly tune ups"],
+      "A faster website, better search results, smart ads when needed, and monthly check-ins.",
+    outcomes: ["Faster website", "Easier to find on Google", "More sales leads", "Monthly check-ins"],
     diagramKey: "growthFunnel" as const,
-    cta: { label: "Map the revenue path", href: "/contact?intent=growth" },
+    cta: { label: "Talk About Sales Growth", href: "/contact?intent=growth" },
   },
   {
     id: "operations",
-    label: "Daily work runs on duct tape",
+    label: "Work is messy across many tools",
+    question: "Is Daily Work Spread Across Too Many Apps And Sheets?",
+    answer:
+      "We build one clear system that matches how your team already works. Everyone sees the same numbers, the right people get the right access, and fewer mistakes slip through.",
     problem:
-      "Tabs, sheets, and inbox threads hold the business together. Mistakes slip through and nobody trusts a single number.",
+      "Tabs, spreadsheets, and emails hold the business together. Mistakes happen and nobody trusts the numbers.",
     solution:
-      "Software shaped around how your people actually sell and support, with roles, reports, and live links between the tools you already pay for.",
-    outcomes: ["Sales boards", "Custom portals", "Live data links", "Safe sign in"],
+      "Simple software for sales and support, clear roles, and live links between your tools.",
+    outcomes: ["One clear dashboard", "Team logins that fit", "Live numbers", "Fewer mistakes"],
     diagramKey: "automationFlow" as const,
-    cta: { label: "Fix the back office", href: "/contact?intent=operations" },
+    cta: { label: "Fix My Daily Tools", href: "/contact?intent=operations" },
   },
   {
     id: "brand",
-    label: "You look better in person than on screen",
+    label: "Offline brand is stronger than the website",
+    question: "Do You Look Better In Person Than On Your Website?",
+    answer:
+      "RS Dev redesigns your site so it looks clean, loads fast, and feels like your real business. Visitors should trust you online the same way they do face to face.",
     problem:
-      "Offline you win trust fast. Online the story feels generic, stiff, or years behind the quality you deliver face to face.",
+      "In person people trust you quickly. Online your site looks old, plain, or confusing.",
     solution:
-      "Interfaces with scroll motion, crisp type, and flows that feel considered. Built to load fast and read well on every device.",
-    outcomes: ["Distinct look online", "Scroll motion", "Speed first build", "Reusable parts"],
+      "A fresh, fast website that looks professional on phones and computers.",
+    outcomes: ["Clean modern look", "Fast on mobile", "Clear story", "Easy to update"],
     diagramKey: "brandExperience" as const,
-    cta: { label: "Raise the online bar", href: "/contact?intent=brand" },
+    cta: { label: "Improve My Website Look", href: "/contact?intent=brand" },
   },
   {
     id: "automate",
-    label: "Staff repeat the same clicks every day",
+    label: "Team repeats the same manual tasks",
+    question: "Does Your Team Do The Same Manual Tasks Every Day?",
+    answer:
+      "We find the repeat work and set up simple automatic steps. Your team only steps in when a real decision is needed — so they save time without losing control.",
     problem:
-      "Data entry, reminders, exports, and sign offs eat the calendar. Big goals keep sliding to next month.",
+      "Copy-paste, reminders, and exports eat the day. Bigger goals keep getting pushed to next month.",
     solution:
-      "Mapped routines that run quietly, alert a person when judgment matters, and leave a trail you can audit.",
-    outcomes: ["Process maps", "Background routines", "Alerts", "Live status views"],
+      "Simple automations that run in the background and alert people only when needed.",
+    outcomes: ["Less copy-paste", "Automatic reminders", "Time back for the team", "Clear task trail"],
     diagramKey: "automationFlow" as const,
-    cta: { label: "Remove the repeat work", href: "/contact?intent=automate" },
+    cta: { label: "Save My Team Time", href: "/contact?intent=automate" },
   },
 ] as const;
 
@@ -188,8 +200,8 @@ export const DELIVERY_CYCLE_STEPS = [
   { step: "01", title: "Listen", detail: "Goals, limits, and what a good ninety days looks like." },
   { step: "02", title: "Define", detail: "Written outputs, dates, and who owns each piece." },
   { step: "03", title: "Sketch", detail: "Screens, motion direction, and brand fit before code." },
-  { step: "04", title: "Ship slices", detail: "Working chunks you can click through each sprint." },
-  { step: "05", title: "Go live", detail: "Checks, analytics, and notes your team can follow." },
+  { step: "04", title: "Ship Slices", detail: "Working chunks you can click through each sprint." },
+  { step: "05", title: "Go Live", detail: "Checks, analytics, and notes your team can follow." },
   { step: "06", title: "Extend", detail: "Search, ads, routines, and care as one ongoing program." },
 ] as const;
 
@@ -202,44 +214,44 @@ export const MAINTENANCE_CYCLE_STEPS = [
 ] as const;
 
 export const PACKAGED_OFFER = {
-  title: "Ninety day digital fix plan",
+  title: "Ninety Day Digital Fix Plan",
   description:
     "One clear plan for product, search, enquiries, and back office tech. Built for owners who want problems solved in the real world, not another deck to sit on a shelf.",
   phases: [
     {
-      weeks: "Weeks 1 to 4",
-      title: "Product surface",
+      weeks: "Weeks 1 To 4",
+      title: "Product Surface",
       detail: "Site or app live with analytics, speed targets, and conversion paths that match your offer.",
     },
     {
-      weeks: "Weeks 5 to 8",
-      title: "Search and traffic",
+      weeks: "Weeks 5 To 8",
+      title: "Search And Traffic",
       detail: "Technical search fixes, page structure, and paid or organic tests tied to real queries.",
     },
     {
-      weeks: "Weeks 9 to 12",
-      title: "Pipeline and ops",
+      weeks: "Weeks 9 To 12",
+      title: "Pipeline And Ops",
       detail: "Forms, sales records, and background routines so follow ups and repeat work shrink.",
     },
   ],
-  cta: { label: "Ask about the ninety day plan", href: "/contact?intent=growth" },
+  cta: { label: "Ask About The Ninety Day Plan", href: "/contact?intent=growth" },
 } as const;
 
 export const COMPANY_VALUES = [
   {
-    title: "Write it down first",
+    title: "Write It Down First",
     body: "Every job opens with agreed outcomes on paper so nobody guesses what done means.",
   },
   {
-    title: "One crew end to end",
+    title: "One Crew End To End",
     body: "Build, search, ads, and care sit with the same people. You are not herding five vendors for one site.",
   },
   {
-    title: "Speed signals respect",
+    title: "Speed Signals Respect",
     body: "Fast loads and clean screens tell visitors you treat their time seriously.",
   },
   {
-    title: "Automate the boring only",
+    title: "Automate The Boring Only",
     body: "We wire repeat steps, not judgment calls, so people stay in control while hours shrink.",
   },
 ] as const;

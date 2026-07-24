@@ -157,6 +157,176 @@ html.dark .brand-button {
   box-shadow: 0 8px 28px rgba(var(--accent) / 0.3);
 }
 
+/* Hero / consultation CTAs — glow + continuous zoom in/out */
+@keyframes cta-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 1px rgba(var(--accent) / 0.35),
+      0 0 22px rgba(var(--accent) / 0.4),
+      0 10px 28px rgba(194, 65, 12, 0.25);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 0 1px rgba(var(--accent) / 0.55),
+      0 0 42px rgba(var(--accent) / 0.7),
+      0 14px 36px rgba(194, 65, 12, 0.4);
+  }
+}
+
+@keyframes cta-breathe-alt {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 1px rgba(2, 132, 199, 0.3),
+      0 0 20px rgba(2, 132, 199, 0.25);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 0 1px rgba(2, 132, 199, 0.5),
+      0 0 36px rgba(2, 132, 199, 0.5);
+  }
+}
+
+.cta-glow-zoom {
+  animation: cta-breathe 2.4s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+/* Promo launch banner — soft pop + emerald glow pulse */
+@keyframes promo-pop-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 48px rgba(16, 185, 129, 0.35),
+      0 20px 50px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 64px rgba(16, 185, 129, 0.55),
+      0 0 40px rgba(251, 191, 36, 0.25),
+      0 24px 56px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.promo-pop {
+  animation: promo-pop-glow 2.8s ease-in-out infinite;
+}
+
+.cta-glow-zoom:hover {
+  animation-play-state: paused;
+  transform: scale(1.08);
+  box-shadow:
+    0 0 0 1px rgba(var(--accent) / 0.6),
+    0 0 48px rgba(var(--accent) / 0.75),
+    0 14px 36px rgba(194, 65, 12, 0.4);
+}
+
+.cta-glow-zoom-alt {
+  animation: cta-breathe-alt 2.6s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.cta-glow-zoom-alt:hover {
+  animation-play-state: paused;
+  transform: scale(1.07);
+  border-color: rgba(2, 132, 199, 0.75);
+  box-shadow:
+    0 0 0 1px rgba(2, 132, 199, 0.5),
+    0 0 40px rgba(2, 132, 199, 0.55);
+}
+
+/* Contact icons — glow + zoom in/out */
+@keyframes contact-glow-wa {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55), 0 0 22px rgba(37, 211, 102, 0.55);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0), 0 0 36px rgba(37, 211, 102, 0.85);
+  }
+}
+
+@keyframes contact-glow-mail {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(194, 65, 12, 0.45), 0 0 22px rgba(194, 65, 12, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(194, 65, 12, 0), 0 0 36px rgba(194, 65, 12, 0.75);
+  }
+}
+
+.contact-glow-wa {
+  animation: contact-glow-wa 2.2s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.contact-glow-wa:hover {
+  animation-play-state: paused;
+  transform: scale(1.14);
+  box-shadow: 0 0 40px rgba(37, 211, 102, 0.9);
+}
+
+.contact-glow-mail {
+  animation: contact-glow-mail 2.2s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.contact-glow-mail:hover {
+  animation-play-state: paused;
+  transform: scale(1.14);
+  box-shadow: 0 0 40px rgba(194, 65, 12, 0.8);
+}
+
+/* Navbar RS Bot — black/charcoal zoom in/out */
+@keyframes rs-bot-nav-zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.rs-bot-nav-trigger {
+  color: #1c1917;
+  animation: rs-bot-nav-zoom 2.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.rs-bot-nav-trigger:hover {
+  animation-play-state: paused;
+  transform: scale(1.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow-zoom,
+  .cta-glow-zoom-alt,
+  .contact-glow-wa,
+  .contact-glow-mail,
+  .rs-bot-nav-trigger,
+  .promo-pop {
+    animation: none;
+  }
+  .cta-glow-zoom:hover,
+  .cta-glow-zoom-alt:hover,
+  .contact-glow-wa:hover,
+  .contact-glow-mail:hover,
+  .rs-bot-nav-trigger:hover {
+    transform: none;
+  }
+}
+
 .btn-outline-cta {
   transition:
     border-color 0.25s ease,
@@ -944,6 +1114,51 @@ html.dark .brand-marquee-logo {
 
 .rs-bot-fab {
   animation: rs-bot-pulse-ring 2.4s ease-out infinite;
+}
+
+/* Navbar gift offer — amber glow */
+@keyframes promo-gift-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(255, 177, 51, 0.55),
+      0 0 18px rgba(255, 177, 51, 0.55);
+  }
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(255, 177, 51, 0),
+      0 0 28px rgba(255, 177, 51, 0.85);
+  }
+}
+
+.promo-gift-trigger {
+  animation: promo-gift-glow 2.2s ease-in-out infinite;
+}
+
+.promo-gift-glow {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-gift-trigger {
+    animation: none;
+  }
+}
+
+.rs-bot-panel {
+  isolation: isolate;
+}
+
+.rs-bot-scroll {
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(194, 65, 12, 0.06), transparent 42%),
+    radial-gradient(circle at 88% 72%, rgba(14, 165, 233, 0.05), transparent 40%);
+}
+
+.dark .rs-bot-scroll {
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(194, 65, 12, 0.12), transparent 42%),
+    radial-gradient(circle at 88% 72%, rgba(14, 165, 233, 0.08), transparent 40%);
 }
 
 .rs-bot-pulse {

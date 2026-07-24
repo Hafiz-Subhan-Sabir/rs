@@ -350,18 +350,18 @@ export function AdviseVisual({ accent, className }: VisualProps) {
 
 export const SERVICE_ICONS = [
   ServerStackIcon,
-  CubeTransparentIcon,
-  Cog6ToothIcon,
   DevicePhoneMobileIcon,
+  CubeTransparentIcon,
   MagnifyingGlassIcon,
-  LightBulbIcon,
+  Cog6ToothIcon,
+  CloudIcon,
 ] as const;
 
 export const SERVICE_VISUALS = [
   LaptopBackendVisual,
-  ArchitectureVisual,
-  AutomateVisual,
   PhoneAppVisual,
+  ArchitectureVisual,
   GrowVisual,
+  AutomateVisual,
   AdviseVisual,
 ] as const;

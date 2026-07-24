@@ -1,4 +1,4 @@
-/** RS Dev company timeline — business growth, not training or skills */
+/** RS Dev company timeline — business growth story */
 
 export type CompanyMilestone = {
   title: string;
@@ -7,70 +7,64 @@ export type CompanyMilestone = {
 
 export type CompanyJourneyYear = {
   year: string;
-  phase: string;
   items: CompanyMilestone[];
 };
 
 export const COMPANY_JOURNEY: CompanyJourneyYear[] = [
   {
     year: "2026",
-    phase: "Full service studio",
     items: [
       {
-        title: "One crew for build, search, enquiries, and ops",
+        title: "One Crew. Full Delivery.",
         description:
-          "RS Dev now runs as a focused digital studio: websites and apps, bespoke software, CRM setups, search work, workflow automation, and campaign support under written plans clients can follow.",
+          "RS Dev now works as one studio for websites, apps, custom software, CRM, search, automation, and growth support. Clients get a written plan, clear owners, and the same people from first call to go-live — so quality work is not blocked by messy digital tools.",
       },
     ],
   },
   {
     year: "2025",
-    phase: "Client programs at scale",
     items: [
       {
-        title: "Repeat delivery across industries",
+        title: "Longer Partnerships. Real Industries.",
         description:
-          "Longer engagements in retail, food supply, access control, and internal operations. More clients stayed for search tune ups, product slices, and back office wiring after the first launch.",
+          "More teams stayed with us after the first launch. We helped retail, food supply, access control, and operations teams with search updates, product improvements, and back-office systems that match how people actually work day to day.",
       },
     ],
   },
   {
     year: "2024",
-    phase: "Trusted by growing teams",
     items: [
       {
-        title: "From one off builds to ongoing partnerships",
+        title: "From One Project To A Plan.",
         description:
-          "Companies started hiring RS Dev for phased roadmaps instead of single pages. We formalized discovery, scope, design, build, launch, and grow as the standard way we work.",
+          "Companies stopped asking for a single page and started asking for a clear roadmap. We made discovery, scope, design, build, launch, and growth our normal way of working — so everyone knows what happens next and why.",
       },
     ],
   },
   {
     year: "2023",
-    phase: "RS Dev founded",
     items: [
       {
-        title: "A studio built for entrepreneur problems",
+        title: "RS Dev Opens For Entrepreneurs.",
         description:
-          "RS Dev launched to help business owners fix digital mess: slow sites, missing search visibility, leaky enquiry flows, and tools that did not match how teams actually sell and support.",
+          "We started RS Dev to help business owners fix common digital problems: slow websites, weak search visibility, lost enquiries, and tools that do not match how teams sell and support customers. Simple language. Clear outcomes. Hands that stay after launch.",
       },
     ],
   },
   {
     year: "2022",
-    phase: "Before the studio name",
     items: [
       {
-        title: "Early client work shaped the model",
+        title: "Early Work Taught Us The Pattern.",
         description:
-          "Project work with founders and small teams showed the same pattern: they needed outcomes, clear communication, and one partner who would stay after go live. That became the RS Dev way of working.",
+          "Before the studio name, project work with founders and small teams showed the same need again and again: real results, honest updates, and one partner who stays after go-live. That pattern became the RS Dev way of working.",
       },
     ],
   },
 ];
 
 export const COMPANY_JOURNEY_INTRO = {
-  title: "How RS Dev became the company clients call when digital work blocks quality work",
+  title: "The Story Of How RS Dev Grew.",
   description:
-    "This is our business story: who we serve, what we shipped, and how we grew into a studio entrepreneurs trust for practical technology.",
+    "We started by helping founders fix messy digital problems. Year by year we grew into a six-person studio entrepreneurs trust for websites, software, search, and day-to-day tools — with clear plans and the same crew from start to finish.",
 } as const;

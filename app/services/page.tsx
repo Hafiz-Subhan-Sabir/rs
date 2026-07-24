@@ -6,7 +6,6 @@ import { PageShell } from "@/components/layout/page-shell";
 import { CapabilitiesGrid } from "@/components/pages/capabilities-grid";
 import { BusinessPaths } from "@/components/pages/business-paths";
 import { PackagedOffer } from "@/components/pages/packaged-offer";
-import { PageTestimonials } from "@/components/pages/page-testimonials";
 import { WhyChooseUs } from "@/components/pages/why-choose-us";
 import { SITE_SUBTAGLINE } from "@/constants";
 
@@ -21,17 +20,15 @@ export default function ServicesPage() {
   return (
     <PageShell className="pb-0">
       <PageHero
-        badge="Services"
-        title="Technology that solves real company problems."
+        title="Technology That Solves Real Company Problems."
         description={SITE_SUBTAGLINE}
-        primaryCta={{ label: "Describe your problem", href: "/contact" }}
-        secondaryCta={{ label: "See our work", href: "/work" }}
+        primaryCta={{ label: "Describe Your Problem", href: "/contact" }}
+        secondaryCta={{ label: "Meet The Crew", href: "/about" }}
       />
       <CapabilitiesGrid showCta={false} />
       <WhyChooseUs />
       <BusinessPaths />
       <PackagedOffer />
-      <PageTestimonials />
       <BookConsultationCta note="Cloud guidance from Daniyal Sheikh when you need scale." />
     </PageShell>
   );

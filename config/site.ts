@@ -28,24 +28,6 @@ export const siteConfig = {
       workingOn: 'Enterprise full-system surfaces and client platform upgrades currently in delivery.',
     },
     {
-      title: 'System architecture & enterprise design',
-      description:
-        'Blueprints for scalable systems: service boundaries, data flows, and multi-role admin before screens ship.',
-      expertise: 'System Architect Designing Expert',
-      lead: 'Ayesha Rahman',
-      workedOn: 'Mapped membership platforms, portal auth layers, and ops systems built for long-term growth.',
-      workingOn: 'Enterprise-level system design for the full operating stack now in active build.',
-    },
-    {
-      title: 'DevOps & automation systems',
-      description:
-        'Pipelines, environments, and workflow automation that keep products reliable and teams free of repeat ops work.',
-      expertise: 'DevOps & Automation Expert',
-      lead: 'Omar Farooq',
-      workedOn: 'Delivery pipelines and product automations already in live client systems.',
-      workingOn: 'New automation lanes tying CRM, SEO ops, and internal tools into one workflow line.',
-    },
-    {
       title: 'App development & product UX',
       description:
         'Polished web and member apps — dashboards, portals, and flows that feel fast and clear to use.',
@@ -55,6 +37,15 @@ export const siteConfig = {
       workingOn: 'Product screens and admin UX for the enterprise full system currently shipping.',
     },
     {
+      title: 'System architecture & enterprise design',
+      description:
+        'Blueprints for scalable systems: service boundaries, data flows, and multi-role admin before screens ship.',
+      expertise: 'System Architect Designing Expert',
+      lead: 'Ayesha Rahman',
+      workedOn: 'Mapped membership platforms, portal auth layers, and ops systems built for long-term growth.',
+      workingOn: 'Enterprise-level system design for the full operating stack now in active build.',
+    },
+    {
       title: 'SEO & search growth systems',
       description:
         'Technical SEO, page structure, and content systems so search engines reward what you publish.',
@@ -62,6 +53,15 @@ export const siteConfig = {
       lead: 'Bilal Siddiqui',
       workedOn: 'Commerce and marketing sites structured for rankings, speed, and measurable enquiry lift.',
       workingOn: 'SEO foundations and content systems inside the enterprise delivery now underway.',
+    },
+    {
+      title: 'DevOps & automation systems',
+      description:
+        'Pipelines, environments, and workflow automation that keep products reliable and teams free of repeat ops work.',
+      expertise: 'DevOps & Automation Expert',
+      lead: 'Omar Farooq',
+      workedOn: 'Delivery pipelines and product automations already in live client systems.',
+      workingOn: 'New automation lanes tying CRM, SEO ops, and internal tools into one workflow line.',
     },
     {
       title: 'Cloud solutions & scale',

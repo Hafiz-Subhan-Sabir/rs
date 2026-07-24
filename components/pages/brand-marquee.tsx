@@ -56,13 +56,13 @@ export function TechMarquee() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 mb-10">
         <MotionIn>
           <div className="text-center sm:text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Trust</p>
-            <h2 className="mt-2 font-display text-xl sm:text-2xl font-semibold text-stone-900 dark:text-white">
-              Companies we work with
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold tracking-tight text-stone-900 dark:text-white">
+              Companies We Work With
             </h2>
-            <p className="mt-2 max-w-2xl text-sm text-stone-600 dark:text-stone-400">
-              Entrepreneurs and teams who trusted RS Dev to solve digital problems so they could stay focused on
-              quality work.
+            <p className="mt-3 max-w-2xl text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
+              Entrepreneurs and teams who trusted{" "}
+              <span className="font-semibold text-accent">RS Dev</span> to solve digital problems so
+              they could stay focused on quality work.
             </p>
           </div>
         </MotionIn>

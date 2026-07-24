@@ -3,8 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { FaRobot } from "react-icons/fa";
 
 import { FastLink } from "@/components/navigation/fast-link";
+import { openRsBot } from "@/components/main/chatbot";
+import { PromoOfferTrigger } from "@/components/layout/promo-offer-sidebar";
 import { NAV_LINKS } from "@/constants";
 import { ThemeToggle } from "@/components/main/ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -14,6 +17,30 @@ const NAVBAR_H = "h-[80px]";
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+/** RS Bot trigger — robotic symbol + label, no button background */
+function RsBotNavTrigger({ className }: { className?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => openRsBot()}
+      className={cn(
+        "rs-bot-nav-trigger group flex flex-col items-center justify-center gap-0.5 bg-transparent border-0 p-1 outline-none transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-stone-400/50 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-stone-950",
+        className,
+      )}
+      aria-label="Open RS Bot"
+      title="Ask RS Bot"
+    >
+      <FaRobot
+        className="h-6 w-6 text-stone-900 dark:text-stone-200"
+        aria-hidden
+      />
+      <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-stone-700 dark:text-stone-300 leading-none">
+        RS Bot
+      </span>
+    </button>
+  );
 }
 
 export const Navbar = () => {
@@ -76,6 +103,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3 shrink-0">
+          <PromoOfferTrigger />
           <ThemeToggle compact />
           <FastLink
             href="/contact"
@@ -83,10 +111,13 @@ export const Navbar = () => {
           >
             Let&apos;s talk
           </FastLink>
+          <RsBotNavTrigger className="ml-4 sm:ml-5" />
         </div>
 
         <div className="flex md:hidden items-center gap-2 shrink-0">
+          <PromoOfferTrigger />
           <ThemeToggle compact />
+          <RsBotNavTrigger />
           <button
             type="button"
             className="grid h-10 w-10 place-items-center rounded-lg border border-stone-200/80 bg-white/70 text-lg leading-none text-stone-800 dark:border-white/10 dark:bg-white/5 dark:text-white"

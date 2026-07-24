@@ -25,7 +25,7 @@ export function FeaturedWork() {
             </h2>
           </div>
           <Link
-            href="/work"
+            href="/about"
             className="btn-outline-cta glow-border inline-flex items-center gap-2 self-start rounded-lg border-2 bg-white px-5 py-2.5 text-sm font-semibold transition dark:bg-white/5"
           >
             All projects <span aria-hidden>→</span>
@@ -82,7 +82,7 @@ export function FeaturedWork() {
                   </a>
                 ) : (
                   <Link
-                    href="/work"
+                    href="/about"
                     className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent"
                   >
                     {inDev ? "Enterprise build details" : "Project details"}{" "}

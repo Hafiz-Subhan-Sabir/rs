@@ -7,9 +7,9 @@ import { Timeline } from "@/components/main/timeline";
 import { COMPANY_JOURNEY_INTRO } from "@/constants/company-journey";
 
 export const metadata: Metadata = {
-  title: "RS Dev | Company journey",
+  title: "RS Dev | Our Story",
   description:
-    "How RS Dev grew from early client work into a digital studio that helps entrepreneurs solve business problems with technology.",
+    "How RS Dev grew from early client work into a six-person studio that helps entrepreneurs solve digital problems with clear plans and practical technology.",
   alternates: { canonical: "/journey" },
 };
 
@@ -17,19 +17,16 @@ export default function JourneyPage() {
   return (
     <PageShell>
       <PageHero
-        badge="RS Dev"
         title={COMPANY_JOURNEY_INTRO.title}
         description={COMPANY_JOURNEY_INTRO.description}
-        primaryCta={{ label: "Work with us", href: "/contact" }}
-        secondaryCta={{ label: "See our services", href: "/services" }}
+        primaryCta={{ label: "Work With Us", href: "/contact" }}
+        secondaryCta={{ label: "See Our Services", href: "/services" }}
       />
-      <div data-reveal="fade-right" data-reveal-duration="0.9" data-reveal-delay="0.08">
-        <Timeline />
-      </div>
+      <Timeline />
       <CtaBand
-        title="Ready to add your company to the next chapter?"
-        description="Tell us the digital problem slowing your team down. We reply with a plain plan and honest fit."
-        primaryLabel="Describe your problem"
+        title="Ready To Start Your Next Chapter?"
+        description="Tell us what is slowing your team down — a website, a tool, search, or daily busywork. We reply within a day with a plain plan and an honest yes or no on fit."
+        primaryLabel="Describe Your Problem"
       />
     </PageShell>
   );

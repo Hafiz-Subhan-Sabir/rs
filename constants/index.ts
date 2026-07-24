@@ -46,62 +46,54 @@ export const FULLSTACK_SKILL = [
 
 export const OTHER_SKILL = [{ skill_name: "Deployment & Maintenance", image: "go.png", width: 60, height: 60 }] as const;
 
-export const PROJECTS = [
+export type ProjectStatus = "live" | "in-development";
+
+export const PROJECTS: ReadonlyArray<{
+  title: string;
+  description: string;
+  image: string;
+  liveUrl: string;
+  featured: boolean;
+  stack: string;
+  category: string;
+  status: ProjectStatus;
+  highlights: readonly string[];
+}> = [
   {
-    title: "The Syndicate Web App",
+    title: "The Syndicate — Cloud Enterprise Web App",
     description:
-      "Membership platform with AI automations, strong system architecture, Cloudflare edge delivery, YouTube-style course video segments that stream without heavy reloads, AI-generated articles, role-based access, secure login, and payment validation with IP-aware charging in pounds or dollars.",
+      "Cloud-based enterprise system designed as a full web application: AI automations, strong architecture, Cloudflare delivery, segmented course video, AI articles, RBAC, secure login, and IP-aware GBP/USD charging — with a clear roadmap into blockchain-ready membership and value rails.",
     image: "/projects/ai-interview.png",
     liveUrl: "",
     featured: true,
-    stack: "Next.js · Architecture · Cloudflare · AI · Payments",
-    category: "Enterprise Product",
-    status: "live" as const,
+    stack: "Cloud · Enterprise · AI · Cloudflare · Blockchain roadmap",
+    category: "Cloud Enterprise",
+    status: "live",
     highlights: [
-      "AI automations across missions and member workflows",
-      "Complex, scalable system architecture",
-      "Cloudflare for performance and edge delivery",
-      "YouTube-style segmented course video playback",
-      "AI-generated articles for content scale",
-      "Role-based access control (RBAC)",
-      "Secure login and payment validation",
-      "IP tracking for GBP / USD charging rules",
+      "Cloud-first enterprise architecture for scale",
+      "AI automations across member and content workflows",
+      "Cloudflare edge delivery for performance",
+      "Segmented course video without heavy reloads",
+      "RBAC, secure login, and payment validation",
+      "Designed path into blockchain-enabled modules",
     ],
   },
   {
-    title: "Affiliate Dashboard System",
+    title: "AI Proctoring Online Quiz Exam App",
     description:
-      "Custom affiliate operations dashboard built on a complex, strong architecture — tracking partners, commissions, and performance in one secure control surface designed for growth teams.",
-    image: "/projects/feedback-portal.png",
-    liveUrl: "",
-    featured: true,
-    stack: "Full stack · System architecture · Dashboards",
-    category: "Affiliate Platform",
-    status: "live" as const,
-    highlights: [
-      "Custom-built affiliate control panel",
-      "Complex architected data and service layers",
-      "Partner, commission, and performance views",
-      "Secure multi-role access for ops teams",
-    ],
-  },
-  {
-    title: "InteliQuiz — AI Online Proctoring",
-    description:
-      "AI-driven online MCQ quiz system with basic proctoring for FYP local demo: Admin/Teacher and Student roles, quiz builder, webcam face checks, tab-switch and fullscreen warnings, results and cheating logs with screenshots.",
+      "Online quiz and exam application with AI-assisted proctoring: teacher and student panels, quiz builder, webcam face checks, tab and fullscreen warnings, results and cheating logs with screenshots — built as a serious MVP product surface.",
     image: "/projects/script-to-video.png",
     liveUrl: "",
     featured: true,
-    stack: "Local demo · Webcam AI · RBAC · Quizzes",
-    category: "EdTech / FYP",
-    status: "live" as const,
+    stack: "AI Proctoring · Online Exams · Webcam AI · RBAC",
+    category: "Online Exams",
+    status: "live",
     highlights: [
-      "Admin/Teacher: create quizzes, manage students, view results & cheating logs",
-      "Student: timed MCQs, one question per page, auto-submit",
-      "Webcam on quiz start + face detection (5s missing → warning + screenshot)",
-      "Tab change & fullscreen exit detection with warning counts",
-      "Demo flow: Admin → Create Quiz → Student → Camera → Quiz → Logs",
-      "V1 scope only — voice/mobile/advanced AI reports planned for V2",
+      "Teachers create timed MCQ exams and manage cohorts",
+      "Students get one-question flow with auto-submit",
+      "Webcam face presence checks with warning + screenshot",
+      "Tab-switch and fullscreen-exit detection",
+      "Results and cheating logs in one admin surface",
     ],
   },
 ] as const;
@@ -139,7 +131,7 @@ export const CREW = [
     gender: "female" as const,
     initials: "AR",
     accent: "ember" as const,
-    photo: null,
+    photo: "/crew/ayesha-rahman.png",
     linkedin: null,
     bio: "Designs enterprise-level system maps, service boundaries, and data flows before a single screen ships.",
     specialty: "Architecture",
@@ -154,7 +146,7 @@ export const CREW = [
     gender: "male" as const,
     initials: "OF",
     accent: "copper" as const,
-    photo: null,
+    photo: "/crew/omar-farooq-v2.png",
     linkedin: null,
     bio: "Owns DevOps and automation — CI/CD, environments, and workflow systems that keep delivery reliable and teams unblocked.",
     specialty: "DevOps & Automation",
@@ -169,7 +161,7 @@ export const CREW = [
     gender: "female" as const,
     initials: "MH",
     accent: "ember" as const,
-    photo: null,
+    photo: "/crew/maria-hassan.png",
     linkedin: null,
     bio: "Ships polished app experiences — dashboards, portals, and member flows that feel fast and clear.",
     specialty: "App Development",
@@ -184,7 +176,7 @@ export const CREW = [
     gender: "male" as const,
     initials: "BS",
     accent: "copper" as const,
-    photo: null,
+    photo: "/crew/bilal-siddiqui-v2.png",
     linkedin: null,
     bio: "Pairs technical SEO with AI-assisted content systems so pages earn the clicks that matter.",
     specialty: "SEO AI",
@@ -199,7 +191,7 @@ export const CREW = [
     gender: "male" as const,
     initials: "DS",
     accent: "ember" as const,
-    photo: null,
+    photo: "/crew/daniyal-sheikh.png",
     linkedin: null,
     bio: "Designs cloud solutions — hosting, environments, and scale paths so products stay fast, secure, and ready to grow.",
     specialty: "Cloud Solutions",
@@ -215,7 +207,6 @@ export const FOOTER_DATA = [
     data: [
       { name: "About", link: "/about" },
       { name: "Services", link: "/services" },
-      { name: "Work", link: "/work" },
       { name: "Our story", link: "/journey" },
     ],
   },
@@ -293,7 +284,6 @@ export const NAV_LINKS = [
   { title: "Home", link: "/" },
   { title: "About", link: "/about" },
   { title: "Services", link: "/services" },
-  { title: "Work", link: "/work" },
   { title: "Our story", link: "/journey" },
   { title: "Contact", link: "/contact" },
 ] as const;

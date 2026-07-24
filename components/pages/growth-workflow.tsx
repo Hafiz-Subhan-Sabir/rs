@@ -9,8 +9,7 @@ export function GrowthWorkflow() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
       <SectionHeader
-        eyebrow="Growth workflow"
-        title="From discovery to compounding results"
+        title="From Discovery To Compounding Results"
         description="A clear sequence so marketing and product work reinforce each other instead of competing for attention."
         align="center"
       />
