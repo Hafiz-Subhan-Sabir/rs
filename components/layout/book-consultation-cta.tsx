@@ -17,7 +17,7 @@ type BookConsultationCtaProps = {
 
 export function BookConsultationCta({ note }: BookConsultationCtaProps) {
   return (
-    <section className="relative mx-auto w-[min(90vw,1280px)] py-[clamp(3rem,8vw,5rem)]">
+    <section className="relative mx-auto w-[min(92vw,1440px)] py-[clamp(3rem,8vw,5rem)]">
       <MotionIn>
         <div className="relative overflow-hidden rounded-[clamp(1.25rem,3vw,1.75rem)] border-2 border-accent/25 bg-white px-[clamp(1.25rem,4vw,2.5rem)] py-[clamp(2rem,5vw,3.5rem)] text-center dark:border-accent/35 dark:bg-stone-950">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(194,65,12,0.1),transparent_55%)]" />

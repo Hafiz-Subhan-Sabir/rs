@@ -25,13 +25,13 @@ export function HomeHero() {
     <section className="relative isolate scroll-mt-24 overflow-hidden min-h-[calc(100svh-80px)]">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-orange-50/90 via-white to-sky-50/50 dark:from-stone-950 dark:via-[#1c1917] dark:to-stone-950" />
-        <div className="absolute -top-24 left-[8%] h-[420px] w-[420px] rounded-full bg-accent/20 blur-[100px] dark:bg-accent/25" />
-        <div className="absolute top-[20%] right-[5%] h-[380px] w-[380px] rounded-full bg-sky-400/20 blur-[110px] dark:bg-sky-500/15" />
-        <div className="absolute bottom-[-10%] left-[35%] h-[320px] w-[320px] rounded-full bg-emerald-400/15 blur-[90px] dark:bg-emerald-500/10" />
-        <div className="absolute inset-0 hero-mesh opacity-[0.35] dark:opacity-[0.2]" aria-hidden />
+        <div className="hero-orb absolute -top-24 left-[8%] h-[min(420px,55vw)] w-[min(420px,55vw)] rounded-full bg-accent/20 blur-[clamp(40px,12vw,100px)] dark:bg-accent/25" />
+        <div className="hero-orb absolute top-[20%] right-[5%] hidden sm:block h-[min(380px,45vw)] w-[min(380px,45vw)] rounded-full bg-sky-400/20 blur-[clamp(40px,12vw,110px)] dark:bg-sky-500/15" />
+        <div className="hero-orb absolute bottom-[-10%] left-[35%] hidden md:block h-[min(320px,40vw)] w-[min(320px,40vw)] rounded-full bg-emerald-400/15 blur-[clamp(36px,10vw,90px)] dark:bg-emerald-500/10" />
+        <div className="absolute inset-0 hero-mesh opacity-[0.28] dark:opacity-[0.16] max-sm:opacity-[0.12]" aria-hidden />
       </div>
 
-      <div className="relative mx-auto w-[90vw] max-w-[90vw] pt-[clamp(5.25rem,8vw,6.5rem)] pb-[clamp(2.5rem,6vw,5rem)] flex flex-col justify-center min-h-[calc(100svh-80px)]">
+      <div className="relative mx-auto w-[min(92vw,1440px)] pt-[clamp(5.25rem,8vw,6.5rem)] pb-[clamp(2.5rem,6vw,5rem)] flex flex-col justify-center min-h-[calc(100svh-80px)] lg:min-h-0 lg:py-[clamp(4rem,8vh,7rem)]">
         <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-[clamp(2rem,4vw,3.5rem)] items-center">
           <div className="text-center lg:text-left">
             <motion.h1

@@ -47,7 +47,7 @@ export function WhyChooseUs() {
   const ready = useMotionReady();
 
   return (
-    <section className="relative mx-auto w-[90vw] max-w-[90vw] py-[clamp(3rem,8vw,6rem)]">
+    <section className="relative mx-auto w-[min(92vw,1440px)] py-[clamp(3rem,8vw,6rem)]">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute right-0 top-10 h-64 w-64 rounded-full bg-sky-400/10 blur-[80px]" />
         <div className="absolute left-10 bottom-0 h-56 w-56 rounded-full bg-accent/10 blur-[70px]" />

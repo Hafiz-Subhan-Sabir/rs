@@ -13,18 +13,21 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   color-scheme: light dark;
-  /* Fluid root — components use clamp on top of this */
-  font-size: clamp(16px, 0.35vw + 15px, 18.5px);
+  /* Fluid root — phones → laptop (1366) → large desktop */
+  font-size: clamp(15.5px, 0.22vw + 14.8px, 18.5px);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   font-size: 1.0625rem;
   line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Shared fluid section rhythm */
@@ -43,8 +46,14 @@ body {
 }
 
 .fluid-container {
-  width: min(90vw, 1280px);
+  width: min(92vw, 1440px);
   margin-inline: auto;
+}
+
+/* Skip paint work for off-screen marketing sections */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 720px;
 }
 
 :root {
@@ -94,7 +103,7 @@ html.dark body {
     linear-gradient(180deg, #292524, #1c1917);
 }
 
-/* Subtle grain atmosphere */
+/* Subtle grain atmosphere — desktop only (expensive on mobile GPUs) */
 body::before {
   content: "";
   position: fixed;
@@ -110,6 +119,23 @@ body::before {
 html.dark body::before {
   opacity: 0.22;
   mix-blend-mode: overlay;
+}
+
+@media (max-width: 1023px), (prefers-reduced-motion: reduce) {
+  body::before {
+    display: none;
+  }
+
+  .hero-orb {
+    opacity: 0.55;
+    filter: blur(48px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 ::selection {

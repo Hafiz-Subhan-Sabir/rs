@@ -14,16 +14,28 @@ export default function Home() {
     <main className="h-full w-full">
       <HomeHero />
       <TechMarquee />
-      <ImpactStrip />
-      <ServicesCollage />
-      <WhyChooseUs />
-      <DeliveryCycle />
-      <PackagedOffer />
-      <ClientTestimonials />
+      <div className="cv-auto">
+        <ImpactStrip />
+      </div>
+      <div className="cv-auto">
+        <ServicesCollage />
+      </div>
+      <div className="cv-auto">
+        <WhyChooseUs />
+      </div>
+      <div className="cv-auto">
+        <DeliveryCycle />
+      </div>
+      <div className="cv-auto">
+        <PackagedOffer />
+      </div>
+      <div className="cv-auto">
+        <ClientTestimonials />
+      </div>
 
       <div
         id="meeting"
-        className="scroll-mt-28 mx-auto w-[min(90vw,1100px)] py-[clamp(2rem,6vw,4rem)]"
+        className="cv-auto scroll-mt-28 mx-auto w-[min(92vw,1100px)] py-[clamp(2rem,6vw,4rem)]"
       >
         <div className="mb-[clamp(1rem,3vw,1.75rem)] text-center max-w-2xl mx-auto">
           <h2 className="font-display text-[clamp(1.75rem,4vw,2.65rem)] font-semibold text-stone-900 dark:text-white">

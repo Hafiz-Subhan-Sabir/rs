@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { canUseHeavyMotion, prefersReducedMotion } from '@/lib/perf';
 
 type LenisLike = {
   destroy: () => void;
@@ -19,14 +20,31 @@ export function SmoothScroll() {
   };
 
   useEffect(() => {
+    // Native scroll on mobile / reduced-motion — better battery & input latency.
+    if (prefersReducedMotion() || !canUseHeavyMotion()) {
+      const onClick = (e: MouseEvent) => {
+        if (e.defaultPrevented) return;
+        const target = e.target as HTMLElement | null;
+        const a = target?.closest?.('a[href^="#"]') as HTMLAnchorElement | null;
+        if (!a) return;
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        const el = document.querySelector(href) as HTMLElement | null;
+        if (!el) return;
+        e.preventDefault();
+        const y = el.getBoundingClientRect().top + window.scrollY + getAnchorOffset(href);
+        window.scrollTo({ top: y, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+      };
+      document.addEventListener('click', onClick);
+      return () => document.removeEventListener('click', onClick);
+    }
+
     let mounted = true;
 
     (async () => {
       const Lenis = (await import('lenis')).default;
       if (!mounted) return;
 
-      // Optional: Sync Lenis with GSAP ScrollTrigger if present.
-      // (Keeps pinned sections and scroll animations stable.)
       let ScrollTrigger: any = null;
       try {
         const gsapMod = await import('gsap');
@@ -39,10 +57,10 @@ export function SmoothScroll() {
       }
 
       const lenis: LenisLike = new Lenis({
-        duration: 1.15,
+        duration: 1.05,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
-        touchMultiplier: 1.8,
+        touchMultiplier: 1.6,
       }) as unknown as LenisLike;
 
       lenisRef.current = lenis;
@@ -89,14 +107,12 @@ export function SmoothScroll() {
       const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
       const isReload = navEntry?.type === 'reload';
 
-      // On reload, always start from top as requested.
       if (isReload) {
         lenis.scrollTo(0, { immediate: true });
         if (window.location.hash) {
           history.replaceState(null, '', window.location.pathname);
         }
       } else {
-        // Restore cross-page anchor navigation quickly (e.g. /contact -> /#timeline).
         const pending = sessionStorage.getItem('pending_anchor');
         const initialHash = pending || window.location.hash || '';
         if (initialHash && initialHash.startsWith('#')) {
@@ -107,9 +123,7 @@ export function SmoothScroll() {
             if (el) {
               scrollToAnchor(initialHash, true);
               requestAnimationFrame(() => scrollToAnchor(initialHash, true));
-              if (pending) {
-                sessionStorage.removeItem('pending_anchor');
-              }
+              if (pending) sessionStorage.removeItem('pending_anchor');
               return;
             }
             attempts += 1;
@@ -158,7 +172,6 @@ export function SmoothScroll() {
       const el = document.querySelector(targetHash) as HTMLElement | null;
       if (el && lenisRef.current) {
         const offset = getAnchorOffset(targetHash);
-        // Apply scroll quickly and re-apply once to survive post-hydration adjustments.
         lenisRef.current.scrollTo(el, { offset, immediate: true });
         requestAnimationFrame(() => {
           lenisRef.current?.scrollTo(el, { offset, immediate: true });
@@ -191,4 +204,3 @@ export function SmoothScroll() {
 
   return null;
 }
-

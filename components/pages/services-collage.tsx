@@ -34,7 +34,7 @@ function toTitleCase(value: string) {
 /** Even 2×3 service grid — aligned, modern, readable */
 export function ServicesCollage() {
   return (
-    <section className="relative mx-auto w-[90vw] max-w-[90vw] py-[clamp(3rem,8vw,6rem)]">
+    <section className="relative mx-auto w-[min(92vw,1440px)] py-[clamp(3rem,8vw,6rem)]">
       <div className="mb-[clamp(1.5rem,4vw,2.5rem)] text-center max-w-3xl mx-auto">
         <h2 className="font-display text-[clamp(1.85rem,4.5vw,2.85rem)] font-semibold tracking-tight text-stone-900 dark:text-white">
           Six Expertises In One Delivery Line

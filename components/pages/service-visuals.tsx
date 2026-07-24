@@ -14,6 +14,7 @@ import {
   ServerStackIcon,
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
+import { LazyLoopVideo } from "@/components/ui/lazy-loop-video";
 import { cn } from "@/lib/utils";
 
 type VisualProps = {
@@ -71,13 +72,9 @@ export function LaptopBackendVisual({ accent, className }: VisualProps) {
                 <p className="text-emerald-400">Compiled in 1.8s ✓</p>
               </div>
               <div className="relative min-h-[108px] overflow-hidden bg-stone-950">
-                <video
+                <LazyLoopVideo
                   className="absolute inset-0 h-full w-full object-cover opacity-70"
                   src="/videos/backend-terminal.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
                   aria-hidden
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/40" />
@@ -118,14 +115,10 @@ export function ArchitectureVisual({ accent, className }: VisualProps) {
   return (
     <Frame accent={accent} className={className}>
       <div className="relative">
-        <video
+        <LazyLoopVideo
           className="h-[130px] w-full object-cover opacity-75"
           src="/videos/architecture-flow.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-label="System architecture flow visualization, about 16 seconds"
+          aria-label="System architecture flow visualization"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/20" />
 

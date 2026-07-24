@@ -11,6 +11,7 @@ import {
 
 import { CountUpText } from "@/components/ui/count-up-text";
 import { useMotionReady } from "@/lib/motion";
+import { useCanUseHeavyMotion } from "@/lib/perf";
 
 const ARCH_NODES = [
   { label: "Gateway", icon: CloudIcon, color: "#0284C7", x: 8, y: 18 },
@@ -21,6 +22,8 @@ const ARCH_NODES = [
 
 export function HeroDeviceStage() {
   const ready = useMotionReady();
+  const heavy = useCanUseHeavyMotion();
+  const float = ready && heavy;
 
   return (
     <div className="relative mx-auto w-full">
@@ -36,8 +39,8 @@ export function HeroDeviceStage() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            animate={ready ? { y: [0, -8, 0] } : undefined}
-            transition={ready ? { duration: 5.5, repeat: Infinity, ease: "easeInOut" } : undefined}
+            animate={float ? { y: [0, -8, 0] } : undefined}
+            transition={float ? { duration: 5.5, repeat: Infinity, ease: "easeInOut" } : undefined}
             className="rounded-[1.85rem] border-[3px] border-stone-700 bg-stone-900 p-2 shadow-[0_20px_44px_rgba(194,65,12,0.3)]"
           >
             <div className="mx-auto mb-1.5 h-1 w-11 rounded-full bg-stone-600" />
@@ -51,7 +54,9 @@ export function HeroDeviceStage() {
                   alt="RS Dev"
                   width={90}
                   height={110}
+                  sizes="(max-width: 640px) 78px, 90px"
                   className="h-[78px] w-auto object-contain drop-shadow-md"
+                  priority
                 />
                 <p className="mt-2.5 font-display text-xs font-bold">
                   <span className="text-accent">RS</span> Dev
@@ -72,9 +77,9 @@ export function HeroDeviceStage() {
           transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            animate={ready ? { y: [0, -6, 0] } : undefined}
+            animate={float ? { y: [0, -6, 0] } : undefined}
             transition={
-              ready ? { duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 } : undefined
+              float ? { duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 } : undefined
             }
           >
             <div className="overflow-hidden rounded-t-xl border-2 border-stone-700 bg-stone-900 shadow-[0_28px_56px_rgba(28,25,23,0.35)]">
@@ -151,8 +156,8 @@ export function HeroDeviceStage() {
           transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            animate={ready ? { y: [0, -8, 0] } : undefined}
-            transition={ready ? { duration: 7, repeat: Infinity, ease: "easeInOut" } : undefined}
+            animate={float ? { y: [0, -8, 0] } : undefined}
+            transition={float ? { duration: 7, repeat: Infinity, ease: "easeInOut" } : undefined}
             className="overflow-hidden rounded-2xl border-2 border-sky-500/40 bg-stone-950/95 p-3.5 shadow-[0_20px_48px_rgba(2,132,199,0.28)]"
           >
             <div className="mb-2.5 flex items-center justify-between gap-2">
