@@ -143,7 +143,7 @@ export function WhyChooseUs() {
             <div className="relative aspect-[4/3] w-full bg-stone-200 dark:bg-stone-800">
               <Image
                 src="/team/rs-dev-six-crew.png"
-                alt="RS Dev six-person tech crew collaborating — young specialists including two women"
+                alt="RS Dev six-person crew on a live project review call — Jira board shared over Google Meet"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 90vw, 45vw"
