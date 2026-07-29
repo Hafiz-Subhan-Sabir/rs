@@ -198,9 +198,9 @@ export function ChatBot() {
   return (
     <>
       <div className="fixed top-[88px] right-3 sm:right-5 z-[70] flex flex-col items-end pointer-events-none">
-        <AnimatePresence>
-          {open ? (
-            <motion.div
+      <AnimatePresence>
+        {open ? (
+          <motion.div
               key="panel"
               initial={{ opacity: 0, y: -18, scale: 0.94, filter: "blur(6px)" }}
               animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
@@ -248,16 +248,16 @@ export function ChatBot() {
                       </p>
                     </div>
                   </div>
-                  <button
-                    type="button"
+              <button
+                type="button"
                     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white/90 backdrop-blur transition hover:bg-white/20 hover:text-white"
-                    onClick={() => setOpen(false)}
+                onClick={() => setOpen(false)}
                     aria-label="Close RS Bot"
-                  >
+              >
                     <XMarkIcon className="h-5 w-5" />
-                  </button>
+              </button>
                 </div>
-              </div>
+            </div>
 
               {/* Messages */}
               <div className="rs-bot-scroll relative flex-1 overflow-y-auto px-3.5 py-4 space-y-3.5 scrollbar-thin">
@@ -266,7 +266,7 @@ export function ChatBot() {
                   const isFirst = i === 0 && isBot;
                   return (
                     <motion.div
-                      key={`${m.role}-${i}`}
+                  key={`${m.role}-${i}`}
                       initial={{ opacity: 0, y: 10, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: 0.22 }}
@@ -310,8 +310,8 @@ export function ChatBot() {
                     </div>
                   </div>
                 ) : null}
-                <div ref={messagesEndRef} />
-              </div>
+              <div ref={messagesEndRef} />
+            </div>
 
               {/* Composer */}
               <div className="relative shrink-0 border-t border-stone-200/80 bg-white/90 px-3.5 pb-3.5 pt-3 backdrop-blur-md dark:border-white/10 dark:bg-[#1a1512]/95">
@@ -327,44 +327,44 @@ export function ChatBot() {
                         Try asking
                       </p>
                       <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-thin">
-                        {QUICK_TOPICS.slice(0, 6).map((topic) => (
-                          <button
-                            key={topic}
-                            type="button"
-                            onClick={() => send(topic)}
+                {QUICK_TOPICS.slice(0, 6).map((topic) => (
+                  <button
+                    key={topic}
+                    type="button"
+                    onClick={() => send(topic)}
                             disabled={typing}
                             className="shrink-0 rounded-full border border-accent/30 bg-gradient-to-b from-white to-orange-50/80 px-3 py-1.5 text-[11px] font-semibold text-stone-700 shadow-sm transition hover:border-accent hover:shadow-[0_0_16px_rgba(194,65,12,0.2)] disabled:opacity-50 dark:from-white/10 dark:to-orange-950/30 dark:text-stone-200 dark:border-accent/35"
-                          >
-                            {topic}
-                          </button>
-                        ))}
-                      </div>
+                  >
+                    {topic}
+                  </button>
+                ))}
+              </div>
                     </motion.div>
                   ) : null}
                 </AnimatePresence>
 
                 <div className="flex items-center gap-2 rounded-2xl border-2 border-accent/30 bg-stone-50 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] transition focus-within:border-accent focus-within:shadow-[0_0_0_3px_rgba(194,65,12,0.12)] dark:border-accent/35 dark:bg-black/30 dark:focus-within:shadow-[0_0_0_3px_rgba(194,65,12,0.2)]">
-                  <input
+                <input
                     ref={inputRef}
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") send();
-                    }}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") send();
+                  }}
                     placeholder="Ask RS Bot…"
                     disabled={typing}
                     className="min-w-0 flex-1 bg-transparent px-3 py-2.5 text-sm text-stone-900 outline-none placeholder:text-stone-400 disabled:opacity-60 dark:text-white"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => send()}
+                />
+                <button
+                  type="button"
+                  onClick={() => send()}
                     disabled={typing || !input.trim()}
                     className="cta-glow-zoom flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-orange-700 text-white shadow-[0_0_20px_rgba(194,65,12,0.4)] transition disabled:opacity-40 disabled:animate-none"
                     aria-label="Send message"
-                  >
+                >
                     <PaperAirplaneIcon className="h-5 w-5" />
-                  </button>
-                </div>
+                </button>
+              </div>
 
                 <div className="mt-3 grid grid-cols-3 gap-2">
                   <a
@@ -389,13 +389,13 @@ export function ChatBot() {
                   >
                     <CalendarDaysIcon className="h-3.5 w-3.5" />
                     Book
-                  </Link>
+              </Link>
                 </div>
-              </div>
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
-      </div>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </div>
 
       {/* WhatsApp + Email — bottom right */}
       <div className="fixed bottom-[10px] right-3 sm:right-5 z-[70] flex flex-row items-center gap-3">

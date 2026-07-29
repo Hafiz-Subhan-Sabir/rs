@@ -15,7 +15,7 @@ export const Footer = () => {
                 alt="RS Dev"
                 width={48}
                 height={48}
-                className="h-12 w-12 rounded-lg bg-white p-1 ring-1 ring-stone-200/80 dark:ring-white/10"
+                className="h-12 w-12 rounded-lg bg-white p-1"
               />
               <span className="font-display text-lg font-semibold text-stone-900 dark:text-white">
                 RS <span className="text-accent">Dev</span>

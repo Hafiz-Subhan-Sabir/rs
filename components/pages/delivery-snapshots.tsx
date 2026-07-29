@@ -302,15 +302,15 @@ export function DeliverySnapshots() {
               ) : null}
 
               <ul className="mt-auto pt-6 flex flex-wrap gap-2">
-                {item.tags.map((tag) => (
-                  <li
-                    key={tag}
+              {item.tags.map((tag) => (
+                <li
+                  key={tag}
                     className="rounded-lg border-2 border-stone-200/90 bg-white px-2.5 py-1 text-[11px] font-semibold text-stone-600 dark:border-white/12 dark:bg-white/5 dark:text-stone-300"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
             </div>
           </motion.article>
         ))}

@@ -69,7 +69,7 @@ export const Navbar = () => {
             height={48}
             draggable={false}
             priority
-            className="h-11 w-11 sm:h-12 sm:w-12 object-contain rounded-lg bg-white p-1 ring-1 ring-stone-200/80 dark:ring-white/10"
+            className="h-11 w-11 sm:h-12 sm:w-12 object-contain rounded-lg bg-white p-1"
           />
           <span className="hidden sm:block font-display text-lg font-semibold tracking-tight text-stone-900 dark:text-white">
             RS <span className="text-accent">Dev</span>
