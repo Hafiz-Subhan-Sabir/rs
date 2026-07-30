@@ -16,8 +16,8 @@ import { DELIVERY_SNAPSHOTS } from "@/constants/case-studies";
 import { useMotionReady } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
-/** Browser + cloud enterprise dashboard for The Syndicate */
-function SyndicateCloudVisual() {
+/** Browser + cloud enterprise dashboard (client name confidential) */
+function CloudEnterpriseVisual() {
   const ready = useMotionReady();
 
   return (
@@ -58,7 +58,7 @@ function SyndicateCloudVisual() {
           <span className="h-2 w-2 rounded-full bg-amber-400" />
           <span className="h-2 w-2 rounded-full bg-emerald-400" />
           <div className="ml-2 flex-1 truncate rounded-md bg-white/10 px-2 py-1 text-[10px] text-stone-300">
-            app.thesyndicate.cloud / members
+            app.client-cloud.app / members
           </div>
         </div>
 
@@ -229,7 +229,7 @@ function QuizExamAppVisual() {
 }
 
 function ProjectVisual({ id }: { id: string }) {
-  if (id === "syndicate") return <SyndicateCloudVisual />;
+  if (id === "cloud-enterprise") return <CloudEnterpriseVisual />;
   if (id === "quiz-exam") return <QuizExamAppVisual />;
   return null;
 }

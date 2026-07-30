@@ -2,11 +2,11 @@
 
 export const DELIVERY_SNAPSHOTS = [
   {
-    id: "syndicate",
+    id: "cloud-enterprise",
     industry: "Enterprise cloud product",
-    headline: "The Syndicate — Cloud Enterprise Web App",
+    headline: "Cloud Enterprise Web App (Confidential Client)",
     summary:
-      "A cloud-based enterprise system designed as a full web application — currently expanding toward blockchain-ready membership and value rails.",
+      "A cloud-based enterprise system designed as a full web application — currently expanding toward blockchain-ready membership and value rails. Client name shared on request only.",
     problem:
       "Memberships, course video, content, roles, and payments needed one secure cloud product surface — not a pile of disconnected tools.",
     outcome:

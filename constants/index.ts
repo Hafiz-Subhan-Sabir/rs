@@ -60,9 +60,9 @@ export const PROJECTS: ReadonlyArray<{
   highlights: readonly string[];
 }> = [
   {
-    title: "The Syndicate — Cloud Enterprise Web App",
+    title: "Cloud Enterprise Web App (Confidential Client)",
     description:
-      "Cloud-based enterprise system designed as a full web application: AI automations, strong architecture, Cloudflare delivery, segmented course video, AI articles, RBAC, secure login, and IP-aware GBP/USD charging — with a clear roadmap into blockchain-ready membership and value rails.",
+      "Cloud-based enterprise system designed as a full web application: AI automations, strong architecture, Cloudflare delivery, segmented course video, AI articles, RBAC, secure login, and IP-aware GBP/USD charging — with a clear roadmap into blockchain-ready membership and value rails. Client name shared on request only.",
     image: "/projects/ai-interview.png",
     liveUrl: "",
     featured: true,

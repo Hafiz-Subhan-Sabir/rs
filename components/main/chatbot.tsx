@@ -19,7 +19,7 @@ const QUICK_TOPICS = [
   "What is RS Dev?",
   "Who is on the crew?",
   "What services do you offer?",
-  "Tell me about The Syndicate",
+  "Tell me about the cloud enterprise app",
   "Do you handle SEO AI optimization?",
   "Enterprise system design?",
   "How do you estimate project cost?",
@@ -55,17 +55,17 @@ function getCustomReply(question: string): string {
   if (containsAny(q, ["email", "mail", "intelligence"])) {
     return "Reach us at intelligence@the-rsdev.com — we usually reply within a day.";
   }
-  if (containsAny(q, ["syndicate"])) {
-    return "The Syndicate is our membership web app: AI automations, strong system architecture, Cloudflare delivery, YouTube-style course video segments, AI-generated articles, role-based access, secure login, and payment validation with IP-aware GBP/USD charging. See About for the full list.";
+  if (containsAny(q, ["syndicate", "cloud enterprise", "membership web", "confidential client", "blockchain"])) {
+    return "We shipped a confidential cloud enterprise membership web app: AI automations, strong system architecture, Cloudflare delivery, course video segments, AI-generated articles, RBAC, secure login, and IP-aware GBP/USD charging. The client name is shared only on request for confidentiality — ask on Contact for a private brief.";
   }
   if (containsAny(q, ["affiliate", "commission"])) {
-    return "We design growth and ops control surfaces when scope calls for it. Our current MVP flagships are The Syndicate cloud enterprise web app and the AI proctoring online quiz exam app — see About for details.";
+    return "We design growth and ops control surfaces when scope calls for it. Our current MVP flagships are a confidential cloud enterprise web app and the AI proctoring online quiz exam app — see About for details.";
   }
   if (containsAny(q, ["inteliquiz", "quiz", "proctor", "exam"])) {
     return "Our AI Proctoring Online Quiz Exam App covers teacher/student roles, quiz builder, webcam face detection, tab/fullscreen warnings, results and cheating logs. See About for the full list.";
   }
-  if (containsAny(q, ["enterprise", "architect", "system design", "full system", "syndicate", "blockchain"])) {
-    return "Yes. Flagship example: The Syndicate — a cloud-based enterprise web app with a blockchain roadmap. Contact us for scope.";
+  if (containsAny(q, ["enterprise", "architect", "system design", "full system"])) {
+    return "Yes. Flagship example: a confidential cloud-based enterprise web app with a blockchain roadmap. Client name shared on request — contact us for scope.";
   }
   if (containsAny(q, ["experience", "how many years", "years of experience", "how long have you", "exp"])) {
     return "Multi-year experience shipping web products, enterprise designs, AI automation, and SEO systems with startups and growth teams.";
@@ -131,7 +131,7 @@ function getCustomReply(question: string): string {
     return "Use the contact page: share outcomes, timeline, tools you use, and budget band. The crew replies with fit and next steps.";
   }
   if (containsAny(q, ["project", "portfolio", "case study", "selected work", "work"])) {
-    return "Flagship MVP work: The Syndicate cloud enterprise web app (blockchain roadmap) and the AI Proctoring Online Quiz Exam App. Open /about for details.";
+    return "Flagship MVP work: a confidential cloud enterprise web app (blockchain roadmap) and the AI Proctoring Online Quiz Exam App. Open /about for details — client names shared on request.";
   }
   return FALLBACK_TEXT;
 }
@@ -151,7 +151,7 @@ export function ChatBot() {
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: "bot",
-      text: "Hey — I'm RS Bot. Ask about our six-person crew, enterprise systems, SEO AI, The Syndicate, or how to start. For scoped quotes, hit Contact.",
+      text: "Hey — I'm RS Bot. Ask about our six-person crew, enterprise systems, SEO AI, confidential MVP work, or how to start. For scoped quotes, hit Contact.",
     },
   ]);
   const [input, setInput] = useState("");

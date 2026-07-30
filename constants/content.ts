@@ -2,23 +2,23 @@
 
 export const DIAGRAM_SLOTS = {
   growthFunnel: {
-    file: "/diagrams/growth-funnel.png",
+    file: "/diagrams/growth-funnel.webp",
     title: "Site to signed deal",
   },
   deliveryCycle: {
-    file: "/diagrams/delivery-cycle.png",
+    file: "/diagrams/delivery-cycle.webp",
     title: "Six beats from brief to live",
   },
   maintenanceLoop: {
-    file: "/diagrams/maintenance-loop.png",
+    file: "/diagrams/maintenance-loop.webp",
     title: "Quarterly momentum ring",
   },
   automationFlow: {
-    file: "/diagrams/automation-flow.png",
+    file: "/diagrams/automation-flow.webp",
     title: "Manual chaos to wired ops",
   },
   brandExperience: {
-    file: "/diagrams/brand-experience.png",
+    file: "/diagrams/brand-experience.webp",
     title: "Stacked presence layers",
   },
 } as const;

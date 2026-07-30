@@ -49,6 +49,9 @@ export function CrewSection() {
     const progress = progressRef.current;
     if (!section || !progress) return;
 
+    const isMobile = window.matchMedia("(max-width: 1023px)").matches;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const ctx = gsap.context(() => {
       gsap.set(progress, { scaleY: 0, transformOrigin: "top" });
       const setScale = gsap.quickSetter(progress, "scaleY");
@@ -57,7 +60,7 @@ export function CrewSection() {
         trigger: section,
         start: "top 18%",
         end: "bottom 22%",
-        scrub: true,
+        scrub: isMobile ? 0.35 : true,
         onUpdate: (self) => {
           setScale(Math.max(0, Math.min(1, self.progress)));
         },
@@ -65,7 +68,32 @@ export function CrewSection() {
 
       const items = itemRefs.current.filter(Boolean) as HTMLDivElement[];
       items.forEach((el, index) => {
-        const fromX = index % 2 === 0 ? 64 : -64;
+        const fromX = reduced ? 0 : isMobile ? (index % 2 === 0 ? 28 : -28) : index % 2 === 0 ? 64 : -64;
+        const enterDuration = reduced ? 0.01 : isMobile ? 0.45 : 0.92;
+
+        if (reduced || isMobile) {
+          // Mobile: fade in once — avoid reverse scrub that fights finger scrolling.
+          gsap.set(el, { autoAlpha: 0, x: fromX, y: isMobile ? 16 : 32, scale: 0.98 });
+          ScrollTrigger.create({
+            trigger: el,
+            start: "top 92%",
+            once: true,
+            onEnter: () => {
+              setActive(index);
+              gsap.to(el, {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                scale: 1,
+                duration: enterDuration,
+                ease: "power2.out",
+                overwrite: "auto",
+              });
+            },
+          });
+          return;
+        }
+
         gsap.set(el, { autoAlpha: 0, x: fromX, y: 32, scale: 0.97 });
 
         ScrollTrigger.create({
@@ -148,7 +176,7 @@ export function CrewSection() {
                   src={member.photo}
                   alt={member.name}
                   fill
-                  quality={100}
+                  quality={85}
                   className="object-cover object-top"
                   sizes="(max-width: 640px) 192px, 256px"
                   priority
@@ -246,16 +274,9 @@ export function CrewSection() {
       </div>
 
       {/* ——— Scroll journey: members appear ——— */}
-      <div className="relative mt-20 md:mt-28">
-        <div className="mb-12 md:mb-16 text-center md:text-left">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">Meet the team</p>
-          <h3 className="mt-2 font-display text-3xl md:text-4xl font-semibold text-stone-900 dark:text-white">
-            Scroll — each member <span className="text-accent">appears</span>
-          </h3>
-          <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-600 dark:text-stone-400 mx-auto md:mx-0">
-            Same scroll rhythm as Our Story. As you move down, each specialist slides in with a
-            colored accent so roles stay easy to tell apart.
-          </p>
+      <div id="meet-the-crew" className="relative mt-20 md:mt-28 scroll-mt-28">
+        <div className="mb-6 md:mb-8 text-center md:text-left">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">Meet the crew</p>
         </div>
 
         <div className="relative">
@@ -351,9 +372,9 @@ export function CrewSection() {
                               src={m.photo}
                               alt={m.name}
                               fill
-                              quality={100}
+                              quality={82}
                               className="object-cover object-top"
-                              sizes="128px"
+                              sizes="96px"
                             />
                           </div>
                           <div className="min-w-0 flex-1">

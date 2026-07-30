@@ -80,22 +80,16 @@ export function WhyChooseUs() {
                   whileInView={ready ? { opacity: 1, x: 0, scale: 1 } : undefined}
                   viewport={{ once: true, amount: 0.35 }}
                   transition={{ delay: i * 0.09, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  whileHover={ready ? { y: -4, transition: { duration: 0.2 } } : undefined}
-                  className="group relative flex gap-4 overflow-hidden rounded-2xl border-2 bg-white p-4 sm:p-5 dark:bg-stone-950/80"
+                  whileHover={ready ? { y: -3, transition: { duration: 0.2 } } : undefined}
+                  className="group relative flex gap-4 overflow-hidden rounded-2xl border-2 bg-white p-4 sm:p-5 dark:bg-stone-950/80 contain-content"
                   style={{
                     borderColor: `${item.color}45`,
                     boxShadow: `0 10px 28px rgba(28,25,23,0.05), 0 0 20px ${item.color}12`,
                   }}
                 >
-                  <motion.div
-                    className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full opacity-30 blur-2xl"
+                  <div
+                    className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full opacity-25 blur-2xl motion-safe:animate-pulse max-md:hidden"
                     style={{ background: item.color }}
-                    animate={
-                      ready
-                        ? { scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }
-                        : undefined
-                    }
-                    transition={{ duration: 3.5 + i * 0.3, repeat: Infinity, ease: "easeInOut" }}
                   />
                   <span
                     className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 text-white"
@@ -142,12 +136,14 @@ export function WhyChooseUs() {
             <div className="absolute inset-x-0 top-0 z-[1] h-1.5 bg-gradient-to-r from-accent via-sky-500 to-emerald-500" />
             <div className="relative aspect-[4/3] w-full bg-stone-200 dark:bg-stone-800">
               <Image
-                src="/team/rs-dev-six-crew.png"
+                src="/team/rs-dev-six-crew.webp"
                 alt="RS Dev six-person crew on a live project review call — Jira board shared over Google Meet"
                 fill
+                quality={85}
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 90vw, 45vw"
-                priority={false}
+                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 90vw, 520px"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/90 via-stone-950/45 to-transparent p-5 sm:p-6">

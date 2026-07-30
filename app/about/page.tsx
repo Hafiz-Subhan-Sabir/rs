@@ -31,6 +31,8 @@ export default function AboutPage() {
       <CtaBand
         title="Problems First. Technology Second."
         description="We agree what needs to change for your business before we write code, so the fix matches how your team actually works."
+        secondaryLabel="Meet The Crew"
+        secondaryHref="/about#meet-the-crew"
       />
     </PageShell>
   );

@@ -33,7 +33,7 @@ export const siteConfig = {
         'Polished web and member apps — dashboards, portals, and flows that feel fast and clear to use.',
       expertise: 'App Developer Expert',
       lead: 'Maria Hassan',
-      workedOn: 'The Syndicate membership hub, dashboards, and member onboarding experiences.',
+      workedOn: 'Confidential enterprise membership hub, dashboards, and member onboarding experiences.',
       workingOn: 'Product screens and admin UX for the enterprise full system currently shipping.',
     },
     {
