@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const size = {
@@ -7,7 +9,10 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const logoBytes = await readFile(join(process.cwd(), "public/rs-dev-logo.png"));
+  const logoSrc = `data:image/png;base64,${Buffer.from(logoBytes).toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -15,61 +20,30 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          position: "relative",
+          alignItems: "center",
+          justifyContent: "center",
           backgroundColor: "#ffffff",
-          color: "#0a0a0a",
-          fontFamily: "Georgia, 'Times New Roman', serif",
         }}
       >
         <div
           style={{
             position: "absolute",
-            inset: 0,
+            left: 0,
+            top: 0,
+            width: 630,
+            height: 630,
             display: "flex",
-            padding: "56px 64px",
-            flexDirection: "column",
+            alignItems: "center",
             justifyContent: "center",
-            gap: 28,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 0,
-              letterSpacing: "-0.03em",
-            }}
-          >
-            <div style={{ fontSize: 112, fontWeight: 700, lineHeight: 0.9 }}>RS</div>
-            <div
-              style={{
-                marginTop: 8,
-                fontSize: 36,
-                fontWeight: 600,
-                letterSpacing: "0.35em",
-                textTransform: "uppercase",
-              }}
-            >
-              DEV
-            </div>
-          </div>
-
-          <div
-            style={{
-              fontSize: 28,
-              fontWeight: 500,
-              maxWidth: 920,
-              lineHeight: 1.35,
-              color: "#333333",
-              fontFamily: "Arial, sans-serif",
-            }}
-          >
-            Sites, bespoke tools, search, and campaign advice
-          </div>
-
-          <div style={{ fontSize: 22, color: "#555555", fontFamily: "Arial, sans-serif" }}>
-            Written plans · plain updates · results you can count
-          </div>
+          <img
+            src={logoSrc}
+            width={320}
+            height={320}
+            alt="RS Dev"
+            style={{ objectFit: "contain" }}
+          />
         </div>
       </div>
     ),
@@ -78,4 +52,3 @@ export default function OpenGraphImage() {
     }
   );
 }
-

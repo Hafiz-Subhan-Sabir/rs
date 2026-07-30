@@ -42,7 +42,7 @@ export const siteConfig: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "RS Dev, technology partner for entrepreneurs",
+        alt: "RS Dev logo",
       },
     ],
   },

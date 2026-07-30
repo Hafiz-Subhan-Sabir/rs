@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RS Dev · Business Document Pack</title>
+  <link rel="stylesheet" href="brand.css" />
+  <style>
+    .index-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .index-list li {
+      margin: 0 0 8px;
+    }
+    .index-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--wash);
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      font-weight: 600;
+    }
+    .index-list a:hover {
+      background: #fff7ed;
+    }
+    .index-list span {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 9.5pt;
+    }
+    .hint {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: #fff7ed;
+      font-size: 10pt;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <article class="doc">
+    <header class="header">
+      <div class="brand">
+        <img src="rs-dev-logo.png" alt="RS Dev" />
+        <div>
+          <h1>RS <span>Dev</span></h1>
+          <p class="sans">Document pack for review</p>
+        </div>
+      </div>
+      <div class="meta">
+        <strong>Index</strong>
+        localhost:8765
+      </div>
+    </header>
+
+    <p class="eyebrow">Review</p>
+    <h1 class="doc-title">Open a document, change what you need, then save as PDF</h1>
+    <p class="lead">
+      Click any link below. When it looks right, press Ctrl + P and choose Save as PDF.
+      Turn on background graphics if you want the soft colors to show.
+    </p>
+
+    <ol class="index-list">
+      <li><a href="01-company-profile.html">01 · Company Profile <span>Open</span></a></li>
+      <li><a href="02-portfolio.html">02 · Portfolio <span>Open</span></a></li>
+      <li><a href="03-services-brochure.html">03 · Services Brochure <span>Open</span></a></li>
+      <li><a href="04-discovery-questionnaire.html">04 · Discovery Questionnaire <span>Open</span></a></li>
+      <li><a href="05-meeting-notes.html">05 · Meeting Notes <span>Open</span></a></li>
+      <li><a href="06-proposal.html">06 · Proposal <span>Open</span></a></li>
+      <li><a href="07-quotation.html">07 · Quotation <span>Open</span></a></li>
+      <li><a href="08-software-development-agreement.html">08 · Software Development Agreement <span>Open</span></a></li>
+      <li><a href="09-invoice.html">09 · Invoice <span>Open</span></a></li>
+      <li><a href="10-payment-receipt.html">10 · Payment Receipt <span>Open</span></a></li>
+      <li><a href="11-welcome-letter.html">11 · Welcome Letter <span>Open</span></a></li>
+      <li><a href="12-project-timeline.html">12 · Project Timeline <span>Open</span></a></li>
+      <li><a href="13-weekly-progress-report.html">13 · Weekly Progress Report <span>Open</span></a></li>
+      <li><a href="14-handover-document.html">14 · Handover Document <span>Open</span></a></li>
+      <li><a href="15-maintenance-agreement.html">15 · Maintenance Agreement <span>Open</span></a></li>
+      <li><a href="16-testimonial-request.html">16 · Testimonial Request <span>Open</span></a></li>
+    </ol>
+
+    <div class="hint">
+      After you review, tell me what to change. I will update the files, then you can print again.
+    </div>
+
+    <footer class="footer">
+      <span>http://localhost:8765</span>
+      <span>RS Dev</span>
+    </footer>
+  </article>
+</body>
+</html>
